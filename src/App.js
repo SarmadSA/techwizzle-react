@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      {/* creat a heder component and add it here */}
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header />
+        <Main />
+        <Footer />
       </div>
     );
   }
