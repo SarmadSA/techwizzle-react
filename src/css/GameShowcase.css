@@ -1,0 +1,27 @@
+.game-showcase{
+    height: 90px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.game-image{
+    float: left;
+    height: 70px;
+    width: 70px;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.game-results-container{
+    float:left;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.game-result{
+    padding: 5px;
+    font-size: 110%;
+}
