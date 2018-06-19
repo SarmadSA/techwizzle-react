@@ -1,12 +1,14 @@
 import React from 'react';
 import Card from './Card';
-import SectionTitle from './SectionTitle'
+import SectionTitle from './SectionTitle';
+import Slider from './Slider';
 import '../css/Main.css';
 
 const Main = () =>{
     return (
         <main className="main">
-
+            <Slider />
+            
             <section>
                 <SectionTitle> Featured Product Profiles </SectionTitle>
                 <Card />
