@@ -8,9 +8,9 @@ import '../css/Slider.css';
 const Slider = () =>{
     return(
         <div className="slider-box">
-            <Slide />
-            <Slide />
-            <Slide />
+            <Slide src={require('../images/tech.jpg')}/>
+            <Slide display={testet()}/>
+            <Slide display="none"/>
 
             <PreviewsButton />
             <NextButton />
@@ -21,3 +21,7 @@ const Slider = () =>{
 };
 
 export default Slider;
+
+function testet(){
+    return "none";
+}
