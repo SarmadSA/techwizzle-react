@@ -1,10 +1,10 @@
 import React from 'react';
 import '../css/NavigationButton.css';
 
-const PreviewsButton = () =>{
+const PreviewsButton = (props) =>{
     return(
         <div className="previews-slide">						
-            <button type="button" className="slide-button" onclick="prevSlide()">
+            <button type="button" className="slide-button" onClick={props.clickHandler}>
                 <svg className="button-icon">
                     <defs>
                         <symbol id="button-icon-left" viewBox="0 0 32 32">

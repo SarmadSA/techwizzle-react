@@ -1,10 +1,10 @@
 import React from 'react';
 import '../css/NavigationButton.css';
 
-const NextButton = () =>{
+const NextButton = (props) =>{
     return(
         <div className="next-slide">
-            <button type="button" className="slide-button" onclick="nextSlide()">
+            <button type="button" className="slide-button" onClick={props.clickHandler}>
                 <svg className="button-icon">
                     <defs>
                         <symbol id="button-icon-right" viewBox="0 0 32 32">
