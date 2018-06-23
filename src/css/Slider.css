@@ -1,7 +1,12 @@
 .slider-box {
+    position: relative;
     float: left;
     width: 73.4%;
-    height: 400px;
-    position: relative;
     margin-bottom: 30px;
+}
+
+.bubble-box{
+    position: relative;
+    margin-top: -30px;
+    text-align: center;
 }

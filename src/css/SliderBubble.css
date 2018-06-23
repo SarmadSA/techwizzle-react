@@ -1,11 +1,3 @@
-.bubble-box{
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -30px;
-    text-align: center;
-}
-
 .bubble {
     border: 1px solid rgba(255,255,255,0.80);
     background-color:transparent;
