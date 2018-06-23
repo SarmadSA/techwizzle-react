@@ -57,4 +57,23 @@ export default class Slider extends Component{
         }
         return bubbleClass;
     }
+
+    render(){
+        return(
+            <div className="slider-box">
+                <Slide display = {this.displaySlide(0)} src={require('../images/slideOne.jpg')} alt="slide one img" />
+                <Slide display = {this.displaySlide(1)} src={require('../images/slideTwo.jpg')} alt="slide two img" />
+                <Slide display = {this.displaySlide(2)} src={require('../images/tech.jpg')} alt="slide three img" />
+
+                <PreviewsButton clickHandler = {this.prevSlideHandler}/>
+                <NextButton clickHandler = {this.nextSlideHandler} />
+
+                <div className="bubble-box">
+                    <SliderBubble clickHandler = {() => this.goToSlide(0)} className={this.setBubbleClass(0)}/>
+                    <SliderBubble clickHandler = {() => this.goToSlide(1)} className={this.setBubbleClass(1)}/>
+                    <SliderBubble clickHandler = {() => this.goToSlide(2)} className={this.setBubbleClass(2)}/>
+                </div>
+            </div>
+        )
+    };
 };
