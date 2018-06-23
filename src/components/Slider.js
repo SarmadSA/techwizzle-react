@@ -36,4 +36,13 @@ export default class Slider extends Component{
         this.setState({currentSlideNumber: prevSlideNumber});
         //console.log(prevSlideNumber);
     }
+
+    displaySlide = (slideNumber) =>{
+        let display = 'none';
+        if(slideNumber === this.state.currentSlideNumber){
+            display = 'block';
+        }
+        //console.log(display);
+        return display;
+    }
 };
