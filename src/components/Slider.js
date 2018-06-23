@@ -1,27 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Slide from './Slide';
-import SliderBubbleBox from './SliderBubbleBox';
+import SliderBubble from './SliderBubble';
 import PreviewsButton from './PreviewsButton';
 import NextButton from './NextButton';
 import '../css/Slider.css';
 
-const Slider = () =>{
-    return(
-        <div className="slider-box">
-            <Slide src={require('../images/tech.jpg')}/>
-            <Slide display={testet()}/>
-            <Slide display="none"/>
 
-            <PreviewsButton />
-            <NextButton />
 
-            <SliderBubbleBox />
-        </div>
-    );
+export default class Slider extends Component{
+
+    state = {
+        maxSlideNumber : 3,
+        minSlideNumber : 0,
+        currentSlideNumber : 0
+    }
 };
-
-export default Slider;
-
-function testet(){
-    return "none";
-}
