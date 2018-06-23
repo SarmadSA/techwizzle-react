@@ -49,4 +49,12 @@ export default class Slider extends Component{
     goToSlide = (bubbleNumber) =>{
         this.setState({currentSlideNumber: bubbleNumber})
     }
+
+    setBubbleClass = (bubbleNumber) =>{
+        let bubbleClass = "bubble";
+        if(bubbleNumber === this.state.currentSlideNumber){
+            bubbleClass = "bubble active";
+        }
+        return bubbleClass;
+    }
 };
