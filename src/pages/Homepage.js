@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from './Card';
-import SectionTitle from './SectionTitle';
-import Slider from './Slider';
+import Card from '../components/Card';
+import SectionTitle from '../components/SectionTitle';
+import Slider from '../components/Slider';
 
 const Homepage = () =>{
     return (
