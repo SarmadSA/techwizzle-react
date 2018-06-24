@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import '../css/Logo.css';
 
 const Logo = () =>{
     return (
-        <a href="#">
+        <Link to="/">
             <div className="logo-container">
                 {/*SVG Logo start*/}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.5 59" class="svg-logo">
@@ -18,7 +19,7 @@ const Logo = () =>{
                 {/*SVG Logo end*/}
                 <h1 className="logo-text">TechWizzle</h1>
             </div>
-        </a>   
+        </Link>   
     );
 };
 
