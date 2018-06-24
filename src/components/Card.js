@@ -11,7 +11,7 @@ const Card = () =>{
             <GameShowcase />
             <GameShowcase />
             <GameShowcase />
-            <div class="more-gameresults">
+            <div className="more-gameresults">
                 <p>More</p>
             </div>
         </div>
