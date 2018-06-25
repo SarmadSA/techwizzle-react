@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import SosialmediaIcons from './SosialmediaIcons'
+import {Link} from 'react-router-dom';
 import '../css/Footer.css';
 
 const Footer = () =>{
@@ -11,10 +12,10 @@ const Footer = () =>{
             <SosialmediaIcons />
             <nav id="footer-nav">
                 <ul id="footer-ul">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Profiles</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/profiles">Profiles</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                     <li><a href="http://www.virusoftware.com" target="_blank">Other websites</a></li>
                 </ul>
             </nav>

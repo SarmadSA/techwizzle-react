@@ -57,6 +57,15 @@ export default class Slider extends Component{
         }
         return bubbleClass;
     }
+    
+    // nextSlide = () => {
+    //     this.nextSlideHandler();
+    //     this.displaySlide(this.state.currentSlideNumber);
+    // }
+
+    // autoSlide = () => {
+    //     this.setInterval(this.nextSlide, 1000);
+    // }
 
     render(){
         return(

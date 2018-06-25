@@ -1,14 +1,12 @@
 import React from 'react';
-import Card from './Card';
-import SectionTitle from './SectionTitle';
-import Slider from './Slider';
-import '../css/Main.css';
+import Card from '../components/Card';
+import SectionTitle from '../components/SectionTitle';
+import SearchForm from '../components/SearchForm';
 
-const Main = () =>{
+const Profilespage = () =>{
     return (
-        <main className="main">
-            <Slider />
-            
+        <div>
+            <SearchForm />
             <section>
                 <SectionTitle> Featured Product Profiles </SectionTitle>
                 <Card />
@@ -25,10 +23,8 @@ const Main = () =>{
                 <Card />
                 <Card />
             </section>
-
-            <br className="clear"/>
-        </main>
+        </div>
     );
 };
 
-export default Main;
+export default Profilespage;

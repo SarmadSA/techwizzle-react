@@ -1,0 +1,18 @@
+.text-box{
+    float: left;
+    width: 70%;
+    min-height: 700px;
+    padding: 30px 30px 50px 30px;
+    margin-bottom: 10px;
+    background-color: rgb(230,230,230);
+    font-size: 120%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1000px) {
+    .text-box{
+        width: 100%;
+        margin-bottom: 20px;
+        min-height: auto;
+    }
+}
