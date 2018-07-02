@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../components/Card';
 import SectionTitle from '../components/SectionTitle';
 
-const Profilespage = () =>{
+const Comparepage = () =>{
     return (
         <div>
 
@@ -26,4 +26,4 @@ const Profilespage = () =>{
     );
 };
 
-export default Profilespage;
+export default Comparepage;
