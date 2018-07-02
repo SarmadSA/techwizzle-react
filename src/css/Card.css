@@ -27,6 +27,7 @@
     width: 100%;
     padding-top: 17px;
     text-align: center;
+    color: black;
     font-size: 120%;
     cursor: pointer;
 	border-bottom-left-radius: 15px;
@@ -36,6 +37,13 @@
 
 .more-gameresults:hover{
 	background-color: rgb(22, 156, 51); /*rgba(5,154,55,0.70);*/
+}
+
+.more-link{
+    color: black;
+}
+
+.more-gameresults:hover{
     color: white;
 }
 
