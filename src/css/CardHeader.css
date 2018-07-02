@@ -20,15 +20,25 @@
     float: left;
 }
 
-.view-profile-link{
+.profile-link{
     color: green;
     cursor: pointer;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 5px;
     transition: 0.2s ease;
 }
 
-.view-profile-link:hover {
+.profile-link:hover {
     color: #04b849;
     text-decoration: underline;
+}
+
+.thumbnail-img{
+    max-height: 100%;
+    max-width: 100%; 
+    /*
+    Always fit to the container (streach):
+    height: 100%;
+    width: 100%; 
+    */
 }
