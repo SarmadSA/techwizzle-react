@@ -12,6 +12,7 @@ function importAll(r) {
   }
 
 const Homepage = () =>{
+    const numberOfFutured = 2;
     return (
         <div>
             <Slider />
@@ -20,8 +21,8 @@ const Homepage = () =>{
             <section>
                 <SectionTitle> Featured Product Profiles </SectionTitle>
                 <Card title={data.cards[0].title}/>
-
-                {renderCards(2)}
+                {window.scrollTo(0, 0)};
+                {renderCards(numberOfFutured)}
             
             </section>
 
