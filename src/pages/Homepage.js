@@ -8,6 +8,7 @@ import importAllImages from '../components/ImageImporter';
 
 const Homepage = () =>{
     const numberOfFutured = 2;
+    document.title = "TechWizzle | Home";
     return (
         <div>
             <Slider />

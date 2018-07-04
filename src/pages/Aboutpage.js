@@ -4,6 +4,7 @@ import AsideFormBox from '../components/AsideFormBox';
 
 
 const Aboutpage = () =>{
+    document.title = "TechWizzle | About";
     return (
         <div>
             <TextBox title="About">

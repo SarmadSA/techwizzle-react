@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import SearchForm from '../components/SearchForm';
 
 const Profilespage = () =>{
+    document.title = "TechWizzle | Profiles";
     return (
         <div>
             <SearchForm />

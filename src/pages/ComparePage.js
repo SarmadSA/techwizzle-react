@@ -3,6 +3,7 @@ import Card from '../components/Card';
 import SectionTitle from '../components/SectionTitle';
 
 const Comparepage = () =>{
+    document.title = "TechWizzle | Compare";
     return (
         <div>
 
