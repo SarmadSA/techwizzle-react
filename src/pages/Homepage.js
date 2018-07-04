@@ -4,12 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import Slider from '../components/Slider';
 import AsideFomBox from '../components/AsideFormBox';
 import data from '../data/cards.json';
-
-function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-    return images;
-  }
+import importAllImages from '../components/ImageImporter';
 
 const Homepage = () =>{
     const numberOfFutured = 2;
@@ -40,7 +35,7 @@ function renderCards(number){
     const cards = [];
     for(let i = 0; i < number; i++){
         const cardData = data.cards[i];
-        const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
+        const images = importAllImages(require.context('../images', false, /\.(png|jpe?g|svg)$/));
         cards.push(
                     <Card 
                         imgSrc={images[cardData.image]}
