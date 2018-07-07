@@ -3,7 +3,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class GamesTable {
-    private DbConnect connection; 
+    private final DbConnect connection; 
     
     public GamesTable(){
         this.connection = new DbConnect();
@@ -26,11 +26,18 @@ public class GamesTable {
 
               String gameId = resultSet.getString("id");
               String gameTitle = resultSet.getString("title");
+              String gameResolution = resultSet.getString("resolution");
+              String gameSettings = resultSet.getString("settings");
               String gameFPS = resultSet.getString("fps");
+              String gameImg = resultSet.getString("image");
+
 
               game.put("id", gameId);
               game.put("title", gameTitle);
+              game.put("resolution", gameResolution);
+              game.put("settings", gameSettings);
               game.put("fps", gameFPS);
+              game.put("image", gameImg);
 
               gamesList.put(game);
 
