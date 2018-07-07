@@ -1,11 +1,11 @@
 import React from 'react';
 import '../css/Hexagon.css';
 
-const Hexagon = () =>{
+const Hexagon = (props) =>{
     return(
         <div className="hexagon">
             <div className="hexagon-score">
-                <p>100+</p>
+                <p>{props.fps}+</p>
                 <p>FPS</p>
             </div>
         </div>
