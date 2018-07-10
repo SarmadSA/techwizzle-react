@@ -49,6 +49,12 @@ const Profile = () =>{
     //console.log(getData(1,(data.cards)));
     //const profileData = getData(dataId, data.cards);
 
+    function getId(){
+        const url = window.location.pathname;
+        const id = url.substring(url.lastIndexOf("/") + 1);
+        return id;
+    }
+    
     return (
         <section className="profile-section">
 
@@ -57,7 +63,7 @@ const Profile = () =>{
                     {(context) => (
                         <React.Fragment>
 
-                            <CardHeader title = { getData(context.state.selectedProfile, data.cards).title } />
+                            <CardHeader title = { getData(getId(), data.cards).title } />
                             
                             {console.log(window.location.pathname)}
                                 
