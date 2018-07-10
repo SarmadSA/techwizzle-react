@@ -2,19 +2,20 @@ import React from 'react';
 import Hexagon from './Hexagon';
 import '../css/GameShowcase.css';
 
-const GameShowcase = () =>{
+const GameShowcase = (props) =>{
+    const { imgSrc, title, settings, fps, resolution } = props;
     return(
         <div className="game-showcase">
             <figure className="game-image">
-                <img src="" alt= "image alt"/>
+                <img src={imgSrc} alt= "" className="thumbnail-img"/>
             </figure>
 
             <div className="game-results-container">
-                <p className="game-result">Game name</p>
-                <p className="game-result">Settings</p>
+                <p className="game-result">{title}</p>
+                <p className="game-result">{settings} settings - {resolution}</p>
             </div>
             
-            <Hexagon />
+            <Hexagon fps={fps}/>
         </div>
     );
 };
