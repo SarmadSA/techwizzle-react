@@ -4,7 +4,6 @@ import GameShowcase from './GameShowcase';
 import '../css/Card.css';
 import {Link} from 'react-router-dom';
 import importAllImages from './ImageImporter';
-import DataContext, {DataProvider} from '../data/GlobalDataProvider';
 
 const Card = (props) =>{
     const numberOfGames = 3;
@@ -23,17 +22,13 @@ const Card = (props) =>{
             <h4 className="card-content-tittle">Preformance in games:</h4>
 
             { renderGames(numberOfGames, gamesData) }
-            <DataProvider>
-                <DataContext.Consumer>
-                    {(context) => (
-                        <Link  to={"/profile/" + id} className="more-link" onClick={ () => context.setSelectedProfile(id) }>
-                            <div className="more-gameresults">
-                                More
-                            </div>
-                        </Link>
-                    )}
-                </DataContext.Consumer>
-            </DataProvider>
+
+            <Link  to={"/profile/" + id} className="more-link">
+                <div className="more-gameresults">
+                    More
+                </div>
+            </Link>
+
         </div>
     );
 
