@@ -8,6 +8,7 @@ import Comparepage from './pages/Comparepage';
 import Aboutpage from './pages/Aboutpage';
 import Contactpage from './pages/Contactpage';
 import Profile from './pages/Profile';
+import NotFoundPage from './pages/NotFoundPage';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -24,8 +25,11 @@ class App extends Component {
               <Route path="/compare" exact component={Comparepage}/>
               <Route path="/about" exact component={Aboutpage}/>
               <Route path="/contact" exact component={Contactpage}/>
+              <Route path="/profile" exact component={NotFoundPage}/>
               <Route path="/profile" component={Profile}/>
-              <Route path="/" component={Homepage}/>
+              <Route path="/home" exact component={Homepage}/>
+              <Route path="/" exact component={Homepage}/>
+              <Route path="/" component={NotFoundPage}/>
             </Switch>
             
             <br className="clear"/>
