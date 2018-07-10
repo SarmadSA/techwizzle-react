@@ -7,7 +7,7 @@ import data from '../data/cards.json';
 import importAllImages from '../components/ImageImporter';
 
 const Homepage = () =>{
-    const numberOfFutured = 2;
+    const numberOfFutured = 3;
     document.title = "TechWizzle | Home";
     return (
         <div>
@@ -16,8 +16,7 @@ const Homepage = () =>{
 
             <section>
                 <SectionTitle> Featured Product Profiles </SectionTitle>
-                <Card title={data.cards[0].title}/>
-                {window.scrollTo(0, 0)};
+                {/* {window.scrollTo(0, 0)} */}
                 {renderCards(numberOfFutured)}
             
             </section>
@@ -25,7 +24,7 @@ const Homepage = () =>{
             <section>
                 <SectionTitle> New Product Profiles </SectionTitle>
                 
-                {renderCards(2)}
+                {renderCards(3)}
 
             </section>
         </div>
@@ -36,15 +35,17 @@ function renderCards(number){
     const cards = [];
     for(let i = 0; i < number; i++){
         const cardData = data.cards[i];
-        const images = importAllImages(require.context('../images', false, /\.(png|jpe?g|svg)$/));
+        const images = importAllImages(require.context('../images', false, /\.(png|jpe?g|svg)$/));        
         cards.push(
                     <Card 
+                        id={cardData.id}
                         imgSrc={images[cardData.image]}
                         title={cardData.title}
                         dateOfRelease={cardData.dateOfRelease}
                         price={cardData.price}
                         productLink={cardData.link}
                         profileLink={cardData.profile}
+                        gamesData={cardData.games}
                     />
                 );
     }
