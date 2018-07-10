@@ -3,22 +3,12 @@ import CardHeader from '../components/CardHeader';
 import GameShowcase from '../components/GameShowcase';
 import InfoList from '../components/InfoList';
 import data from '../data/cards.json';
-import importAllImages from '../components/ImageImporter';
-import Card from '../components/Card';
-import DataContext, {DataProvider} from '../data/GlobalDataProvider';
 
 
 const Profile = () =>{
-    //let dataId = 1;
-    //const cardsData = data.cards;
-
-
-    //console.log(dataId);
-
-    
-    //console.log(Card.getId());
-   // const profileName = profileData.title;
-    //document.title = "TechWizzle | " + profileName;
+    const profileData = getData(getId(), data.cards);
+    const profileTitle = profileData.title;
+    document.title = "TechWizzle | " + profileTitle;
 
     function getData(id, dataa){
         for(let i = 0; i < dataa.length; i++){
@@ -42,13 +32,6 @@ const Profile = () =>{
     //     });
     // }
 
-    //const list = data.cards;
-    //console.log(getData("1",list));
-
-    //console.log(data.cards[0]);
-    //console.log(getData(1,(data.cards)));
-    //const profileData = getData(dataId, data.cards);
-
     function getId(){
         const url = window.location.pathname;
         const id = url.substring(url.lastIndexOf("/") + 1);
@@ -58,32 +41,18 @@ const Profile = () =>{
     return (
         <section className="profile-section">
 
-            <DataProvider>
-                <DataContext.Consumer>
-                    {(context) => (
-                        <React.Fragment>
+            <CardHeader title = { profileData.title } />
 
-                            <CardHeader title = { getData(getId(), data.cards).title } />
-                            
-                            {console.log(window.location.pathname)}
-                                
+            <InfoList />
+            
+            <h4 className="card-content-tittle">Preformance in games:</h4>
 
-
-                            <InfoList />
-                            
-                            <h4 className="card-content-tittle">Preformance in games:</h4>
-
-                            <GameShowcase />
-                            <GameShowcase />
-                            <GameShowcase />
-                            <GameShowcase />
-                            <GameShowcase />
-                            <GameShowcase />
-
-                        </React.Fragment>
-                    )}
-                </DataContext.Consumer>
-            </DataProvider>
+            <GameShowcase />
+            <GameShowcase />
+            <GameShowcase />
+            <GameShowcase />
+            <GameShowcase />
+            <GameShowcase />
 
         </section>
     );
