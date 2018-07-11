@@ -70,9 +70,9 @@ export default class Slider extends Component{
     render(){
         return(
             <div className="slider-box">
-                <Slide display = {this.displaySlide(0)} src={require('../images/slideOne.jpg')} alt="slide one img" />
-                <Slide display = {this.displaySlide(1)} src={require('../images/slideTwo.jpg')} alt="slide two img" />
-                <Slide display = {this.displaySlide(2)} src={require('../images/tech.jpg')} alt="slide three img" />
+                <Slide display = {this.displaySlide(0)} src={require('../images/slideOne.jpg')} alt="slide one img">This is slide number one and it is just a test</Slide>
+                <Slide display = {this.displaySlide(1)} src={require('../images/slideTwo.jpg')} alt="slide two img">This is slide number two and it is just a test</Slide>
+                <Slide display = {this.displaySlide(2)} src={require('../images/tech.jpg')} alt="slide three img">This is slide number three and it is just a test</Slide>
 
                 <PreviewsButton clickHandler = {this.prevSlideHandler}/>
                 <NextButton clickHandler = {this.nextSlideHandler} />

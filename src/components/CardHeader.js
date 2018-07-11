@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import '../css/CardHeader.css';
 
 const CardHeader = (props) =>{
@@ -12,9 +13,9 @@ const CardHeader = (props) =>{
                 <h3>{title}</h3>
                 <p>Date Of Release: {dateOfRelease}</p>
                 <p>Avrage Price: {price} USD</p>
-                <a href={productLink} target="_blank" className="profile-link"> Product link</a>
+                <a href={productLink} target="_blank" className="custom-link"> Product link</a>
                 <br/>
-                <a href={profileLink} className="profile-link">View full profile</a>
+                <Link to={"" + profileLink} className="custom-link">View full profile</Link>
             </div>
         </div>
     );

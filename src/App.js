@@ -10,11 +10,15 @@ import Contactpage from './pages/Contactpage';
 import Profile from './pages/Profile';
 import NotFoundPage from './pages/NotFoundPage';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import ScrolToTop from './components/ScrollToTop';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      
+      <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
+        <ScrolToTop>
         <div className="App">
 
           <Header />
@@ -38,6 +42,7 @@ class App extends Component {
           <Footer />
 
         </div>
+        </ScrolToTop>
       </BrowserRouter>
     );
   }
