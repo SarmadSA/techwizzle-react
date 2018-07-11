@@ -20,7 +20,7 @@
     float: left;
 }
 
-.profile-link{
+.custom-link{
     color: green;
     cursor: pointer;
     display: inline-block;
@@ -28,7 +28,7 @@
     transition: 0.2s ease;
 }
 
-.profile-link:hover {
+.custom-link:hover {
     color: #04b849;
     text-decoration: underline;
 }
