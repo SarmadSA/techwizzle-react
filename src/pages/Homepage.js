@@ -44,7 +44,7 @@ function renderCards(number){
                         dateOfRelease={cardData.dateOfRelease}
                         price={cardData.price}
                         productLink={cardData.link}
-                        profileLink={cardData.profile}
+                        profileLink={"/profile/" + cardData.id}
                         gamesData={cardData.games}
                     />
                 );
