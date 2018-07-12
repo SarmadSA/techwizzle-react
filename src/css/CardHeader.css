@@ -6,39 +6,3 @@
     padding: 10px;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0px rgba(0, 0, 0, 0.19);
 }
-
-.card-image{
-    float: left;
-    height: 80px;
-    width: 100px;
-    background-color: transparent;
-    margin-right: 20px;
-}
-
-.card-info-container{
-    width: 60%;
-    float: left;
-}
-
-.custom-link{
-    color: green;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 5px;
-    transition: 0.2s ease;
-}
-
-.custom-link:hover {
-    color: #04b849;
-    text-decoration: underline;
-}
-
-.thumbnail-img{
-    max-height: 100%;
-    max-width: 100%; 
-    /*
-    Always fit to the container (streach):
-    height: 100%;
-    width: 100%; 
-    */
-}
