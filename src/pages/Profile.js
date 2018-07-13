@@ -3,13 +3,13 @@ import ProfileHeader from '../components/ProfileHeader';
 import GameShowcase from '../components/GameShowcase';
 import InfoList from '../components/InfoList';
 import data from '../data/cards.json';
-import importAllImages from '../components/ImageImporter';
+import ImageImporter from '../jobs/ImageImporter';
 import GameRenderer from '../jobs/GameRenderer';
 
 
 const Profile = () =>{    
     const numberOfgames = 3;
-    const images = importAllImages(require.context('../images', false, /\.(png|jpe?g|svg)$/));
+    const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
     const profileData = getData(getId(), data.cards);
     const profileTitle = profileData.title;
     document.title = profileTitle + " | TechWizzle";
