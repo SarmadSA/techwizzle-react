@@ -1,10 +1,10 @@
 import React from 'react';
 import GameShowcase from '../components/GameShowcase';
-import importAllImages from '../components/ImageImporter';
+import ImageImporter from './ImageImporter';
 
 const GameRenderer = (props) =>{
     const gamesArray = [];
-    const images = importAllImages(require.context('../images', false, /\.(png|jpe?g|svg)$/));
+    const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
     if(props.data){
         for(let i = 0; i < props.number; i++){
             gamesArray.push (
