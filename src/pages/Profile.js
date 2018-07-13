@@ -4,6 +4,7 @@ import GameShowcase from '../components/GameShowcase';
 import InfoList from '../components/InfoList';
 import data from '../data/cards.json';
 import importAllImages from '../components/ImageImporter';
+import GameRenderer from '../jobs/GameRenderer';
 
 
 const Profile = () =>{    
@@ -36,24 +37,6 @@ const Profile = () =>{
         return id;
     }
 
-    function renderGames(number, data){
-        const gamesArray = [];
-        if(data){
-            for(let i = 0; i < number; i++){
-                gamesArray.push (
-                    <GameShowcase 
-                        imgSrc = {images[data[i].image]}
-                        title = {data[i].title}
-                        settings = {data[i].settings}
-                        resolution = {data[i].resolution}
-                        fps = {data[i].fps} 
-                    />
-                );
-            }
-        }
-        return gamesArray;
-    }
-
     return (
         <section className="profile-section">
 
@@ -69,7 +52,7 @@ const Profile = () =>{
             
             <h4 className="card-content-tittle">Preformance in games:</h4>
             
-            {renderGames(numberOfgames, profileData.games)}
+            <GameRenderer number={numberOfgames} data={profileData.games}/>
 
         </section>
     );
