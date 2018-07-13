@@ -9,14 +9,7 @@ const Profilespage = () =>{
         <div>
             <SearchForm />
             <section>
-                <SectionTitle> Featured Product Profiles </SectionTitle>
-                <Card />
-                <Card />
-                <Card />
-            </section>
-
-            <section>
-                <SectionTitle> New Product Profiles </SectionTitle>
+                <SectionTitle> All Product Profiles </SectionTitle>
                 <Card />
                 <Card />
                 <Card />
