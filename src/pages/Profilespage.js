@@ -1,7 +1,8 @@
 import React from 'react';
-import Card from '../components/Card';
 import SectionTitle from '../components/SectionTitle';
 import SearchForm from '../components/SearchForm';
+import data from '../data/cards.json';
+import CardRenderer from '../jobs/CardRenderer';
 
 const Profilespage = () =>{
     document.title = "TechWizzle | Profiles";
@@ -9,20 +10,10 @@ const Profilespage = () =>{
         <div>
             <SearchForm />
             <section>
-                <SectionTitle> Featured Product Profiles </SectionTitle>
-                <Card />
-                <Card />
-                <Card />
-            </section>
-
-            <section>
-                <SectionTitle> New Product Profiles </SectionTitle>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <SectionTitle> All Product Profiles </SectionTitle>
+                <CardRenderer number={3} data={data.cards}/>
+                <CardRenderer number={3} data={data.cards}/>
+                <CardRenderer number={3} data={data.cards}/>
             </section>
         </div>
     );
