@@ -1,9 +1,8 @@
 import React from 'react';
 import CardHeader from './CardHeader';
-import GameShowcase from './GameShowcase';
+import GameRenderer from '../jobs/GameRenderer'
 import '../css/Card.css';
 import {Link} from 'react-router-dom';
-import importAllImages from './ImageImporter';
 
 const Card = (props) =>{
     const numberOfGames = 3;
@@ -20,8 +19,8 @@ const Card = (props) =>{
                 profileLink={profileLink}
             />
             <h4 className="card-content-tittle">Preformance in games:</h4>
-
-            { renderGames(numberOfGames, gamesData) }
+            
+            <GameRenderer number={numberOfGames} data={gamesData}/>
 
             <Link  to={"/profile/" + id} className="more-link">
                 <div className="more-gameresults">
@@ -31,25 +30,6 @@ const Card = (props) =>{
 
         </div>
     );
-
-    function renderGames(number, data){
-        const gamesArray = [];
-        const images = importAllImages(require.context('../images', false, /\.(png|jpe?g|svg)$/));
-        if(data){
-            for(let i = 0; i < number; i++){
-                gamesArray.push (
-                    <GameShowcase 
-                        imgSrc = {images[data[i].image]}
-                        title = {data[i].title}
-                        settings = {data[i].settings}
-                        resolution = {data[i].resolution}
-                        fps = {data[i].fps} 
-                    />
-                );
-            }
-        }
-        return gamesArray;
-    }
 };
 
 export default Card;
