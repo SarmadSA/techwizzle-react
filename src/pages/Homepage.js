@@ -22,7 +22,7 @@ const Homepage = () =>{
             </section>
 
             <section>
-                <SectionTitle> New Product Profiles </SectionTitle>
+                <SectionTitle> Latest Product Profiles </SectionTitle>
                 
                 {renderCards(3)}
 
