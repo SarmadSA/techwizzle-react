@@ -1,6 +1,5 @@
 import React from 'react';
 import ProfileHeader from '../components/ProfileHeader';
-import GameShowcase from '../components/GameShowcase';
 import InfoList from '../components/InfoList';
 import data from '../data/cards.json';
 import ImageImporter from '../jobs/ImageImporter';
