@@ -11,7 +11,7 @@ import Profile from './pages/Profile';
 import NotFoundPage from './pages/NotFoundPage';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import ScrolToTop from './components/ScrollToTop';
+import ScrolToTop from './jobs/ScrollToTop';
 
 class App extends Component {
   render() {
