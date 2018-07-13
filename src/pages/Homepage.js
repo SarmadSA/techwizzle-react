@@ -4,7 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import Slider from '../components/Slider';
 import AsideFomBox from '../components/AsideFormBox';
 import data from '../data/cards.json';
-import importAllImages from '../components/ImageImporter';
+import ImageImporter from '../jobs/ImageImporter';
 
 const Homepage = () =>{
     const numberOfFutured = 3;
@@ -35,7 +35,7 @@ function renderCards(number){
     const cards = [];
     for(let i = 0; i < number; i++){
         const cardData = data.cards[i];
-        const images = importAllImages(require.context('../images', false, /\.(png|jpe?g|svg)$/));        
+        const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));        
         cards.push(
                     <Card 
                         id={cardData.id}

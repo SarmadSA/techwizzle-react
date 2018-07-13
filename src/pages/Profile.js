@@ -1,58 +1,58 @@
 import React from 'react';
-import CardHeader from '../components/CardHeader';
+import ProfileHeader from '../components/ProfileHeader';
 import GameShowcase from '../components/GameShowcase';
 import InfoList from '../components/InfoList';
 import data from '../data/cards.json';
+import ImageImporter from '../jobs/ImageImporter';
+import GameRenderer from '../jobs/GameRenderer';
 
 
-const Profile = () =>{
+const Profile = () =>{    
+    const numberOfgames = 3;
+    const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
     const profileData = getData(getId(), data.cards);
     const profileTitle = profileData.title;
-    document.title = "TechWizzle | " + profileTitle;
-
-    function getData(id, dataa){
-        for(let i = 0; i < dataa.length; i++){
-            if(dataa[i].id === id){
-              return dataa[i];
-          }
-        }
-    }
-
+    document.title = profileTitle + " | TechWizzle";
+    
     /**
      * Returns the first object in the given array that has the given id
      * 
      * @param {*} id the to check the object for  
      * @param {*} dataArray the array to search in
      */
-    // function getData2(id, dataArray){
-    //     dataArray.forEach(function(obj){
-    //         if(obj.id === id){
-    //             return obj;
-    //         }
-    //     });
-    // }
+    function getData(id, data){
+        for(let i = 0; i < data.length; i++){
+            if(data[i].id === id){
+                return data[i];
+            }
+            else{
+                //window.location.href="/profile"; // Find a better solution using react redirect
+            }
+        }
+    }
 
     function getId(){
         const url = window.location.pathname;
         const id = url.substring(url.lastIndexOf("/") + 1);
         return id;
     }
-    
+
     return (
         <section className="profile-section">
 
-            <CardHeader title = { profileData.title } />
+            <ProfileHeader //change this to ProfileHeader component where there is no shadow and there is not profile link
+                title = { profileData.title }
+                imgSrc = {images[profileData.image]}
+                dateOfRelease = { profileData.dateOfRelease }
+                price = { profileData.price }
+                productLink={ profileData.link }
+            />
 
             <InfoList />
             
             <h4 className="card-content-tittle">Preformance in games:</h4>
-
-            <GameShowcase />
-            <GameShowcase />
-            <GameShowcase />
-            <GameShowcase />
-            <GameShowcase />
-            <GameShowcase />
+            
+            <GameRenderer number={numberOfgames} data={profileData.games}/>
 
         </section>
     );
