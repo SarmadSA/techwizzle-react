@@ -18,7 +18,7 @@ const Card = (props) =>{
                 productLink={productLink}
                 profileLink={profileLink}
             />
-            <h4 className="card-content-tittle">Preformance in games:</h4>
+            <h4 className="card-content-tittle">Preformance in games: <i class="fa fa-exclamation-circle"></i></h4>
             
             <GameRenderer number={numberOfGames} data={gamesData}/>
 
