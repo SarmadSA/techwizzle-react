@@ -4,6 +4,7 @@ import Slider from '../components/Slider';
 import AsideFomBox from '../components/AsideFormBox';
 import data from '../data/cards.json';
 import CardRenderer from '../jobs/CardRenderer';
+import LoadButton from '../components/LoadButton';
 
 const Homepage = () =>{
     const numberOfFutured = 3;
@@ -20,10 +21,10 @@ const Homepage = () =>{
 
             <section>
                 <SectionTitle> Latest Product Profiles </SectionTitle>
-                
                 <CardRenderer number={3} data={data.cards}/>
 
             </section>
+            <LoadButton>Load More</LoadButton>
         </div>
     );
 };
