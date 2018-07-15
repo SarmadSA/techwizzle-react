@@ -9,7 +9,7 @@ export default class Profilespage extends Component{
     constructor(props){
         super(props);
         this.state = {
-            numberOfCards: 1
+            numberOfCards: 3
         }
         this.loadMore = this.loadMore.bind(this);
         this.renderLoadButton = this.renderLoadButton.bind(this);
@@ -17,7 +17,7 @@ export default class Profilespage extends Component{
     
     loadMore(){
         if(this.state.numberOfCards <= (data.cards).length){
-            this.setState({numberOfCards: this.state.numberOfCards + 1});
+            this.setState({numberOfCards: this.state.numberOfCards + 6});
         }
     }
 
@@ -29,7 +29,6 @@ export default class Profilespage extends Component{
 
     render(){
         document.title = "TechWizzle | Profiles";
-        console.log(this.state.numberOfCards);
         return (
             <div>
                 <SearchForm />
