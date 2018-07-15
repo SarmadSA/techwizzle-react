@@ -18,6 +18,11 @@ const SearchForm = () =>{
                 </svg>	
             </button>
 
+            <div className="filterers">
+                <i className="fas fa-filter"></i>
+                <i className="fas fa-sliders-h"></i>
+            </div>
+            
             <select name="" id="dropdown-selection">
                 <option value="Sort by" selected disabled>Sort by</option>
                 <option value="Normal">Normal</option>

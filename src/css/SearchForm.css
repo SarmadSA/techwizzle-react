@@ -39,13 +39,17 @@
 	margin-right: 40px;
 }
 
+#search-input:focus{
+	box-shadow: 0 0 1pt 0.3pt rgba(0,149,46,1.00);	
+}
+
 #search:focus{
 	box-shadow: 0 0 1pt 0.2pt green;
 }
 
 #search_button{
 	position: absolute;
-	right: 6%;
+	right: 5%;
 	top: 0;
 	border-radius: 40px;
 	border: 0;
@@ -79,4 +83,21 @@
 }
 .cls-3{
 	fill:#fff;
+}
+
+.filterers{
+	float: right;
+	font-size: 30px;
+	padding: 7px 0;
+	color: gray;
+}
+
+.fa-sliders-h, .fa-filter{
+	cursor: pointer;
+	margin-right: 20px;
+	transition: 0.3s ease;
+}
+
+.fa-sliders-h:hover, .fa-filter:hover{
+	color: green;
 }

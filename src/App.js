@@ -9,15 +9,15 @@ import Aboutpage from './pages/Aboutpage';
 import Contactpage from './pages/Contactpage';
 import Profile from './pages/Profile';
 import NotFoundPage from './pages/NotFoundPage';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { Route, BrowserRouter, Switch, Router } from 'react-router-dom';
 import ScrolToTop from './jobs/ScrollToTop';
+import History from './jobs/History';
 
 class App extends Component {
   render() {
     return (
       
-      <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
+      <Router history={History}>
         <ScrolToTop>
         <div className="App">
 
@@ -43,7 +43,7 @@ class App extends Component {
 
         </div>
         </ScrolToTop>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
