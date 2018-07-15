@@ -41,7 +41,7 @@ export default class NotFoundPage extends React.Component{
 
         return(
             <div style={style}>
-                <p style={pStyle}> Page not found! <i className="fa fa-frown-o"></i> </p> <br/> 
+                <p style={pStyle}> Page not found! <i className="far fa-frown"></i> </p> <br/> 
                 Please make sure you typed the right URL. <br/>
                 You will be redirected to <Link to="/" className="custom-link"> home </Link> page in 10 seconds...
                 {this.timeOut(10000)}

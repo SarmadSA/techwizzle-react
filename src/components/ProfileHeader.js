@@ -13,7 +13,7 @@ const ProfileHeader = (props) =>{
                 <p>Date Of Release: {dateOfRelease}</p>
                 <p>Avrage Price: {price} USD</p>
                 <br/>
-                <a href={productLink} target="_blank" className="custom-link"> Product link</a>
+                <a href={productLink} target="_blank" className="custom-link"> Product link <i className="fas fa-external-link-alt"></i></a>
             </div>
         </div>
     );
