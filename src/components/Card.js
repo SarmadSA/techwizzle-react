@@ -41,7 +41,7 @@ export default class Card extends Component{
                 />
                 <h4 className="card-content-tittle">
                     Preformance in games: 
-                    <i class="fa fa-exclamation-circle" onMouseOver={this.displayBlock} onMouseOut={this.displayNone}></i>
+                    <i className="fa fa-exclamation-circle" onMouseOver={this.displayBlock} onMouseOut={this.displayNone}></i>
                 </h4>
     
                 <InfoBlock style={{display: this.state.display}}> 
