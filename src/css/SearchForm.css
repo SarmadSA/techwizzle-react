@@ -17,7 +17,8 @@
 
 .search-form{
 	position: relative;
-	height: 50px;
+	min-height: 50px;
+	max-width: 780px;
 	float: right;
 }
 
@@ -100,4 +101,14 @@
 
 .fa-sliders-h:hover, .fa-filter:hover{
 	color: green;
+}
+
+.expand-box{
+	float: left;
+	min-height: 150px;
+	width: 93%;
+	background-color: rgba(255,255,255,0.6);
+	padding: 15px 20px;
+	margin: 15px;
+	border-radius: 5px;
 }
