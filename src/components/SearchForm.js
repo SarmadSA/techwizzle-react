@@ -7,37 +7,31 @@ export default class SearchForm extends Component{
     constructor(props){
         super(props)
         this.state = {
-            searchOptionsExpanded: false,
-            filtererExpanded: false
+            optionsDisplay: 'none',
+            filtererDisplay: 'none',
+            filtererClass: '',
+            optionsClass: '',
         }
-        this.expandOptions = this.expandOptions.bind(this);
         this.expandSearchOptions = this.expandSearchOptions.bind(this);
         this.expandFilterer = this.expandFilterer.bind(this);
     }
 
-    expandOptions(){
-        let expandComponent = null;
-        if(this.state.filtererExpanded){
-            expandComponent = 
-                (<div className="expand-box">
-                    
-                </div>);
-        }
-        else if(this.state.searchOptionsExpanded){
-            expandComponent = 
-                (<div className="expand-box">
-                    <SearchOptions/>
-                </div>);
-        }
-        return expandComponent;
-    }
-
     expandSearchOptions(){
-        this.setState({searchOptionsExpanded : !this.state.searchOptionsExpanded, filtererExpanded: false});
+        if(this.state.optionsDisplay === 'none'){
+            this.setState({optionsDisplay : 'block', filtererDisplay: 'none', optionsClass: 'expanded', filtererClass: ''});
+        }
+        else{
+            this.setState({optionsDisplay : 'none', filtererDisplay: 'none', optionsClass: '', filtererClass: ''});
+        }
     }
 
     expandFilterer(){
-        this.setState({searchOptionsExpanded : false, filtererExpanded: !this.state.filtererExpanded});
+        if(this.state.filtererDisplay === 'none'){
+            this.setState({optionsDisplay : 'none', filtererDisplay: 'block', filtererClass: 'expanded', optionsClass: ''});
+        }
+        else{
+            this.setState({optionsDisplay : 'none', filtererDisplay: 'none', filtererClass: '', optionsClass: ''});
+        }
     }
 
     render(){
@@ -58,8 +52,8 @@ export default class SearchForm extends Component{
                 </button>
     
                 <div className="filterers">
-                    <i className="fas fa-filter" onClick={this.expandFilterer}></i>
-                    <i className="fas fa-sliders-h" onClick={this.expandSearchOptions}></i>
+                    <i className={"fas fa-filter " + this.state.filtererClass} onClick={this.expandFilterer}></i>
+                    <i className={"fas fa-sliders-h " + this.state.optionsClass} onClick={this.expandSearchOptions}></i>
                 </div>
                 
                 <select name="" id="dropdown-selection">
@@ -69,7 +63,13 @@ export default class SearchForm extends Component{
                     <option value="Most recent">Most recent</option>
                 </select>
                 
-                {this.expandOptions()}
+                <div className="expand-box" style={{display: this.state.optionsDisplay}}>
+                    <SearchOptions/>
+                </div>
+                
+                <div className="expand-box" style={{display: this.state.filtererDisplay}}>
+
+                </div>
 
             </form>
         );
