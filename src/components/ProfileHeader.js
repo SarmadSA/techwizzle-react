@@ -4,7 +4,7 @@ import '../css/ProfileHeader.css';
 const ProfileHeader = (props) =>{
     const { imgSrc, title, dateOfRelease, price, productLink } = props;
     return(
-        <div className="profile-header">
+        <div className="profile-header product-header-common">
             <figure className="thumbnail-figure">
                 <img src={imgSrc} alt="" className="thumbnail-img"/> 
             </figure>
