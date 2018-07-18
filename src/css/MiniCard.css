@@ -1,0 +1,31 @@
+.mini-card-container{
+    width: 100%;
+    float: right;
+    margin: 20px 0; 
+    height: auto;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.links-box{
+    float: right;
+    width: 100%;
+    padding: 10px;
+    background-color: lightgray;   
+}
+
+.mini-card-info{
+    background: rgba(230,230,230,1);
+    padding: 10px;
+    width: 100%;
+    float: left;
+}
+
+.l-right{
+    float: right;
+    margin-right: 20px;
+}
+
+.l-left{
+    float: left;
+    margin-left:20px;
+}
