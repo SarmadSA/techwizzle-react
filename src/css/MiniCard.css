@@ -29,3 +29,17 @@
     float: left;
     margin-left:20px;
 }
+
+@media only screen and (max-width: 1200px) {
+    .mini-card-container {
+        width: 47%;
+        margin: 10px 25px 10px 0;
+        float: left;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .mini-card-container {
+        width: 100%;
+    }
+}
