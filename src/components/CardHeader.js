@@ -5,7 +5,7 @@ import '../css/CardHeader.css';
 const CardHeader = (props) =>{
     const { imgSrc, title, dateOfRelease, price, productLink, profileLink } = props;
     return(
-        <div className="card-header">
+        <div className="card-header product-header-common">
             <figure className="thumbnail-figure">
                 <img src={imgSrc} alt="gtx" className="thumbnail-img"/> 
             </figure>
