@@ -99,7 +99,7 @@
 	transition: 0.3s ease;
 }
 
-.fa-sliders-h:hover, .fa-filter:hover{
+.fa-sliders-h:hover, .fa-filter:hover, .expanded{
 	color: green;
 }
 
