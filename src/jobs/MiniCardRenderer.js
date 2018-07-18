@@ -15,6 +15,7 @@ const MiniCardRenderer = (props) =>{
                     price = {props.data[i].price}
                     productLink = {props.data[i].link} 
                     profileLink = {props.data[i].id}
+                    // gamesData = {props.data[i].games}
                 />
             );
         }

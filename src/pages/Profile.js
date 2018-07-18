@@ -73,7 +73,7 @@ const Profile = () =>{
                 </div>   
             </section>
 
-            <SuggestedContent number={4} data={data.cards} />
+            <SuggestedContent number={4} data={data.cards}/>
 
         </div>
     );
