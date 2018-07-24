@@ -19,7 +19,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/mysqlDB/nbproject/private/
 /mysqlDB/build/
-/servlet/nbproject/private/
-/servlet/build/
