@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SearchOptions from './SearchOptions';
+import FiltererOptions from './FiltererOptions';
 import '../css/SearchForm.css';
 
 export default class SearchForm extends Component{
@@ -68,7 +69,7 @@ export default class SearchForm extends Component{
                 </div>
                 
                 <div className="expand-box" style={{display: this.state.filtererDisplay}}>
-
+                    <FiltererOptions/>
                 </div>
 
             </form>
