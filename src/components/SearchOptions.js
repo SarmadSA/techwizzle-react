@@ -1,7 +1,8 @@
 import React from 'react';
 import '../css/SearchOptions.css';
+import { connect } from 'react-redux';
 
-const SearchOptions = () =>{
+const SearchOptions = (props) =>{
 
     return(
         <div>
@@ -9,14 +10,21 @@ const SearchOptions = () =>{
 
             <div className="radio-group">
                 <div className="pretty p-default p-round p-thick p-smooth">
-                    <input type="radio" name="match" checked/>
+                    <input type="radio"
+                           name="match"
+                           defaultChecked
+                           onChange={(evt) => props.updateMatchOptions(!evt.target.checked)}
+                    />
                     <div className="state p-success">
                         <label>Normal Match</label>
                     </div>
                 </div>
 
                 <div className="pretty p-default p-round p-thick p-smooth">
-                    <input type="radio" name="match"/>
+                    <input type="radio"
+                           name="match"
+                           onChange={(evt) => props.updateMatchOptions(evt.target.checked)}
+                    />
                     <div className="state p-success">
                         <label>Exact Match</label>
                     </div>
@@ -59,6 +67,22 @@ const SearchOptions = () =>{
 
         </div>
     )
-}
+};
 
-export default SearchOptions;
+const mapDispatchToProps = dispatch =>{
+    return {
+        // onCheck: (normalMatch, exactMatch) => dispatch({type: 'SEARCH',
+        //     properties: {
+        //         normalMatch: normalMatch,
+        //         exactMatch: exactMatch,
+        //         title: true,
+        //         game: false,
+        //         settings: false,
+        //         resolution: false
+        //     }}),
+
+        updateMatchOptions: (exactMatch) => dispatch({type: 'SET_SEARCH_OPTIONS', exactMatch: exactMatch}),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(SearchOptions);
