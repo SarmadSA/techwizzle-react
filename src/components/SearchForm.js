@@ -66,8 +66,8 @@ class SearchForm extends Component{
                 </button>
     
                 <div className="filterers">
-                    <i className={"fas fa-filter " + this.state.filtererClass} onClick={this.expandFilterer}></i>
-                    <i className={"fas fa-sliders-h " + this.state.optionsClass} onClick={this.expandSearchOptions}></i>
+                    <i className={"fas fa-filter " + this.state.filtererClass} onClick={this.expandFilterer}/>
+                    <i className={"fas fa-sliders-h " + this.state.optionsClass} onClick={this.expandSearchOptions}/>
                 </div>
                 
                 <select name="" id="dropdown-selection">
@@ -92,7 +92,7 @@ class SearchForm extends Component{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        onSearch: (value) => dispatch({type: 'SEARCH', value: value})
+        onSearch: (value) => dispatch({type: 'SEARCH', keyWord: value}),
     };
 };
 
