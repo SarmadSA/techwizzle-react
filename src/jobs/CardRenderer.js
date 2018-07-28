@@ -25,16 +25,16 @@ const CardRenderer = (props) =>{
             }
             else{
                 //TODO.. when there is no more data in the array.
-                cards.push(<ErrorBox> No more profiles to load! <i className="far fa-frown"></i> </ErrorBox>);
+                cards.push(<ErrorBox> No more profiles to load! <i className="far fa-frown"/> </ErrorBox>);
                 return cards;
             }
         }
     }
     else{
         //TODO.. when there is no data at all (data not passed to the component or data array passed is empty)
-        cards.push(<ErrorBox> No profiles to load! <i className="far fa-frown"></i> </ErrorBox>);
+        cards.push(<ErrorBox> No profiles to load! <i className="far fa-frown"/> </ErrorBox>);
     }
     return cards;
-}
+};
 
 export default CardRenderer;
