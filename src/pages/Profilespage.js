@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import SectionTitle from '../components/SectionTitle';
 import SearchForm from '../components/SearchForm';
-//import data from '../data/cards.json';
 import CardRenderer from '../jobs/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import { connect } from 'react-redux';
@@ -38,7 +37,6 @@ class Profilespage extends Component{
                     <SectionTitle> All Product Profiles </SectionTitle>
                     <CardRenderer number={this.state.numberOfCards} data={this.props.data}/>
                     {this.renderLoadButton()}
-                    
 
                 </section>
             </div>
