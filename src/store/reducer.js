@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) =>{
             return {
                 ...state,
                 exactMatch: action.exactMatch,
-                data: search(initialState.data, action.keyWord, state.exactMatch)
+                data: search(initialState.data, action.keyWord, action.exactMatch)
             };
     }
     return state;
