@@ -19,6 +19,6 @@ const GameRenderer = (props) =>{
         }
     }
     return gamesArray;
-}
+};
 
 export default GameRenderer;
