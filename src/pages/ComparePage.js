@@ -1,27 +1,11 @@
 import React from 'react';
-import Card from '../components/Card';
-import SectionTitle from '../components/SectionTitle';
 
 const Comparepage = () =>{
     document.title = "TechWizzle | Compare";
     return (
         <div>
-
             <section>
-                <SectionTitle> Featured Product Profiles </SectionTitle>
-                <Card />
-                <Card />
-                <Card />
-            </section>
-
-            <section>
-                <SectionTitle> New Product Profiles </SectionTitle>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                This future is currently not available.
             </section>
         </div>
     );
