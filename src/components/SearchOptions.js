@@ -12,7 +12,7 @@ const SearchOptions = (props) =>{
                     <input type="radio"
                            name="match"
                            defaultChecked
-                           onChange={(evt) => props.handleChange(!evt.target.checked)}
+                           onChange={(evt) => props.handleMatchChange(!evt.target.checked)}
                     />
                     <div className="state p-success">
                         <label>Normal Match</label>
@@ -22,7 +22,7 @@ const SearchOptions = (props) =>{
                 <div className="pretty p-default p-round p-thick p-smooth">
                     <input type="radio"
                            name="match"
-                           onChange={(evt) => props.handleChange(evt.target.checked)}
+                           onChange={(evt) => props.handleMatchChange(evt.target.checked)}
                     />
                     <div className="state p-success">
                         <label>Exact Match</label>
@@ -32,7 +32,7 @@ const SearchOptions = (props) =>{
 
             <p className="search-options-text">Search By</p>
             
-            <div className="radio-group">
+            <div>
                 <div className="pretty p-default p-curve p-smooth">
                     <input type="checkbox" checked disabled/>
                     <div className="state p-success">
@@ -41,27 +41,25 @@ const SearchOptions = (props) =>{
                 </div>
 
                 <div className="pretty p-default p-curve p-smooth">
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={(evt) => props.handleSearchByGame(evt.target.checked)}/>
                     <div className="state p-success">
                         <label>Game</label>
                     </div>
                 </div>
 
                 <div className="pretty p-default p-curve p-smooth">
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={(evt) => props.handleSearchBySettings(evt.target.checked)}/>
                     <div className="state p-success">
                         <label>Settings</label>
                     </div>
                 </div>
 
                 <div className="pretty p-default p-curve p-smooth">
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={(evt) => props.handleSearchByResolution(evt.target.checked)}/>
                     <div className="state p-success">
                         <label>Resolution</label>
                     </div>
                 </div>
-                
-
             </div>
 
         </div>
