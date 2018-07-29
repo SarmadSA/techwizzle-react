@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/SearchOptions.css';
-import { connect } from 'react-redux';
 
 const SearchOptions = (props) =>{
 
@@ -13,7 +12,7 @@ const SearchOptions = (props) =>{
                     <input type="radio"
                            name="match"
                            defaultChecked
-                           onChange={(evt) => props.updateMatchOptions(!evt.target.checked)}
+                           onChange={(evt) => props.handleChange(!evt.target.checked)}
                     />
                     <div className="state p-success">
                         <label>Normal Match</label>
@@ -23,7 +22,7 @@ const SearchOptions = (props) =>{
                 <div className="pretty p-default p-round p-thick p-smooth">
                     <input type="radio"
                            name="match"
-                           onChange={(evt) => props.updateMatchOptions(evt.target.checked)}
+                           onChange={(evt) => props.handleChange(evt.target.checked)}
                     />
                     <div className="state p-success">
                         <label>Exact Match</label>
@@ -69,20 +68,22 @@ const SearchOptions = (props) =>{
     )
 };
 
-const mapDispatchToProps = dispatch =>{
-    return {
-        // onCheck: (normalMatch, exactMatch) => dispatch({type: 'SEARCH',
-        //     properties: {
-        //         normalMatch: normalMatch,
-        //         exactMatch: exactMatch,
-        //         title: true,
-        //         game: false,
-        //         settings: false,
-        //         resolution: false
-        //     }}),
+// const mapDispatchToProps = dispatch =>{
+//     return {
+//         // onCheck: (normalMatch, exactMatch) => dispatch({type: 'SEARCH',
+//         //     properties: {
+//         //         normalMatch: normalMatch,
+//         //         exactMatch: exactMatch,
+//         //         title: true,
+//         //         game: false,
+//         //         settings: false,
+//         //         resolution: false
+//         //     }}),
+//
+//         updateMatchOptions: (exactMatch) => dispatch({type: 'SET_SEARCH_OPTIONS', exactMatch: exactMatch}),
+//     };
+// };
+//
+// export default connect(null, mapDispatchToProps)(SearchOptions);
 
-        updateMatchOptions: (exactMatch) => dispatch({type: 'SET_SEARCH_OPTIONS', exactMatch: exactMatch}),
-    };
-};
-
-export default connect(null, mapDispatchToProps)(SearchOptions);
+export default SearchOptions;

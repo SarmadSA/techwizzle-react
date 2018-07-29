@@ -8,7 +8,7 @@ import SuggestedContent from '../components/SuggestedContent';
 
 
 const Profile = () =>{    
-    const numberOfgames = 3;
+    const numberOfGames = 3;
     const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
     const profileData = getData(getId(), data.cards);
     const profileTitle = profileData.title;
@@ -20,10 +20,10 @@ const Profile = () =>{
      * @param {*} id the to check the object for  
      * @param {*} dataArray the array to search in
      */
-    function getData(id, data){
-        for(let i = 0; i < data.length; i++){
-            if(data[i].id === id){
-                return data[i];
+    function getData(id, dataArray){
+        for(let i = 0; i < dataArray.length; i++){
+            if(dataArray[i].id === id){
+                return dataArray[i];
             }
             else{
                 //window.location.href="/profile"; // Find a better solution using react redirect
@@ -53,18 +53,18 @@ const Profile = () =>{
                 
                 <h4 className="card-content-tittle">Preformance in games:</h4>
                 
-                <GameRenderer number={numberOfgames} data={profileData.games}/>
+                <GameRenderer number={numberOfGames} data={profileData.games}/>
 
                 <div className="profie-more-info-box">
                     <h2 className="more-info-title">More Information</h2>
                     <h3 className="info-title">Resource usage:</h3>
                     <ul className="resouce-usage-list">
-                        <li>Avrage power usage: 11 kw/h </li>
-                        <li>Avrage memory usage: - </li>
-                        <li>Avrage temperature: - </li>
+                        <li>Average power usage: 11 kw/h </li>
+                        <li>Average memory usage: - </li>
+                        <li>Average temperature: - </li>
                     </ul>
                     <h3 className="info-title">Other:</h3>
-                    <p>Game result are avrage result, they may not be 100% accruate, it will always depend on build components, specialy the CPU. Results achieved using a hight prefomance CPU that does not battleneck. Click for more info.</p>
+                    <p>Game result are Average result, they may not be 100% accruate, it will always depend on build components, specialy the CPU. Results achieved using a hight prefomance CPU that does not battleneck. Click for more info.</p>
                 </div>
 
                 <div className="profile-input-box">

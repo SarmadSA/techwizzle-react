@@ -12,8 +12,8 @@ const CardHeader = (props) =>{
             <div className="product-info-container">
                 <h3>{title}</h3>
                 <p>Date Of Release: {dateOfRelease}</p>
-                <p>Avrage Price: {price} USD</p>
-                <a href={productLink} target="_blank" className="custom-link"> Product link <i className="fas fa-external-link-alt"></i></a>
+                <p>Average Price: {price} USD</p>
+                <a href={productLink} target="_blank" className="custom-link"> Product link <i className="fas fa-external-link-alt"/></a>
                 <br/>
                 <Link to={"" + profileLink} className="custom-link">View full profile</Link>
             </div>

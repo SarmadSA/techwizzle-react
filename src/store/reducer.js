@@ -12,19 +12,11 @@ const initialState = {
 
 const reducer = (state = initialState, action) =>{
     switch (action.type) {
-        case 'SET_SEARCH_OPTIONS':
-            return {
-                ...state,
-                exactMatch: action.exactMatch,
-                // searchByTitle: action.properties,
-                // searchByGame: action.properties,
-                // searchBySettings: action.properties,
-                // searchByResolution: action.properties,
-            };
         case 'SEARCH':
             return {
                 ...state,
-                data: search(initialState.data, action.keyWord, state)
+                exactMatch: action.exactMatch,
+                data: search(initialState.data, action.keyWord, action.exactMatch)
             };
     }
     return state;
@@ -53,9 +45,9 @@ const normalSearch = (dataArray, keyWord) => {
     return newDataArray;
 };
 
-const search = (dataArray, keyWord, state) => {
+const search = (dataArray, keyWord, exactMatch) => {
     let dataArrayToReturn = dataArray;
-    if(state.exactMatch){
+    if(exactMatch){
         dataArrayToReturn = exactSearch(dataArray, keyWord);
     }
     else{

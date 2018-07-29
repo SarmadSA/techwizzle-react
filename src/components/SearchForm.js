@@ -4,45 +4,51 @@ import FiltererOptions from './FiltererOptions';
 import '../css/SearchForm.css';
 import { connect } from 'react-redux';
 
+let inputValue = '';
+let exactMatch = false;
+
 class SearchForm extends Component{
-    
+
     constructor(props){
         super(props);
         this.state = {
             optionsDisplay: 'none',
             filtererDisplay: 'none',
             filtererClass: '',
-            optionsClass: ''
+            optionsClass: '',
+            inputValue: '',
+            exactMatch: false
+
         };
-        this.expandSearchOptions = this.expandSearchOptions.bind(this);
-        this.expandFilterer = this.expandFilterer.bind(this);
     }
 
-    expandSearchOptions(){
+    expandSearchOptions = () =>{
         if(this.state.optionsDisplay === 'none'){
             this.setState({optionsDisplay : 'block', filtererDisplay: 'none', optionsClass: 'expanded', filtererClass: ''});
         }
         else{
             this.setState({optionsDisplay : 'none', filtererDisplay: 'none', optionsClass: '', filtererClass: ''});
         }
-    }
+    };
 
-    expandFilterer(){
+    expandFilterer = () =>{
         if(this.state.filtererDisplay === 'none'){
             this.setState({optionsDisplay : 'none', filtererDisplay: 'block', filtererClass: 'expanded', optionsClass: ''});
         }
         else{
             this.setState({optionsDisplay : 'none', filtererDisplay: 'none', filtererClass: '', optionsClass: ''});
         }
-    }
+    };
 
     render(){
 
-        let inputValue = '';
+        const updateInput = (value) =>{
+            inputValue = value.trim();
+        };
 
-        function updateInput(evt){
-            inputValue = evt.target.value;
-        }
+        const updateExactMatch = (value) =>{
+            exactMatch = value;
+        };
 
         return (
             <form className="search-form" onSubmit={(evt) => evt.preventDefault()}>
@@ -50,10 +56,10 @@ class SearchForm extends Component{
                        className="search-input"
                        id="search-input"
                        placeholder="Search..."
-                       onChange={(evt) => {updateInput(evt); this.props.onSearch(inputValue.trim())}}
+                       onChange={(evt) => {updateInput(evt.target.value); this.props.onSearch(inputValue, exactMatch)}}
                 />
                 
-                <button type="button" id="search_button" onClick={ () => this.props.onSearch(inputValue.trim()) }>
+                <button type="button" id="search_button" onClick={ () => this.props.onSearch(inputValue, exactMatch) }>
                     <svg viewBox="0 0 36.02 40.02">
                         <defs>
                             <symbol id="search_symbol" viewBox="0 0 32.87 36.83">
@@ -70,7 +76,7 @@ class SearchForm extends Component{
                     <i className={"fas fa-sliders-h " + this.state.optionsClass} onClick={this.expandSearchOptions}/>
                 </div>
                 
-                <select name="" id="dropdown-selection">
+                <select name="" id="dropdown-selection" disabled>
                     <option value="Sort by" selected disabled>Sort by</option>
                     <option value="Normal">Normal</option>
                     <option value="Trending">Trending</option>
@@ -78,7 +84,7 @@ class SearchForm extends Component{
                 </select>
                 
                 <div className="expand-box" style={{display: this.state.optionsDisplay}}>
-                    <SearchOptions/>
+                    <SearchOptions handleChange={ (exactMatch) => {updateExactMatch(exactMatch); this.props.onSearch(inputValue, exactMatch)} }/>
                 </div>
                 
                 <div className="expand-box" style={{display: this.state.filtererDisplay}}>
@@ -92,7 +98,7 @@ class SearchForm extends Component{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        onSearch: (value) => dispatch({type: 'SEARCH', keyWord: value}),
+        onSearch: (value,exactMatch) => dispatch({type: 'SEARCH', keyWord: value, exactMatch: exactMatch}),
     };
 };
 

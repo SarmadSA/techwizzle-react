@@ -17,7 +17,7 @@ const MiniCard = (props) =>{
                 </div>
             </div>
             <div className="links-box">
-                <a href={productLink} target="_blank" className="custom-link l-right"> Product link <i className="fas fa-external-link-alt"></i></a>
+                <a href={productLink} target="_blank" className="custom-link l-right"> Product link <i className="fas fa-external-link-alt"/></a>
                 <Link to={"" + profileLink} className="custom-link l-left">View full profile</Link>
             </div>
         </div>

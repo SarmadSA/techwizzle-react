@@ -12,7 +12,7 @@ const Range = createSliderWithTooltip(Slider.Range);
 export default class FiltererOptions extends Component{
 
     constructor(props){
-        super(props)
+        super(props);
         this.state={
             fps: [30,300],
             maxPrice: 900 
@@ -21,23 +21,23 @@ export default class FiltererOptions extends Component{
     
     onSliderChange = (value) => {
         this.setState({ maxPrice: value });
-    }
+    };
 
     onRangeChange = (value) => {
         this.setState({ fps: value });
-    }
+    };
 
     render(){
         const Handle = Slider.Handle;
         const fps = this.state.fps;
         const maxPrice = this.state.maxPrice;
-        const settings={
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        }
+        // const settings={
+        //     dots: false,
+        //     infinite: true,
+        //     speed: 500,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1
+        // };
 
         const handle = (props) => {
             const { value, dragging, index, ...restProps } = props;
