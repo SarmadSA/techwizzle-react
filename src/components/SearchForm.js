@@ -39,9 +39,14 @@ class SearchForm extends Component{
     render(){
 
         let inputValue = '';
+        let exactMatch = false;
 
-        function updateInput(evt){
-            inputValue = evt.target.value;
+        function updateInput(value){
+            inputValue = value;
+        }
+
+        function updateExactMatch(value){
+            exactMatch = value;
         }
 
         return (
@@ -50,10 +55,10 @@ class SearchForm extends Component{
                        className="search-input"
                        id="search-input"
                        placeholder="Search..."
-                       onChange={(evt) => {updateInput(evt); this.props.onSearch(inputValue.trim())}}
+                       onChange={(evt) => {updateInput(evt.target.value); this.props.onSearch(inputValue.trim(), exactMatch)}}
                 />
                 
-                <button type="button" id="search_button" onClick={ () => this.props.onSearch(inputValue.trim()) }>
+                <button type="button" id="search_button" onClick={ () => this.props.onSearch(inputValue.trim(), exactMatch) }>
                     <svg viewBox="0 0 36.02 40.02">
                         <defs>
                             <symbol id="search_symbol" viewBox="0 0 32.87 36.83">
@@ -70,7 +75,7 @@ class SearchForm extends Component{
                     <i className={"fas fa-sliders-h " + this.state.optionsClass} onClick={this.expandSearchOptions}/>
                 </div>
                 
-                <select name="" id="dropdown-selection">
+                <select name="" id="dropdown-selection" disabled>
                     <option value="Sort by" selected disabled>Sort by</option>
                     <option value="Normal">Normal</option>
                     <option value="Trending">Trending</option>
@@ -78,7 +83,7 @@ class SearchForm extends Component{
                 </select>
                 
                 <div className="expand-box" style={{display: this.state.optionsDisplay}}>
-                    <SearchOptions/>
+                    <SearchOptions handleChange={ (exactMatch) => {updateExactMatch(exactMatch); this.props.onSearch(inputValue, exactMatch)} }/>
                 </div>
                 
                 <div className="expand-box" style={{display: this.state.filtererDisplay}}>
@@ -92,7 +97,7 @@ class SearchForm extends Component{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        onSearch: (value) => dispatch({type: 'SEARCH', keyWord: value}),
+        onSearch: (value,exactMatch) => dispatch({type: 'SEARCH', keyWord: value, exactMatch: exactMatch}),
     };
 };
 
