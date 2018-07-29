@@ -13,7 +13,7 @@ export default class Slider extends Component{
         maxSlideNumber : 3,
         minSlideNumber : 0,
         currentSlideNumber : 0
-    }
+    };
     
     nextSlideHandler = () =>{
         let nextSlideNumber = this.state.currentSlideNumber;
@@ -24,7 +24,7 @@ export default class Slider extends Component{
         }
         this.setState({currentSlideNumber: nextSlideNumber});
         //console.log(nextSlideNumber);
-    }
+    };
 
     prevSlideHandler = () =>{
         let prevSlideNumber = this.state.currentSlideNumber;
@@ -35,7 +35,7 @@ export default class Slider extends Component{
         }
         this.setState({currentSlideNumber: prevSlideNumber});
         //console.log(prevSlideNumber);
-    }
+    };
 
     displaySlide = (slideNumber) =>{
         let display = 'none';
@@ -44,11 +44,11 @@ export default class Slider extends Component{
         }
         //console.log(display);
         return display;
-    }
+    };
 
     goToSlide = (bubbleNumber) =>{
         this.setState({currentSlideNumber: bubbleNumber})
-    }
+    };
 
     setBubbleClass = (bubbleNumber) =>{
         let bubbleClass = "bubble";
@@ -56,7 +56,7 @@ export default class Slider extends Component{
             bubbleClass = "bubble active";
         }
         return bubbleClass;
-    }
+    };
     
     // nextSlide = () => {
     //     this.nextSlideHandler();
