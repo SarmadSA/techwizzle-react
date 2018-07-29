@@ -4,50 +4,51 @@ import FiltererOptions from './FiltererOptions';
 import '../css/SearchForm.css';
 import { connect } from 'react-redux';
 
+let inputValue = '';
+let exactMatch = false;
+
 class SearchForm extends Component{
-    
+
     constructor(props){
         super(props);
         this.state = {
             optionsDisplay: 'none',
             filtererDisplay: 'none',
             filtererClass: '',
-            optionsClass: ''
+            optionsClass: '',
+            inputValue: '',
+            exactMatch: false
+
         };
-        this.expandSearchOptions = this.expandSearchOptions.bind(this);
-        this.expandFilterer = this.expandFilterer.bind(this);
     }
 
-    expandSearchOptions(){
+    expandSearchOptions = () =>{
         if(this.state.optionsDisplay === 'none'){
             this.setState({optionsDisplay : 'block', filtererDisplay: 'none', optionsClass: 'expanded', filtererClass: ''});
         }
         else{
             this.setState({optionsDisplay : 'none', filtererDisplay: 'none', optionsClass: '', filtererClass: ''});
         }
-    }
+    };
 
-    expandFilterer(){
+    expandFilterer = () =>{
         if(this.state.filtererDisplay === 'none'){
             this.setState({optionsDisplay : 'none', filtererDisplay: 'block', filtererClass: 'expanded', optionsClass: ''});
         }
         else{
             this.setState({optionsDisplay : 'none', filtererDisplay: 'none', filtererClass: '', optionsClass: ''});
         }
-    }
+    };
 
     render(){
 
-        let inputValue = '';
-        let exactMatch = false;
+        const updateInput = (value) =>{
+            inputValue = value.trim();
+        };
 
-        function updateInput(value){
-            inputValue = value;
-        }
-
-        function updateExactMatch(value){
+        const updateExactMatch = (value) =>{
             exactMatch = value;
-        }
+        };
 
         return (
             <form className="search-form" onSubmit={(evt) => evt.preventDefault()}>
@@ -55,10 +56,10 @@ class SearchForm extends Component{
                        className="search-input"
                        id="search-input"
                        placeholder="Search..."
-                       onChange={(evt) => {updateInput(evt.target.value); this.props.onSearch(inputValue.trim(), exactMatch)}}
+                       onChange={(evt) => {updateInput(evt.target.value); this.props.onSearch(inputValue, exactMatch)}}
                 />
                 
-                <button type="button" id="search_button" onClick={ () => this.props.onSearch(inputValue.trim(), exactMatch) }>
+                <button type="button" id="search_button" onClick={ () => this.props.onSearch(inputValue, exactMatch) }>
                     <svg viewBox="0 0 36.02 40.02">
                         <defs>
                             <symbol id="search_symbol" viewBox="0 0 32.87 36.83">
