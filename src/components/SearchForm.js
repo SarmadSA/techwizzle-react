@@ -4,8 +4,16 @@ import FiltererOptions from './FiltererOptions';
 import '../css/SearchForm.css';
 import { connect } from 'react-redux';
 
-let inputValue = '';
-let exactMatch = false;
+
+const searchOptions = {
+    inputValue: '',
+    isExactMatch: false,
+    searchBy: {
+        game: false,
+        settings: false,
+        resolution: false
+    }
+};
 
 class SearchForm extends Component{
 
@@ -15,10 +23,7 @@ class SearchForm extends Component{
             optionsDisplay: 'none',
             filtererDisplay: 'none',
             filtererClass: '',
-            optionsClass: '',
-            inputValue: '',
-            exactMatch: false
-
+            optionsClass: ''
         };
     }
 
@@ -41,13 +46,26 @@ class SearchForm extends Component{
     };
 
     render(){
+        const props = this.props;
 
         const updateInput = (value) =>{
-            inputValue = value.trim();
+            searchOptions.inputValue = value.trim();
         };
 
         const updateExactMatch = (value) =>{
-            exactMatch = value;
+            searchOptions.isExactMatch = value;
+        };
+
+        const setSearchByGame = (value) =>{
+            searchOptions.searchBy.game = value;
+        };
+
+        const setSearchBySettings = (value) =>{
+            searchOptions.searchBy.settings = value;
+        };
+
+        const setSearchByResolution = (value) =>{
+            searchOptions.searchBy.resolution = value;
         };
 
         return (
@@ -56,10 +74,10 @@ class SearchForm extends Component{
                        className="search-input"
                        id="search-input"
                        placeholder="Search..."
-                       onChange={(evt) => {updateInput(evt.target.value); this.props.onSearch(inputValue, exactMatch)}}
+                       onChange={(evt) => {updateInput(evt.target.value); props.onSearch()}}
                 />
                 
-                <button type="button" id="search_button" onClick={ () => this.props.onSearch(inputValue, exactMatch) }>
+                <button type="button" id="search_button" onClick={ props.onSearch }>
                     <svg viewBox="0 0 36.02 40.02">
                         <defs>
                             <symbol id="search_symbol" viewBox="0 0 32.87 36.83">
@@ -84,7 +102,11 @@ class SearchForm extends Component{
                 </select>
                 
                 <div className="expand-box" style={{display: this.state.optionsDisplay}}>
-                    <SearchOptions handleChange={ (exactMatch) => {updateExactMatch(exactMatch); this.props.onSearch(inputValue, exactMatch)} }/>
+                    <SearchOptions handleMatchChange={ (match) => { updateExactMatch(match); props.onSearch() } }
+                                   handleSearchByGame={ (searchByGame) => { setSearchByGame(searchByGame); props.onSearch()} }
+                                   handleSearchBySettings={ (searchBySettings) => { setSearchBySettings(searchBySettings); props.onSearch()} }
+                                   handleSearchByResolution={ (searchByResolution) => { setSearchByResolution(searchByResolution); props.onSearch()} }
+                    />
                 </div>
                 
                 <div className="expand-box" style={{display: this.state.filtererDisplay}}>
@@ -97,8 +119,18 @@ class SearchForm extends Component{
 }
 
 const mapDispatchToProps = dispatch =>{
+    const searchBy = searchOptions.searchBy;
     return {
-        onSearch: (value,exactMatch) => dispatch({type: 'SEARCH', keyWord: value, exactMatch: exactMatch}),
+        onSearch: () => dispatch({
+            type: 'SEARCH',
+            keyWord: searchOptions.inputValue,
+            exactMatch: searchOptions.isExactMatch,
+            searchBy:{
+                game: searchBy.game,
+                settings: searchBy.settings,
+                resolution: searchBy.resolution
+            }
+        })
     };
 };
 
