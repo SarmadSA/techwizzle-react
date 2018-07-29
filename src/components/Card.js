@@ -8,21 +8,19 @@ import InfoBlock from './InfoBlock';
 export default class Card extends Component{
 
     constructor(props){
-        super(props)
+        super(props);
         this.state={
-            display : 'none'
-        }
-        this.displayBlock = this.displayBlock.bind(this);
-        this.displayNone = this.displayNone.bind(this);
+            infoBlockDisplay : 'none'
+        };
     }
 
-    displayBlock(){
-        this.setState({display:'block'})
-    }
+    displayBlock = () =>{
+        this.setState({infoBlockDisplay:'block'})
+    };
     
-    displayNone(){
-        this.setState({display:'none'})
-    }
+    displayNone = () =>{
+        this.setState({infoBlockDisplay:'none'})
+    };
 
     render(){
 
@@ -40,12 +38,12 @@ export default class Card extends Component{
                     profileLink={profileLink}
                 />
                 <h4 className="card-content-tittle">
-                    Preformance in games: 
-                    <i className="fa fa-exclamation-circle" onMouseOver={this.displayBlock} onMouseOut={this.displayNone}></i>
+                    Performance in games:
+                    <i className="fa fa-exclamation-circle" onMouseOver={this.displayBlock} onMouseOut={this.displayNone}/>
                 </h4>
     
-                <InfoBlock style={{display: this.state.display}}> 
-                    Game result are avrage result, they may not be 100% accruate, it will always depend on build components, specialy the CPU. Results achieved using a hight prefomance CPU that does not battleneck. Click for more info.
+                <InfoBlock style={{display: this.state.infoBlockDisplay}}>
+                    Game result are average result, they may not be 100% accruate, it will always depend on build components, specialy the CPU. Results achieved using a hight prefomance CPU that does not battleneck. Click for more info.
                 </InfoBlock>
                 
                 <GameRenderer number={numberOfGames} data={gamesData}/>
