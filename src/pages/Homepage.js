@@ -14,13 +14,12 @@ export default class Homepage extends Component{
         this.state={
             //If page size is enough for 3 display 3, else display 2 or 4.
             numberOfFeatured  : 3
-        }
-        this.goToProfilesPage = this.goToProfilesPage.bind(this);
+        };
     }
 
-    goToProfilesPage(){
+    goToProfilesPage = () =>{
         History.push('/profiles');
-    }
+    };
 
     render(){
         document.title = "TechWizzle | Home";
