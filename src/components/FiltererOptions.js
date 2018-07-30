@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Slider from 'rc-slider';
 import Tooltip from 'rc-tooltip';
-import '../css/FiltererOptions.css'
+import '../css/FiltererOptions.css';
 import 'rc-slider/assets/index.css';
 
 // It is also possible to import { Range } from 'rc-slider' and
@@ -15,7 +15,7 @@ export default class FiltererOptions extends Component{
         super(props);
         this.state={
             fps: [30,300],
-            maxPrice: 900 
+            maxPrice: 900
         }
     }
     
@@ -61,9 +61,9 @@ export default class FiltererOptions extends Component{
                     <div className="fps-display">
                         {fps[0]} - {fps[1]}
                     </div>
-                    <Range 
-                        min={0} 
-                        max={400} 
+                    <Range
+                        min={0}
+                        max={400}
                         defaultValue={fps}
                         pushable={30}
                         step={10}
@@ -71,6 +71,7 @@ export default class FiltererOptions extends Component{
                         handleStyle={[{ backgroundColor: 'white', borderColor: 'lightgreen' },{ backgroundColor: 'white', borderColor: 'lightgreen' }]}
                         railStyle={{ backgroundColor: 'lightgray' }}
                         onChange={ this.onRangeChange }
+                        onAfterChange={ () => this.props.handleFpsChange(fps[0], fps[1]) }
                     />
                 </div>
 
@@ -82,12 +83,14 @@ export default class FiltererOptions extends Component{
                     <Slider 
                         min={0} 
                         max={1000} 
-                        value={maxPrice} 
-                        handle={handle} 
+                        value={maxPrice}
+                        handle={handle}
                         trackStyle={[{ backgroundColor: '#04b849' }]}
                         handleStyle={[{ backgroundColor: 'white', borderColor: 'lightgreen' }]}
                         railStyle={{ backgroundColor: 'lightgray' }}
                         onChange={ this.onSliderChange }
+                        //remove the '()=>' if you want the function to fire onchange (then the cards will be filtered while you are dragging the slider)
+                        onAfterChange={ () => this.props.handlePriceChange(maxPrice) }
                     />
                 </div>
                 {/* 
