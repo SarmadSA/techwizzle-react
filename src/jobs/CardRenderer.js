@@ -28,7 +28,7 @@ const CardRenderer = (props) =>{
                 if(props.data.length <= 0){
                     cards.push(<ErrorBox>
                                     No results found! <i className="far fa-frown"/> <br/>
-                                    Please make sure you typed correct search term and selected correct search settings
+                                    Please make sure you typed correct term and selected correct search settings
                                 </ErrorBox>);
                 }
                 else{
