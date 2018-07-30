@@ -71,6 +71,7 @@ export default class FiltererOptions extends Component{
                         handleStyle={[{ backgroundColor: 'white', borderColor: 'lightgreen' },{ backgroundColor: 'white', borderColor: 'lightgreen' }]}
                         railStyle={{ backgroundColor: 'lightgray' }}
                         onChange={ this.onRangeChange }
+                        onAfterChange={ () => this.props.handleFpsChange(fps[0], fps[1]) }
                     />
                 </div>
 
@@ -89,7 +90,7 @@ export default class FiltererOptions extends Component{
                         railStyle={{ backgroundColor: 'lightgray' }}
                         onChange={ this.onSliderChange }
                         //remove the '()=>' if you want the function to fire onchange (then the cards will be filtered while you are dragging the slider)
-                        onAfterChange={ () => this.props.handlePriceChange(this.state.maxPrice) }
+                        onAfterChange={ () => this.props.handlePriceChange(maxPrice) }
                     />
                 </div>
                 {/* 
