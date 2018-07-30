@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) =>{
                     resolution: action.searchBy.resolution
                 },
                 maxPrice: action.maxPrice,
-                data: search(initialState.data, action.keyWord, action)
+                data: getUpdatedData(initialState.data, action.keyWord, action)
             };
         case 'SORT':
             //Sort by code here...
@@ -42,28 +42,6 @@ Array.prototype.unique = function() {
         }
     }
     return a;
-};
-
-// const filterByFps = (dataArray, maxPrice) =>{
-//     const filteredDataArray = [];
-//     dataArray.forEach(function(parentElement){
-//         parentElement.games.forEach(function(childElement){
-//             if(Number(childElement.price) <= maxPrice){
-//                 filteredDataArray.push(childElement);
-//             }
-//         });
-//     });
-//     return filteredDataArray;
-// };
-
-const filterByPrice = (dataArray, maxPrice) =>{
-    const filteredDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        if(Number(dataArray[i].price) <= maxPrice){
-            filteredDataArray.push(dataArray[i]);
-        }
-    }
-    return filteredDataArray.unique();
 };
 
 const searchByTitleExact = (dataArray, keyWord) =>{
@@ -189,11 +167,6 @@ const normalSearch = (dataArray, keyWord, options) => {
     if(options.searchBy.resolution){
         filteredData = [...filteredData, ...searchByResolution(dataArray, keyWord)];
     }
-    // condition checks if slider has moved at least once (activated), only then we will filter,
-    // otherwise all result shows without filtering
-    if(options.maxPrice !== initialState.maxPrice){
-        filteredData = [...filterByPrice(filteredData, options.maxPrice)];
-    }
     return filteredData.unique();
 };
 
@@ -206,6 +179,48 @@ const search = (dataArray, keyWord, options) => {
         dataArrayToReturn = normalSearch(dataArray, keyWord, options);
     }
     return dataArrayToReturn;
+};
+
+// const filterByFps = (dataArray, maxPrice) =>{
+//     const filteredDataArray = [];
+//     dataArray.forEach(function(parentElement){
+//         parentElement.games.forEach(function(childElement){
+//             if(Number(childElement.price) <= maxPrice){
+//                 filteredDataArray.push(childElement);
+//             }
+//         });
+//     });
+//     return filteredDataArray;
+// };
+
+const filterByPrice = (dataArray, maxPrice) =>{
+    const filteredDataArray = [];
+    for(let i = 0; i < dataArray.length; i++){
+        if(Number(dataArray[i].price) <= maxPrice){
+            filteredDataArray.push(dataArray[i]);
+        }
+    }
+    return filteredDataArray.unique();
+};
+
+
+const filter = (dataArray, options) => {
+    let filteredData = [];
+    // condition checks if slider has moved at least once (activated), only then we will filter,
+    // otherwise all result shows without filtering
+    if(options.maxPrice !== initialState.maxPrice){
+        filteredData = [...filterByPrice(dataArray, options.maxPrice)];
+    }
+    // if(options.maxPrice !== initialState.maxPrice){
+    //     filteredData = [...filterByPrice(filteredData, options.maxPrice)];
+    // }
+    return filteredData.unique();
+};
+
+const getUpdatedData = (dataArray, keyWord, options) =>{
+   const searchData = search(dataArray, keyWord, options);
+   const filteredData = filter(searchData, options);
+   return filteredData;
 };
 
 export default reducer;
