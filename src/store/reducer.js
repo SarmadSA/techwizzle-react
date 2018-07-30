@@ -8,6 +8,10 @@ const initialState = {
         settings: false,
         resolution: false
     },
+    fps:{
+        min: 30,
+        max: 300
+    },
     maxPrice: 900
 };
 
@@ -21,6 +25,10 @@ const reducer = (state = initialState, action) =>{
                     game: action.searchBy.game,
                     settings: action.searchBy.settings,
                     resolution: action.searchBy.resolution
+                },
+                fps:{
+                    min: action.fps.min,
+                    max: action.fps.max
                 },
                 maxPrice: action.maxPrice,
                 data: getUpdatedData(initialState.data, action.keyWord, action)
@@ -170,6 +178,32 @@ const normalSearch = (dataArray, keyWord, options) => {
     return filteredData.unique();
 };
 
+const filterByFps = (dataArray, options) =>{
+    const filteredDataArray = [];
+    for(let i = 0; i < dataArray.length; i++){
+        let index = 0;
+        let found = false;
+        while(index < dataArray[i].games.length && !found){
+            if(Number(dataArray[i].games[index].fps) >= options.fps.min && Number(dataArray[i].games[index].fps) <= options.fps.max){
+                filteredDataArray.push(dataArray[i]);
+                found = true;
+            }
+            index++;
+        }
+    }
+    return filteredDataArray;
+};
+
+const filterByPrice = (dataArray, options) => {
+    const filteredDataArray = [];
+    for(let i = 0; i < dataArray.length; i++){
+        if(Number(dataArray[i].price) <= options.maxPrice){
+            filteredDataArray.push(dataArray[i]);
+        }
+    }
+    return filteredDataArray.unique();
+};
+
 const search = (dataArray, keyWord, options) => {
     let dataArrayToReturn = dataArray;
     if(options.exactMatch){
@@ -181,46 +215,15 @@ const search = (dataArray, keyWord, options) => {
     return dataArrayToReturn;
 };
 
-// const filterByFps = (dataArray, maxPrice) =>{
-//     const filteredDataArray = [];
-//     dataArray.forEach(function(parentElement){
-//         parentElement.games.forEach(function(childElement){
-//             if(Number(childElement.price) <= maxPrice){
-//                 filteredDataArray.push(childElement);
-//             }
-//         });
-//     });
-//     return filteredDataArray;
-// };
-
-const filterByPrice = (dataArray, maxPrice) =>{
-    const filteredDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        if(Number(dataArray[i].price) <= maxPrice){
-            filteredDataArray.push(dataArray[i]);
-        }
-    }
-    return filteredDataArray.unique();
-};
-
-
-const filter = (dataArray, options) => {
-    let filteredData = [];
-    // condition checks if slider has moved at least once (activated), only then we will filter,
-    // otherwise all result shows without filtering
-    if(options.maxPrice !== initialState.maxPrice){
-        filteredData = [...filterByPrice(dataArray, options.maxPrice)];
-    }
-    // if(options.maxPrice !== initialState.maxPrice){
-    //     filteredData = [...filterByPrice(filteredData, options.maxPrice)];
-    // }
+const filterData = (dataArray, options) => {
+    let filteredData = filterByPrice(dataArray, options);
+    filteredData = filterByFps(filteredData, options);
     return filteredData.unique();
 };
 
 const getUpdatedData = (dataArray, keyWord, options) =>{
    const searchData = search(dataArray, keyWord, options);
-   const filteredData = filter(searchData, options);
-   return filteredData;
+   return filterData(searchData, options);
 };
 
 export default reducer;
