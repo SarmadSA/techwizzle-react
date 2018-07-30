@@ -192,27 +192,26 @@ const normalSearch = (dataArray, keyWord, options) => {
 
 const filterByFps = (dataArray, options) =>{
     const filteredDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        let index = 0;
-        let found = false;
-        while(index < dataArray[i].games.length && !found){
-            if(Number(dataArray[i].games[index].fps) >= options.fps.min && Number(dataArray[i].games[index].fps) <= options.fps.max){
-                filteredDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        let index = 0, found = false;
+        while(index < element.games.length && !found){
+            if(Number(element.games[index].fps) >= options.fps.min && Number(element.games[index].fps) <= options.fps.max){
+                filteredDataArray.push(element);
                 found = true;
             }
             index++;
         }
-    }
+    });
     return filteredDataArray;
 };
 
 const filterByPrice = (dataArray, options) => {
     const filteredDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        if(Number(dataArray[i].price) <= options.maxPrice){
-            filteredDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        if(Number(element.price) <= options.maxPrice){
+            filteredDataArray.push(element);
         }
-    }
+    });
     return filteredDataArray;
 };
 
