@@ -7,7 +7,8 @@ const initialState = {
         game: false,
         settings: false,
         resolution: false
-    }
+    },
+    maxPrice: 900
 };
 
 const reducer = (state = initialState, action) =>{
@@ -21,8 +22,12 @@ const reducer = (state = initialState, action) =>{
                     settings: action.searchBy.settings,
                     resolution: action.searchBy.resolution
                 },
+                maxPrice: action.maxPrice,
                 data: search(initialState.data, action.keyWord, action)
             };
+        case 'SORT':
+            //Sort by code here...
+            break;
     }
     return state;
 };
@@ -37,6 +42,28 @@ Array.prototype.unique = function() {
         }
     }
     return a;
+};
+
+// const filterByFps = (dataArray, maxPrice) =>{
+//     const filteredDataArray = [];
+//     dataArray.forEach(function(parentElement){
+//         parentElement.games.forEach(function(childElement){
+//             if(Number(childElement.price) <= maxPrice){
+//                 filteredDataArray.push(childElement);
+//             }
+//         });
+//     });
+//     return filteredDataArray;
+// };
+
+const filterByPrice = (dataArray, maxPrice) =>{
+    const filteredDataArray = [];
+    for(let i = 0; i < dataArray.length; i++){
+        if(Number(dataArray[i].price) <= maxPrice){
+            filteredDataArray.push(dataArray[i]);
+        }
+    }
+    return filteredDataArray.unique();
 };
 
 const searchByTitleExact = (dataArray, keyWord) =>{
@@ -161,6 +188,11 @@ const normalSearch = (dataArray, keyWord, options) => {
     }
     if(options.searchBy.resolution){
         filteredData = [...filteredData, ...searchByResolution(dataArray, keyWord)];
+    }
+    // condition checks if slider has moved at least once (activated), only then we will filter,
+    // otherwise all result shows without filtering
+    if(options.maxPrice !== initialState.maxPrice){
+        filteredData = [...filterByPrice(filteredData, options.maxPrice)];
     }
     return filteredData.unique();
 };
