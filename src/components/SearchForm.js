@@ -110,7 +110,7 @@ class SearchForm extends Component{
                 
                 <select name="" id="dropdown-selection" disabled>
                     <option value="Sort by" selected disabled>Sort by</option>
-                    <option value="Normal">Normal</option>
+                    <option value="Normal" defaultValue>Normal</option>
                     <option value="Trending">Trending</option>
                     <option value="Most recent">Most recent</option>
                 </select>
