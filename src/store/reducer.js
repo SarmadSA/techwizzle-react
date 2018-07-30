@@ -53,100 +53,112 @@ Array.prototype.unique = function() {
 };
 
 const searchByTitleExact = (dataArray, keyWord) =>{
-    if(keyWord === ''){
-        return dataArray;
-    }
     const newDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        if(dataArray[i].title.toLowerCase() === (keyWord.toLowerCase())){
-            newDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        if(element.title.toLowerCase() === (keyWord.toLowerCase())){
+            newDataArray.push(element);
         }
-    }
+    });
     return newDataArray;
 };
 
 const searchByGameExact = (dataArray, keyWord) =>{
-    if(keyWord === ''){
-        return dataArray;
-    }
     const newDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        for(let j = 0; j < dataArray[i].games.length; j++)
-        if(dataArray[i].games[j].title.toLowerCase() === (keyWord.toLowerCase())){
-            newDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        let index = 0, found = false;
+        while(!found && index < element.games.length){
+            if(element.games[index].title.toLowerCase() === (keyWord.toLowerCase())){
+                newDataArray.push(element);
+                found = true;
+            }
+            index++;
         }
-    }
+    });
     return newDataArray;
 };
 
 const searchBySettingsExact = (dataArray, keyWord) =>{
-    if(keyWord === ''){
-        return dataArray;
-    }
     const newDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        for(let j = 0; j < dataArray[i].games.length; j++)
-            if(dataArray[i].games[j].settings.toLowerCase() === (keyWord.toLowerCase())){
-                newDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        let index = 0, found = false;
+        while(!found && index < element.games.length){
+            if(element.games[index].settings.toLowerCase() === (keyWord.toLowerCase())){
+                newDataArray.push(element);
+                found = true;
             }
-    }
+            index++;
+        }
+    });
     return newDataArray;
 };
 
 const searchByResolutionExact = (dataArray, keyWord) =>{
-    if(keyWord === ''){
-        return dataArray;
-    }
     const newDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        for(let j = 0; j < dataArray[i].games.length; j++)
-            if(dataArray[i].games[j].resolution.toLowerCase() === (keyWord.toLowerCase())){
-                newDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        let index = 0, found = false;
+        while(!found && index < element.games.length){
+            if(element.games[index].resolution.toLowerCase() === (keyWord.toLowerCase())){
+                newDataArray.push(element);
+                found = true;
             }
-    }
+            index++;
+        }
+    });
     return newDataArray;
 };
 
 const searchByTitle = (dataArray, keyWord) =>{
     const newDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        if(dataArray[i].title.toLowerCase().includes(keyWord.toLowerCase())){
-            newDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        if(element.title.toLowerCase().includes(keyWord.toLowerCase())){
+            newDataArray.push(element);
         }
-    }
+    });
     return newDataArray;
 };
 
 const searchByGame = (dataArray, keyWord) =>{
     const newDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        for(let j = 0; j < dataArray[i].games.length; j++)
-        if(dataArray[i].games[j].title.toLowerCase().includes(keyWord.toLowerCase())){
-            newDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        let index = 0, found = false;
+        while(!found && index < element.games.length){
+            if(element.games[index].title.toLowerCase().includes(keyWord.toLowerCase())){
+                newDataArray.push(element);
+                found = true;
+            }
+            index++;
         }
-    }
+    });
     return newDataArray;
 };
 
 const searchBySettings = (dataArray, keyWord) =>{
     const newDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        for(let j = 0; j < dataArray[i].games.length; j++)
-            if(dataArray[i].games[j].settings.toLowerCase().includes(keyWord.toLowerCase())){
-                newDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        let index = 0, found = false;
+        while(!found && index < element.games.length){
+            if(element.games[index].settings.toLowerCase().includes(keyWord.toLowerCase())){
+                newDataArray.push(element);
+                found = true;
             }
-    }
+            index++;
+        }
+    });
     return newDataArray;
 };
 
 const searchByResolution = (dataArray, keyWord) =>{
     const newDataArray = [];
-    for(let i = 0; i < dataArray.length; i++){
-        for(let j = 0; j < dataArray[i].games.length; j++)
-            if(dataArray[i].games[j].resolution.toLowerCase().includes(keyWord.toLowerCase())){
-                newDataArray.push(dataArray[i]);
+    dataArray.forEach(function(element){
+        let index = 0, found = false;
+        while(!found && index < element.games.length){
+            if(element.games[index].resolution.toLowerCase().includes(keyWord.toLowerCase())){
+                newDataArray.push(element);
+                found = true;
             }
-    }
+            index++;
+        }
+    });
     return newDataArray;
 };
 
@@ -161,7 +173,7 @@ const exactSearch = (dataArray, keyWord, options) =>{
     if(options.searchBy.resolution){
         filteredData = [...filteredData, ...searchByResolutionExact(dataArray, keyWord)];
     }
-    return filteredData.unique();
+    return filteredData;
 };
 
 const normalSearch = (dataArray, keyWord, options) => {
@@ -175,7 +187,7 @@ const normalSearch = (dataArray, keyWord, options) => {
     if(options.searchBy.resolution){
         filteredData = [...filteredData, ...searchByResolution(dataArray, keyWord)];
     }
-    return filteredData.unique();
+    return filteredData;
 };
 
 const filterByFps = (dataArray, options) =>{
@@ -201,10 +213,13 @@ const filterByPrice = (dataArray, options) => {
             filteredDataArray.push(dataArray[i]);
         }
     }
-    return filteredDataArray.unique();
+    return filteredDataArray;
 };
 
 const search = (dataArray, keyWord, options) => {
+    if(keyWord === ''){
+        return dataArray;
+    }
     let dataArrayToReturn = dataArray;
     if(options.exactMatch){
         dataArrayToReturn = exactSearch(dataArray, keyWord, options);
@@ -218,12 +233,16 @@ const search = (dataArray, keyWord, options) => {
 const filterData = (dataArray, options) => {
     let filteredData = filterByPrice(dataArray, options);
     filteredData = filterByFps(filteredData, options);
-    return filteredData.unique();
+    return filteredData;
 };
 
 const getUpdatedData = (dataArray, keyWord, options) =>{
    const searchData = search(dataArray, keyWord, options);
-   return filterData(searchData, options);
+   const filteredData = filterData(searchData, options);
+   // I already made sure that no duplicate entries allowed, but here function 'unique' is still used just to make sure,
+    // in the future in case I add more advanced search options and forget about it, this function will remove them.
+    // REMOVE FOR FASTER SEARCH!
+   return filteredData.unique();
 };
 
 export default reducer;
