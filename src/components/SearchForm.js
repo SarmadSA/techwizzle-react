@@ -12,7 +12,8 @@ const searchOptions = {
         game: false,
         settings: false,
         resolution: false
-    }
+    },
+    maxPrice: 900,
 };
 
 class SearchForm extends Component{
@@ -68,6 +69,10 @@ class SearchForm extends Component{
             searchOptions.searchBy.resolution = value;
         };
 
+        const updateMaxPrice = (value) =>{
+            searchOptions.maxPrice = value;
+        };
+
         return (
             <form className="search-form" onSubmit={(evt) => evt.preventDefault()}>
                 <input type="text"
@@ -110,7 +115,7 @@ class SearchForm extends Component{
                 </div>
                 
                 <div className="expand-box" style={{display: this.state.filtererDisplay}}>
-                    <FiltererOptions/>
+                    <FiltererOptions handlePriceChange={ (maxPrice) => {updateMaxPrice(maxPrice); props.onSearch()} }/>
                 </div>
 
             </form>
@@ -129,7 +134,8 @@ const mapDispatchToProps = dispatch =>{
                 game: searchBy.game,
                 settings: searchBy.settings,
                 resolution: searchBy.resolution
-            }
+            },
+            maxPrice: searchOptions.maxPrice
         })
     };
 };
