@@ -4,8 +4,8 @@ const Comparepage = () =>{
     document.title = "TechWizzle | Compare";
     return (
         <div>
-            <section>
-                This future is currently not available.
+            <section style={{textAlign:'center', fontSize:'30px'}}>
+                Compare future is currently not available <i className="far fa-frown"/>
             </section>
         </div>
     );
