@@ -24,7 +24,7 @@ const SearchOptions = (props) =>{
                            name="match"
                            onChange={(evt) => props.handleMatchChange(evt.target.checked)}
                     />
-                    <div className="state p-success">
+                    <div className="state p-danger">
                         <label>Exact Match</label>
                     </div>
                 </div>
@@ -41,21 +41,21 @@ const SearchOptions = (props) =>{
                 </div>
 
                 <div className="pretty p-default p-curve p-smooth">
-                    <input type="checkbox" onChange={(evt) => props.handleSearchByGame(evt.target.checked)}/>
+                    <input type="checkbox" checked onChange={(evt) => props.handleSearchByGame(evt.target.checked)}/>
                     <div className="state p-success">
                         <label>Game</label>
                     </div>
                 </div>
 
                 <div className="pretty p-default p-curve p-smooth">
-                    <input type="checkbox" onChange={(evt) => props.handleSearchBySettings(evt.target.checked)}/>
+                    <input type="checkbox" checked onChange={(evt) => props.handleSearchBySettings(evt.target.checked)}/>
                     <div className="state p-success">
                         <label>Settings</label>
                     </div>
                 </div>
 
                 <div className="pretty p-default p-curve p-smooth">
-                    <input type="checkbox" onChange={(evt) => props.handleSearchByResolution(evt.target.checked)}/>
+                    <input type="checkbox" checked onChange={(evt) => props.handleSearchByResolution(evt.target.checked)}/>
                     <div className="state p-success">
                         <label>Resolution</label>
                     </div>
@@ -65,23 +65,5 @@ const SearchOptions = (props) =>{
         </div>
     )
 };
-
-// const mapDispatchToProps = dispatch =>{
-//     return {
-//         // onCheck: (normalMatch, exactMatch) => dispatch({type: 'SEARCH',
-//         //     properties: {
-//         //         normalMatch: normalMatch,
-//         //         exactMatch: exactMatch,
-//         //         title: true,
-//         //         game: false,
-//         //         settings: false,
-//         //         resolution: false
-//         //     }}),
-//
-//         updateMatchOptions: (exactMatch) => dispatch({type: 'SET_SEARCH_OPTIONS', exactMatch: exactMatch}),
-//     };
-// };
-//
-// export default connect(null, mapDispatchToProps)(SearchOptions);
 
 export default SearchOptions;

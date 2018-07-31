@@ -9,9 +9,9 @@ const searchOptions = {
     inputValue: '',
     isExactMatch: false,
     searchBy: {
-        game: false,
-        settings: false,
-        resolution: false
+        game: true,
+        settings: true,
+        resolution: true
     },
     fps:{
         min: 30,
