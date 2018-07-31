@@ -1,25 +1,17 @@
-import data from '../data/cards.json';
+import * as actionTypes from './actions';
+import { data, searchFormOptions } from "../data/initStateConsts";
 
 const initialState = {
-    data: data.cards,
-    exactMatch: false,
-    searchBy:{
-        game: true,
-        settings: true,
-        resolution: true
-    },
-    fps:{
-        min: 30,
-        max: 300
-    },
-    maxPrice: 900
+    data,
+    searchFormOptions
 };
 
 const reducer = (state = initialState, action) =>{
     switch (action.type) {
-        case 'SEARCH':
+        case actionTypes.SEARCH:
             return {
                 ...state,
+                keyWord: action.inputValue,
                 exactMatch: action.exactMatch,
                 searchBy:{
                     game: action.searchBy.game,
@@ -31,12 +23,12 @@ const reducer = (state = initialState, action) =>{
                     max: action.fps.max
                 },
                 maxPrice: action.maxPrice,
-                data: getUpdatedData(initialState.data, action.keyWord, action)
+                data: getUpdatedData(initialState.data, action)
             };
-        case 'RESET_STATE':
+        case actionTypes.RESET_STATE:
             state = initialState;
             break;
-        case 'SORT':
+        case actionTypes.SORT:
             //Sort by code here...
             break;
     }
@@ -165,30 +157,30 @@ const searchByResolution = (dataArray, keyWord) =>{
     return newDataArray;
 };
 
-const exactSearch = (dataArray, keyWord, options) =>{
-    let filteredData = searchByTitleExact(dataArray, keyWord);
+const exactSearch = (dataArray, options) =>{
+    let filteredData = searchByTitleExact(dataArray, options.keyWord);
     if(options.searchBy.game){
-        filteredData = [...filteredData, ...searchByGameExact(dataArray, keyWord)];
+        filteredData = [...filteredData, ...searchByGameExact(dataArray, options.keyWord)];
     }
     if(options.searchBy.settings){
-        filteredData = [...filteredData, ...searchBySettingsExact(dataArray, keyWord)];
+        filteredData = [...filteredData, ...searchBySettingsExact(dataArray, options.keyWord)];
     }
     if(options.searchBy.resolution){
-        filteredData = [...filteredData, ...searchByResolutionExact(dataArray, keyWord)];
+        filteredData = [...filteredData, ...searchByResolutionExact(dataArray, options.keyWord)];
     }
     return filteredData;
 };
 
-const normalSearch = (dataArray, keyWord, options) => {
-    let filteredData = searchByTitle(dataArray, keyWord);
+const normalSearch = (dataArray, options) => {
+    let filteredData = searchByTitle(dataArray, options.keyWord);
     if(options.searchBy.game){
-        filteredData = [...filteredData, ...searchByGame(dataArray, keyWord)];
+        filteredData = [...filteredData, ...searchByGame(dataArray, options.keyWord)];
     }
     if(options.searchBy.settings){
-        filteredData = [...filteredData, ...searchBySettings(dataArray, keyWord)];
+        filteredData = [...filteredData, ...searchBySettings(dataArray, options.keyWord)];
     }
     if(options.searchBy.resolution){
-        filteredData = [...filteredData, ...searchByResolution(dataArray, keyWord)];
+        filteredData = [...filteredData, ...searchByResolution(dataArray, options.keyWord)];
     }
     return filteredData;
 };
@@ -218,16 +210,16 @@ const filterByPrice = (dataArray, options) => {
     return filteredDataArray;
 };
 
-const search = (dataArray, keyWord, options) => {
-    if(keyWord === ''){
+const search = (dataArray, options) => {
+    if(options.keyWord === ''){
         return dataArray;
     }
     let dataArrayToReturn = dataArray;
     if(options.exactMatch){
-        dataArrayToReturn = exactSearch(dataArray, keyWord, options);
+        dataArrayToReturn = exactSearch(dataArray, options);
     }
     else{
-        dataArrayToReturn = normalSearch(dataArray, keyWord, options);
+        dataArrayToReturn = normalSearch(dataArray, options);
     }
     return dataArrayToReturn;
 };
@@ -238,8 +230,8 @@ const filterData = (dataArray, options) => {
     return filteredData;
 };
 
-const getUpdatedData = (dataArray, keyWord, options) =>{
-   const searchData = search(dataArray, keyWord, options);
+const getUpdatedData = (dataArray, options) =>{
+   const searchData = search(dataArray, options);
    const filteredData = filterData(searchData, options);
    // I already made sure that no duplicate entries allowed, but here function 'unique' is still used just to make sure,
     // in the future in case I add more advanced search options and forget about it, this function will remove them.
