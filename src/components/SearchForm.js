@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
 import SearchOptions from './SearchOptions';
 import FiltererOptions from './FiltererOptions';
-import '../css/SearchForm.css';
 import { connect } from 'react-redux';
-
+import { searchFormOptions } from "../data/initStateConsts";
+import * as actionTypes from "../store/actions";
+import '../css/SearchForm.css';
 
 const searchOptions = {
-    inputValue: '',
-    isExactMatch: false,
+    inputValue: searchFormOptions.inputValue,
+    isExactMatch: searchFormOptions.isExactMatch,
     searchBy: {
-        game: false,
-        settings: false,
-        resolution: false
+        game: searchFormOptions.searchBy.game,
+        settings: searchFormOptions.searchBy.settings,
+        resolution: searchFormOptions.searchBy.resolution
     },
     fps:{
-        min: 30,
-        max: 300
+        min: searchFormOptions.fps.min,
+        max: searchFormOptions.fps.max
     },
-    maxPrice: 900,
+    maxPrice: searchFormOptions.maxPrice
 };
 
 class SearchForm extends Component{
@@ -31,6 +32,10 @@ class SearchForm extends Component{
             optionsClass: ''
         };
     }
+
+    componentWillMount = () =>{
+        this.props.onLoad();
+    };
 
     expandSearchOptions = () =>{
         if(this.state.optionsDisplay === 'none'){
@@ -85,12 +90,19 @@ class SearchForm extends Component{
         return (
             <form className="search-form" onSubmit={(evt) => evt.preventDefault()}>
                 <input type="text"
+                       // list="suggestions"
                        className="search-input"
                        id="search-input"
+                       autoComplete="off"
                        placeholder="Search..."
                        onChange={(evt) => {updateInput(evt.target.value); props.onSearch()}}
                 />
-                
+                {/*<datalist id="suggestions">*/}
+                    {/*<option value="GTX 1060">GTX 1060</option>*/}
+                    {/*<option value="GTX 1070">GTX 1070</option>*/}
+                    {/*<option value="GTX 1080">GTX 1080</option>*/}
+                {/*</datalist>*/}
+
                 <button type="button" id="search_button" onClick={ props.onSearch }>
                     <svg viewBox="0 0 36.02 40.02">
                         <defs>
@@ -139,7 +151,7 @@ const mapDispatchToProps = dispatch =>{
     const fps = searchOptions.fps;
     return {
         onSearch: () => dispatch({
-            type: 'SEARCH',
+            type: actionTypes.SEARCH,
             keyWord: searchOptions.inputValue,
             exactMatch: searchOptions.isExactMatch,
             searchBy:{
@@ -152,7 +164,8 @@ const mapDispatchToProps = dispatch =>{
                 max: fps.max
             },
             maxPrice: searchOptions.maxPrice
-        })
+        }),
+        onLoad: () => dispatch({type: actionTypes.RESET_STATE})
     };
 };
 

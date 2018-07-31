@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Slider from 'rc-slider';
 import Tooltip from 'rc-tooltip';
+import { searchFormOptions } from "../data/initStateConsts";
 import '../css/FiltererOptions.css';
 import 'rc-slider/assets/index.css';
 
@@ -14,8 +15,8 @@ export default class FiltererOptions extends Component{
     constructor(props){
         super(props);
         this.state={
-            fps: [30,300],
-            maxPrice: 900
+            fps: [searchFormOptions.fps.min, searchFormOptions.fps.max],
+            maxPrice: searchFormOptions.maxPrice
         }
     }
     
