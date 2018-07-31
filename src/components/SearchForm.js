@@ -32,6 +32,10 @@ class SearchForm extends Component{
         };
     }
 
+    componentWillMount = () =>{
+        this.props.onLoad();
+    };
+
     expandSearchOptions = () =>{
         if(this.state.optionsDisplay === 'none'){
             this.setState({optionsDisplay : 'block', filtererDisplay: 'none', optionsClass: 'expanded', filtererClass: ''});
@@ -152,7 +156,8 @@ const mapDispatchToProps = dispatch =>{
                 max: fps.max
             },
             maxPrice: searchOptions.maxPrice
-        })
+        }),
+        onLoad: () => dispatch({type:'RESET_STATE'})
     };
 };
 

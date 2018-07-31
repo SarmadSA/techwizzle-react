@@ -33,6 +33,9 @@ const reducer = (state = initialState, action) =>{
                 maxPrice: action.maxPrice,
                 data: getUpdatedData(initialState.data, action.keyWord, action)
             };
+        case 'RESET_STATE':
+            state = initialState;
+            break;
         case 'SORT':
             //Sort by code here...
             break;
