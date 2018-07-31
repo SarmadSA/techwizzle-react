@@ -89,12 +89,19 @@ class SearchForm extends Component{
         return (
             <form className="search-form" onSubmit={(evt) => evt.preventDefault()}>
                 <input type="text"
+                       // list="suggestions"
                        className="search-input"
                        id="search-input"
+                       autoComplete="off"
                        placeholder="Search..."
                        onChange={(evt) => {updateInput(evt.target.value); props.onSearch()}}
                 />
-                
+                {/*<datalist id="suggestions">*/}
+                    {/*<option value="GTX 1060">GTX 1060</option>*/}
+                    {/*<option value="GTX 1070">GTX 1070</option>*/}
+                    {/*<option value="GTX 1080">GTX 1080</option>*/}
+                {/*</datalist>*/}
+
                 <button type="button" id="search_button" onClick={ props.onSearch }>
                     <svg viewBox="0 0 36.02 40.02">
                         <defs>
