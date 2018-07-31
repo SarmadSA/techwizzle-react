@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
 import SearchOptions from './SearchOptions';
 import FiltererOptions from './FiltererOptions';
-import '../css/SearchForm.css';
 import { connect } from 'react-redux';
-
+import { searchFormOptions } from "../data/initStateConsts";
+import * as actionTypes from "../store/actions";
+import '../css/SearchForm.css';
 
 const searchOptions = {
-    inputValue: '',
-    isExactMatch: false,
+    inputValue: searchFormOptions.inputValue,
+    isExactMatch: searchFormOptions.isExactMatch,
     searchBy: {
-        game: true,
-        settings: true,
-        resolution: true
+        game: searchFormOptions.searchBy.game,
+        settings: searchFormOptions.searchBy.settings,
+        resolution: searchFormOptions.searchBy.resolution
     },
     fps:{
-        min: 30,
-        max: 300
+        min: searchFormOptions.fps.min,
+        max: searchFormOptions.fps.max
     },
-    maxPrice: 900,
+    maxPrice: searchFormOptions.maxPrice
 };
 
 class SearchForm extends Component{
@@ -150,7 +151,7 @@ const mapDispatchToProps = dispatch =>{
     const fps = searchOptions.fps;
     return {
         onSearch: () => dispatch({
-            type: 'SEARCH',
+            type: actionTypes.SEARCH,
             keyWord: searchOptions.inputValue,
             exactMatch: searchOptions.isExactMatch,
             searchBy:{
@@ -164,7 +165,7 @@ const mapDispatchToProps = dispatch =>{
             },
             maxPrice: searchOptions.maxPrice
         }),
-        onLoad: () => dispatch({type:'RESET_STATE'})
+        onLoad: () => dispatch({type: actionTypes.RESET_STATE})
     };
 };
 
