@@ -30,7 +30,7 @@ const Profile = () =>{
             }
         }
     }
-
+    //TODO get product title instead
     function getId(){
         const url = window.location.pathname;
         const id = url.substring(url.lastIndexOf("/") + 1);
@@ -59,7 +59,7 @@ const Profile = () =>{
                     <h2 className="more-info-title">More Information</h2>
                     <h3 className="info-title">Resource usage:</h3>
                     <ul className="resouce-usage-list">
-                        <li>Average power usage: 11 kw/h </li>
+                        <li>Average power usage: - </li>
                         <li>Average memory usage: - </li>
                         <li>Average temperature: - </li>
                     </ul>
@@ -68,7 +68,7 @@ const Profile = () =>{
                 </div>
 
                 <div className="profile-input-box">
-                    <input className="profile-btn" type="submit" value="Report correction"/>
+                    <input className="profile-btn" type="submit" disabled value="Report correction" style={{background: "gray"}}/>
                     <input className="profile-btn" type="submit" disabled value="Edit profile" style={{background: "gray"}}/>
                 </div>   
             </section>
