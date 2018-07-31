@@ -128,10 +128,10 @@ class SearchForm extends Component{
                 </select>
                 
                 <div className="expand-box" style={{display: this.state.optionsDisplay}}>
-                    <SearchOptions handleMatchChange={ (match) => { updateExactMatch(match); props.onSearch() } }
-                                   handleSearchByGame={ (searchByGame) => { setSearchByGame(searchByGame); props.onSearch()} }
-                                   handleSearchBySettings={ (searchBySettings) => { setSearchBySettings(searchBySettings); props.onSearch()} }
-                                   handleSearchByResolution={ (searchByResolution) => { setSearchByResolution(searchByResolution); props.onSearch()} }
+                    <SearchOptions handleMatchChange={ (match) => {updateExactMatch(match); props.onSearch()} }
+                                   handleSearchByGame={ (e) => {setSearchByGame(e.target.checked); props.onSearch()} }
+                                   handleSearchBySettings={ (e) => { setSearchBySettings(e.target.checked); props.onSearch()} }
+                                   handleSearchByResolution={ (e) => { setSearchByResolution(e.target.checked); props.onSearch()} }
                     />
                 </div>
                 

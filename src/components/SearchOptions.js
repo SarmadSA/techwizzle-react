@@ -46,7 +46,7 @@ const SearchOptions = (props) =>{
                 <div className="pretty p-default p-curve p-smooth">
                     <input type="checkbox"
                            defaultChecked={searchBy.game}
-                           onChange={(evt) => props.handleSearchByGame(evt.target.checked)}/>
+                           onChange={ props.handleSearchByGame }/>
                     <div className="state p-success">
                         <label>Game</label>
                     </div>
@@ -55,7 +55,7 @@ const SearchOptions = (props) =>{
                 <div className="pretty p-default p-curve p-smooth">
                     <input type="checkbox"
                            defaultChecked={searchBy.settings}
-                           onChange={(evt) => props.handleSearchBySettings(evt.target.checked)}/>
+                           onChange={ props.handleSearchBySettings }/>
                     <div className="state p-success">
                         <label>Settings</label>
                     </div>
@@ -64,7 +64,7 @@ const SearchOptions = (props) =>{
                 <div className="pretty p-default p-curve p-smooth">
                     <input type="checkbox"
                            defaultChecked={searchBy.resolution}
-                           onChange={(evt) => props.handleSearchByResolution(evt.target.checked)}/>
+                           onChange={ props.handleSearchByResolution }/>
                     <div className="state p-success">
                         <label>Resolution</label>
                     </div>
