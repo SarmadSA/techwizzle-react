@@ -11,21 +11,19 @@ class Profilespage extends Component{
         this.state = {
             numberOfCards: 3
         };
-        this.loadMore = this.loadMore.bind(this);
-        this.renderLoadButton = this.renderLoadButton.bind(this);
     }
-    
-    loadMore(){
+
+    loadMore = () =>{
         if(this.state.numberOfCards <= (this.props.data).length){
             this.setState({numberOfCards: this.state.numberOfCards + 6});
         }
-    }
+    };
 
-    renderLoadButton(){
+    renderLoadButton = () =>{
         if(this.state.numberOfCards <= (this.props.data).length){
             return (<LoadButton clickHandler={this.loadMore}>Load More</LoadButton>);
         }
-    }
+    };
 
     render(){
         document.title = "TechWizzle | Profiles";
