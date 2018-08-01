@@ -9,7 +9,7 @@ import Aboutpage from './pages/Aboutpage';
 import Contactpage from './pages/Contactpage';
 import Profile from './pages/Profile';
 import NotFoundPage from './pages/NotFoundPage';
-import { Route, BrowserRouter, Switch, Router } from 'react-router-dom';
+import { Route, Switch, Router } from 'react-router-dom';
 import ScrolToTop from './jobs/ScrollToTop';
 import History from './jobs/History';
 
@@ -29,11 +29,10 @@ class App extends Component {
               <Route path="/compare" exact component={Comparepage}/>
               <Route path="/about" exact component={Aboutpage}/>
               <Route path="/contact" exact component={Contactpage}/>
-              <Route path="/profile" exact component={NotFoundPage}/>
-              <Route path="/profile" component={Profile}/>
+              <Route path="/profile/:id" exact component={Profile}/>
               <Route path="/home" exact component={Homepage}/>
               <Route path="/" exact component={Homepage}/>
-              <Route path="/" component={NotFoundPage}/>
+              <Route render={()=> <NotFoundPage/>}/>
             </Switch>
             
             <br className="clear"/>

@@ -7,7 +7,7 @@ import GameRenderer from '../jobs/GameRenderer';
 import SuggestedContent from '../components/SuggestedContent';
 
 
-const Profile = () =>{    
+const Profile = (props) =>{
     const numberOfGames = 3;
     const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
     const profileData = getData(getId(), data.cards);
@@ -32,15 +32,12 @@ const Profile = () =>{
     }
     //TODO get product title instead
     function getId(){
-        const url = window.location.pathname;
-        const id = url.substring(url.lastIndexOf("/") + 1);
-        return id;
+        return props.match.params.id;
     }
 
     return (
         <div>
             <section className="profile-section">
-
                 <ProfileHeader
                     title = { profileData.title }
                     imgSrc = {images[profileData.image]}
