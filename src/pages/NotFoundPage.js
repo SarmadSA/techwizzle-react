@@ -21,6 +21,7 @@ export default class NotFoundPage extends React.Component{
     };
 
     render(){
+        document.title = "TechWizzle | Page not found";
 
         if(this.state.timedOut){
             return <Redirect to="/"/>
