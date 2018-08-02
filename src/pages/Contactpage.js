@@ -1,5 +1,5 @@
 import React from 'react';
-import * as pageTitles from '../data/pageTitles';
+import * as pageTitles from '../resources/pageTitles';
 import ContactForm from '../components/ContactForm';
 
 const Contactpage = () =>{

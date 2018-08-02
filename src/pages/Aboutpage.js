@@ -1,7 +1,7 @@
 import React from 'react';
 import TextBox from '../components/TextBox';
 import AsideFormBox from '../components/AsideFormBox';
-import * as pageTitles from '../data/pageTitles'
+import * as pageTitles from '../resources/pageTitles'
 
 const Aboutpage = () =>{
     document.title = pageTitles.ABOUT;

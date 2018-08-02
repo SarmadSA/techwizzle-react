@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import ProfileHeader from '../components/ProfileHeader';
 import InfoList from '../components/InfoList';
-import data from '../data/cards.json';
+import data from '../resources/cards.json';
 import ImageImporter from '../jobs/ImageImporter';
 import GameRenderer from '../jobs/GameRenderer';
 import SuggestedContent from '../components/SuggestedContent';
 import { Redirect } from 'react-router-dom';
-import * as pageTitles from '../data/pageTitles';
+import * as pageTitles from '../resources/pageTitles';
 
 export default class Profile extends Component{
     constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
-import * as pageTitles from '../data/pageTitles';
+import * as pageTitles from '../resources/pageTitles';
 import '../css/Card.css';
 
 export default class NotFoundPage extends React.Component{

@@ -4,7 +4,7 @@ import SearchForm from '../components/SearchForm';
 import CardRenderer from '../jobs/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import { connect } from 'react-redux';
-import * as pageTitles from '../data/pageTitles';
+import * as pageTitles from '../resources/pageTitles';
 
 class Profilespage extends Component{
     constructor(props){
