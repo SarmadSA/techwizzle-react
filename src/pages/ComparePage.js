@@ -1,7 +1,8 @@
 import React from 'react';
+import * as pageTitles from '../resources/pageTitles';
 
 const Comparepage = () =>{
-    document.title = "TechWizzle | Compare";
+    document.title = pageTitles.COMPARE;
     return (
         <div>
             <section style={{textAlign:'center', fontSize:'30px'}}>

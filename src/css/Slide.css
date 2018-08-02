@@ -1,11 +1,11 @@
 .slide-txt {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.4);
     color:white; 					
     font-size: 15px;
     margin: 8px;
     padding: 8px 10px;
     position: absolute;
-    max-width: 40%;
+    max-width: 60%;
     max-height: 40%;
     cursor: pointer;
 }
@@ -16,15 +16,8 @@
 }
 
 .fadeout {
-    -webkit-animation-name: fadeOut;
-    -webkit-animation-duration: 1.5s;
     animation-name: fadeOut;
     animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fadeOut {
-    0% {opacity: .5} /*from*/
-    100% {opacity: 1} /*to*/
 }
 
 @keyframes fadeOut {

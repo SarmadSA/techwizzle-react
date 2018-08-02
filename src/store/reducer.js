@@ -1,5 +1,5 @@
 import * as actionTypes from './actions';
-import { data, searchFormOptions } from "../data/initStateConsts";
+import { data, searchFormOptions } from "../resources/initStateConsts";
 
 const initialState = {
     data,
@@ -29,7 +29,7 @@ const reducer = (state = initialState, action) =>{
             state = initialState;
             break;
         case actionTypes.SORT:
-            //Sort by code here...
+            //Sort-by code here...
             break;
     }
     return state;
@@ -233,7 +233,7 @@ const filterData = (dataArray, options) => {
 const getUpdatedData = (dataArray, options) =>{
    const searchData = search(dataArray, options);
    const filteredData = filterData(searchData, options);
-   // I already made sure that no duplicate entries allowed, but here function 'unique' is still used just to make sure,
+    // I already made sure that no duplicate entries allowed, but here function 'unique' is still used just to make sure,
     // in the future in case I add more advanced search options and forget about it, this function will remove them.
     // REMOVE FOR FASTER SEARCH!
    return filteredData.unique();

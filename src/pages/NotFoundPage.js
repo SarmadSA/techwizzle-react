@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
+import * as pageTitles from '../resources/pageTitles';
 import '../css/Card.css';
 
 export default class NotFoundPage extends React.Component{
@@ -21,7 +22,7 @@ export default class NotFoundPage extends React.Component{
     };
 
     render(){
-        document.title = "TechWizzle | Page not found";
+        document.title = pageTitles.NOT_FOUND;
 
         if(this.state.timedOut){
             return <Redirect to="/"/>

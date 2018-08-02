@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import SearchOptions from './SearchOptions';
 import FiltererOptions from './FiltererOptions';
 import { connect } from 'react-redux';
-import { searchFormOptions } from "../data/initStateConsts";
+import { searchFormOptions } from "../resources/initStateConsts";
 import * as actionTypes from "../store/actions";
 import '../css/SearchForm.css';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { searchFormOptions } from "../data/initStateConsts";
+import { searchFormOptions } from "../resources/initStateConsts";
 import '../css/SearchOptions.css';
 
 const SearchOptions = (props) =>{

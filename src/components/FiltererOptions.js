@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Slider from 'rc-slider';
 import Tooltip from 'rc-tooltip';
-import { searchFormOptions } from "../data/initStateConsts";
+import { searchFormOptions } from "../resources/initStateConsts";
 import '../css/FiltererOptions.css';
 import 'rc-slider/assets/index.css';
 

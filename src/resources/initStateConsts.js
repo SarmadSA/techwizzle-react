@@ -1,4 +1,4 @@
-import fullData from '../data/cards.json';
+import fullData from './/cards.json';
 
 /**
  * File represents the initial state of the app.
