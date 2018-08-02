@@ -71,8 +71,8 @@ export default class Slider extends Component{
         return(
             <div className="slider-box">
                 <Slide display = {this.displaySlide(0)} linkTo="https://youtu.be/KMWgmkBwAB0" src={require('../images/gta_5_gtx_1060_4.jpg')} alt="slide one img">GTA 5 tested with GTX 1060 at Ultra and Low settings (Video)</Slide>
-                <Slide display = {this.displaySlide(1)} linkTo="https://youtu.be/0pTxAuYdCbA" src={require('../images/recon_gtx_1060_2.jpg')} alt="slide two img">This is slide number two and it is just a test</Slide>
-                <Slide display = {this.displaySlide(2)} linkTo="https://youtu.be/BaEj2Tk13rI" src={require('../images/bf1_gtx_1060.jpg')} alt="slide three img">This is slide number three and it is just a test</Slide>
+                <Slide display = {this.displaySlide(1)} linkTo="https://youtu.be/0pTxAuYdCbA" src={require('../images/recon_gtx_1060_2.jpg')} alt="slide two img">Ghost Recon Wildlands tested with GTX 1060 at Ultra and Low settings (Video)</Slide>
+                <Slide display = {this.displaySlide(2)} linkTo="https://youtu.be/BaEj2Tk13rI" src={require('../images/bf1_gtx_1060.jpg')} alt="slide three img">Battlefield 1 tested with GTX 1060 at Ultra and Low settings (Video)</Slide>
 
                 <PreviewsButton clickHandler = {this.prevSlideHandler}/>
                 <NextButton clickHandler = {this.nextSlideHandler} />
