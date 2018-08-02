@@ -6,6 +6,7 @@ import data from '../data/cards.json';
 import CardRenderer from '../jobs/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import History from '../jobs/History';
+import * as pageTitles from '../data/pageTitles';
 
 export default class Homepage extends Component{
     
@@ -22,7 +23,7 @@ export default class Homepage extends Component{
     };
 
     render(){
-        document.title = "TechWizzle | Home";
+        document.title = pageTitles.HOME;
         
         return (
             <div>

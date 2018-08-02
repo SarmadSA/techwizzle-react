@@ -1,10 +1,10 @@
 import React from 'react';
 import TextBox from '../components/TextBox';
 import AsideFormBox from '../components/AsideFormBox';
-
+import * as pageTitles from '../data/pageTitles'
 
 const Aboutpage = () =>{
-    document.title = "TechWizzle | About";
+    document.title = pageTitles.ABOUT;
     return (
         <div>
             <TextBox title="About">
