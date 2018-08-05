@@ -8,7 +8,8 @@ const GameRenderer = (props) =>{
     if(props.data){
         for(let i = 0; i < props.number; i++){
             gamesArray.push (
-                <GameShowcase 
+                <GameShowcase
+                    // key={props.data[i].uid}
                     imgSrc = {images[props.data[i].image]}
                     title = {props.data[i].title}
                     settings = {props.data[i].settings}

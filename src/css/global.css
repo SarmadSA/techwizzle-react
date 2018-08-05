@@ -5,7 +5,7 @@
     padding-bottom: 20px;
     margin-bottom: 20px;
     background-color: whitesmoke;
-    box-shadow: 0px 6px 37px -11px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 37px -11px rgba(0,0,0,0.2);
     border-top: 2px solid #22B473;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -91,6 +91,10 @@
 
 .info-title{
     margin-bottom: 5px;
+}
+
+.danger{
+    color: red;
 }
 
 .profile-btn{

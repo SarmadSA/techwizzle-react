@@ -43,7 +43,8 @@ export default class Card extends Component{
                 </h4>
     
                 <InfoBlock style={{display: this.state.infoBlockDisplay}}>
-                    Game result are average result, they may not be 100% accruate, it will always depend on build components, specialy the CPU. Results achieved using a hight prefomance CPU that does not battleneck. Click for more info.
+                    Game results are average results, they may not be 100% accurate. FPS will always depend on build components as a whole,
+                    specially the CPU. Results achieved using high performance CPU that does not bottleneck the GPU.
                 </InfoBlock>
                 
                 <GameRenderer number={numberOfGames} data={gamesData}/>

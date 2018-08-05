@@ -7,13 +7,13 @@ const InfoList = () =>{
             <h3>Technical information:</h3>
             <br/>
             <ul className="info-list">
-                <li>CUDA Cores: </li>
-                <li>Graphics Clock (MHz): </li>
-                <li>Processor Clock (MHz): </li>
-                <li>Standard Memory Config: </li>
-                <li>Memory Interface: </li>
-                <li>Memory Interface Width: </li>
-                <li>Memory Bandwidth (GB/sec): </li>
+                <li>CUDA Cores: -</li>
+                <li>Base Clock (MHz): -</li>
+                <li>Boost Clock (MHz): -</li>
+                <li>Memory Speed: -</li>
+                <li>Standard Memory Config: -</li>
+                <li>Memory Interface Width: -</li>
+                <li>Memory Bandwidth (GB/sec): -</li>
             </ul>
         </div>
     );

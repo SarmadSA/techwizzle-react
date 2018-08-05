@@ -8,14 +8,24 @@ const Aboutpage = () =>{
     return (
         <div>
             <TextBox title="About">
-                TechWizzle.com is a website that can help you choose the right hardware for your next PC build.
-                By looking up hardware profiles you will be able to determine how many FPS you are going to get
-                with that build. Finding the right hardware for the right price can be challanging, and require
-                alot of research, knowladge and time. Looking up different youtube videos about different GPUs and
-                searching the web for different hardware is not an easy task, and requires a lot of time. By using
-                our Service you will easily be able to compare multiple GPUs, CPUs and other hardware that will be
-                added in the future. You will be able to see how many FPS you can get, from that Harware in different
-                games without having to watch hours and hours of youtube videos.
+                TechWizzle.com is a website that can help you choose the right hardware for your PC build.
+                By looking up hardware profiles, you will be able to determine how many frames per second (FPS) you can get
+                with that build. Finding the right hardware for the right price can be challenging, and requires
+                a lot of research, knowledge and time. Looking up different youtube videos about different GPUs and
+                searching the web for different hardware is not an easy task. By using
+                our service you will be able to compare multiple GPUs, CPUs and other hardware that will be
+                added in the future, then determine the right hardware for your build, and make a good decision that you won't regret.
+                You will be able to see how many frames per second (FPS) you can get with that Hardware in different
+                games without having to watch hours and hours of different youtube videos.
+                <br/>
+                <br/>
+                Looking to buy a game, but not sure if it will run smoothly in your PC? This is the right place to do so.
+                At TechWizzle you will be able to search for games, and easily find out how many frames per second (FPS).
+                <br/>
+                <br/>
+                If you have any suggestions, ideas or concerns, make sure to contact us by navigating to the contact page.
+                We will get back to
+                you as soon as possible.
             </TextBox>
             <AsideFormBox title="Get the latest updates"/>
         </div>
