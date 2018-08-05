@@ -11,7 +11,8 @@ const CardRenderer = (props) =>{
             const cardData = props.data[i];  
             if(cardData){
                 cards.push(
-                    <Card 
+                    <Card
+                        key={cardData.id}
                         id={cardData.id}
                         imgSrc={images[cardData.image]}
                         title={cardData.title}
