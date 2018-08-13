@@ -34,6 +34,7 @@
 .svg-logo .cls-1{
     transition: 0.4s ease;
     fill: #00FF00;
+    stroke: none;
 }
 
 .logo-container:hover .logo-text,
@@ -41,4 +42,5 @@
 .svg-logo .cls-1{
     color: #fff;
     fill: #fff;
+    stroke: none;
 }
