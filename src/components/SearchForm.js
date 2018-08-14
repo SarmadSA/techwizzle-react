@@ -3,7 +3,7 @@ import SearchOptions from './SearchOptions';
 import FiltererOptions from './FiltererOptions';
 import { connect } from 'react-redux';
 import { searchFormOptions } from "../resources/initStateConsts";
-import * as actionTypes from "../store/actions";
+import * as actionCreators from '../store/actionCreators';
 import '../css/SearchForm.css';
 
 const searchOptions = {
@@ -147,25 +147,9 @@ class SearchForm extends Component{
 }
 
 const mapDispatchToProps = dispatch =>{
-    const searchBy = searchOptions.searchBy;
-    const fps = searchOptions.fps;
     return {
-        onSearch: () => dispatch({
-            type: actionTypes.SEARCH,
-            keyWord: searchOptions.inputValue,
-            exactMatch: searchOptions.isExactMatch,
-            searchBy:{
-                game: searchBy.game,
-                settings: searchBy.settings,
-                resolution: searchBy.resolution
-            },
-            fps:{
-                min: fps.min,
-                max: fps.max
-            },
-            maxPrice: searchOptions.maxPrice
-        }),
-        onLoad: () => dispatch({type: actionTypes.RESET_STATE})
+        onSearch: () => dispatch(actionCreators.search(searchOptions)),
+        onLoad: () => dispatch(actionCreators.resetState())
     };
 };
 
