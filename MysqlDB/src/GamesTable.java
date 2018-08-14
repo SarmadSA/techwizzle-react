@@ -25,6 +25,7 @@ public class GamesTable {
               JSONObject game = new JSONObject();
 
               String gameId = resultSet.getString("id");
+              String cardId = resultSet.getString("card_id");
               String gameTitle = resultSet.getString("title");
               String gameResolution = resultSet.getString("resolution");
               String gameSettings = resultSet.getString("settings");
@@ -33,6 +34,7 @@ public class GamesTable {
 
 
               game.put("id", gameId);
+              game.put("card_id", cardId);
               game.put("title", gameTitle);
               game.put("resolution", gameResolution);
               game.put("settings", gameSettings);
