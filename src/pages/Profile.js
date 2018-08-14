@@ -57,7 +57,7 @@ export default class Profile extends Component{
 
                     <InfoList />
 
-                    <h4 className="card-content-tittle">Preformance in games:</h4>
+                    <h4 className="card-content-tittle">Performance in games:</h4>
 
                     <GameRenderer number={numberOfGames} data={profileData.games}/>
 
@@ -69,8 +69,12 @@ export default class Profile extends Component{
                             <li>Average memory usage: - </li>
                             <li>Average temperature: - </li>
                         </ul>
-                        <h3 className="info-title">Other:</h3>
-                        <p>Game result are Average result, they may not be 100% accruate, it will always depend on build components, specialy the CPU. Results achieved using a hight prefomance CPU that does not battleneck. Click for more info.</p>
+                        <h3 className="info-title danger">NOTE!</h3>
+                        <p>
+                            Framerates depend on several factors. These results are Average, they may not be 100% accurate,
+                            it all depend on build components, especially the CPU.
+                            Results achieved using high performance CPU.
+                        </p>
                     </div>
 
                     <div className="profile-input-box">
