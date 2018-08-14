@@ -3,11 +3,21 @@ import { data, searchFormOptions } from "../resources/initStateConsts";
 
 const initialState = {
     data,
-    searchFormOptions
+    searchFormOptions,
+    searching: false,
+    loading: true,
 };
 
 const reducer = (state = initialState, action) =>{
     switch (action.type) {
+        case actionTypes.FETCH_DATA:
+            initialState.data = action.data;
+            return{
+                ...state,
+                searching: false,
+                loading: action.loading,
+                data: action.data
+            };
         case actionTypes.SEARCH:
             return {
                 ...state,
@@ -23,10 +33,12 @@ const reducer = (state = initialState, action) =>{
                     max: action.fps.max
                 },
                 maxPrice: action.maxPrice,
+                searching: true,
                 data: getUpdatedData(initialState.data, action)
             };
         case actionTypes.RESET_STATE:
             state = initialState;
+            state.loading = false;
             break;
         case actionTypes.SORT:
             //Sort-by code here...
