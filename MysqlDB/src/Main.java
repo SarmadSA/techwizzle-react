@@ -9,7 +9,7 @@ public class Main {
         CardTable cards = new CardTable();
         cards.Initialize();
         
-        try(FileWriter file = new FileWriter("../src/data/cards.json")){
+        try(FileWriter file = new FileWriter("../src/resources/cards.json")){
             file.write(cards.getData().toString());
             file.flush();
             System.out.println(cards.getData());

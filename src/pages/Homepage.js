@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import SectionTitle from '../components/SectionTitle';
 import Slider from '../components/Slider';
 import AsideFomBox from '../components/AsideFormBox';
-import data from '../resources/cards.json';
 import CardRenderer from '../jobs/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import History from '../jobs/History';
 import * as pageTitles from '../resources/pageTitles';
+import * as actionCreators from "../store/actionCreators";
+import { connect } from 'react-redux';
 
-export default class Homepage extends Component{
+class Homepage extends Component{
     
     constructor(props){
         super(props);
@@ -17,6 +18,14 @@ export default class Homepage extends Component{
             numberOfFeatured  : 3
         };
     }
+
+    componentDidMount = () =>{
+        // check if data already fetched, if true, don't fetch again
+        // call the function that fetches then stores the data here from action creators
+        if(this.props.data.length < 1){
+            this.props.onLoad();
+        }
+    };
 
     goToProfilesPage = () =>{
         History.push('/profiles');
@@ -32,12 +41,12 @@ export default class Homepage extends Component{
 
                 <section>
                     <SectionTitle> Featured Product Profiles </SectionTitle>
-                    <CardRenderer number={this.state.numberOfFeatured} data={data.cards}/>
+                    <CardRenderer number={this.state.numberOfFeatured} data={this.props.data}/>
                 </section>
 
                 <section>
                     <SectionTitle> Latest Product Profiles </SectionTitle>
-                    <CardRenderer number={3} data={data.cards}/>
+                    <CardRenderer number={3} data={this.props.data}/>
 
                 </section>
                 
@@ -47,3 +56,17 @@ export default class Homepage extends Component{
         );
     }
 }
+
+const mapDispatchToProps = dispatch =>{
+    return {
+        onLoad: () => dispatch(actionCreators.fetchData())
+    };
+};
+
+const mapStateToProps = state =>{
+    return {
+        data : state.data
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
