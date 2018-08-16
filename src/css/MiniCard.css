@@ -30,6 +30,11 @@
     margin-left:20px;
 }
 
+.product-info-container-mini{
+    width: 60%;
+    float: left;
+}
+
 @media only screen and (max-width: 1200px) {
     .mini-card-container {
         width: 47%;
