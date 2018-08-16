@@ -50,12 +50,12 @@ export default class Profile extends Component{
                     <ProfileHeader
                         title = { profileData.title }
                         imgSrc = {images[profileData.image]}
-                        dateOfRelease = { profileData.release_date }
+                        dateOfRelease = { profileData.dateOfRelease }
                         price = { profileData.price }
-                        productLink={ profileData.amazon_link }
+                        productLink={ profileData.link }
                     />
 
-                    <InfoList data={ profileData.technical_info }/>
+                    <InfoList />
 
                     <h4 className="card-content-tittle">Performance in games:</h4>
 
