@@ -10,7 +10,7 @@ const MiniCardRenderer = (props) =>{
             miniCardArray.push (
                 <MiniCard 
                     imgSrc = {images[props.data[i].image]}
-                    title = {props.data[i].title}
+                    title = {props.data[i].short_title}
                     dateOfRelease = {props.data[i].release_date}
                     price = {props.data[i].price}
                     productLink = {props.data[i].amazon_link}
