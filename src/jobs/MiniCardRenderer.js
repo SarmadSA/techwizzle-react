@@ -11,9 +11,9 @@ const MiniCardRenderer = (props) =>{
                 <MiniCard 
                     imgSrc = {images[props.data[i].image]}
                     title = {props.data[i].title}
-                    dateOfRelease = {props.data[i].dateOfRelease}
+                    dateOfRelease = {props.data[i].release_date}
                     price = {props.data[i].price}
-                    productLink = {props.data[i].link} 
+                    productLink = {props.data[i].amazon_link}
                     profileLink = {props.data[i].id}
                     // gamesData = {props.data[i].games}
                 />
