@@ -14,7 +14,7 @@ const CardRenderer = (props) =>{
                         key={cardData.id}
                         id={cardData.id}
                         imgSrc={images[cardData.image]}
-                        title={cardData.title}
+                        title={cardData.short_title}
                         dateOfRelease={cardData.release_date}
                         price={cardData.price}
                         productLink={cardData.amazon_link}
