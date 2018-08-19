@@ -26,40 +26,6 @@ class Profilespage extends Component{
         }
     };
 
-    // randomizeDataOrder = (dataArray) =>{
-    //     const data = [];
-    //
-    //     dataArray.forEach(function (element) {
-    //         let prevNum = null;
-    //         let index = 0;
-    //
-    //         while(index < element.games.length){
-    //             let randomNr = Math.floor(Math.random() * dataArray.length);
-    //
-    //             if(randomNr !== prevNum){
-    //                 // console.log(element.games[randomNr]);
-    //                 // console.log(element.games[index]);
-    //                 element.games[index] = element.games[randomNr];
-    //                 prevNum = randomNr;
-    //                 index++
-    //             }
-    //         }
-    //         console.log(element);
-    //         data.push(element);
-    //     });
-    //
-    //     return data;
-    // };
-    //
-    // // getData = () =>{
-    // //     const data = this.props.data;
-    // //     data.forEach(function(element){
-    // //         this.randomizeDataOrder(element.games);
-    // //     });
-    // //
-    // //     return data;
-    // // };
-
     render(){
         document.title = pageTitles.PROFILES;
         return (
@@ -77,9 +43,46 @@ class Profilespage extends Component{
     }
 }
 
+const contains = (numberArray, number) =>{
+    let found = false;
+    let index = 0;
+
+    while(index < numberArray.length && !found){
+        if(numberArray[index] === number){
+            found = true;
+        }
+        index++;
+    }
+    return found;
+};
+
+const randomizeGamesDataOrder = (dataArray) =>{
+    const data = [];
+
+    dataArray.forEach(function (element) {
+        let numHistory = [];
+        const newGamesArray = [];
+        let index = 0;
+
+        while(index < element.games.length){
+            let randomNr = Math.floor(Math.random() * element.games.length);
+
+            if(!contains(numHistory, randomNr)){
+                newGamesArray.push(element.games[randomNr]);
+                numHistory.push(randomNr);
+                index++;
+            }
+        }
+        element.games = newGamesArray;
+        data.push(element);
+    });
+
+    return data;
+};
+
 const mapStateToProps = state =>{
     return {
-        data : state.data
+        data : randomizeGamesDataOrder(state.data)
     };
 };
 
