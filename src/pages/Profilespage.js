@@ -26,6 +26,40 @@ class Profilespage extends Component{
         }
     };
 
+    // randomizeDataOrder = (dataArray) =>{
+    //     const data = [];
+    //
+    //     dataArray.forEach(function (element) {
+    //         let prevNum = null;
+    //         let index = 0;
+    //
+    //         while(index < element.games.length){
+    //             let randomNr = Math.floor(Math.random() * dataArray.length);
+    //
+    //             if(randomNr !== prevNum){
+    //                 // console.log(element.games[randomNr]);
+    //                 // console.log(element.games[index]);
+    //                 element.games[index] = element.games[randomNr];
+    //                 prevNum = randomNr;
+    //                 index++
+    //             }
+    //         }
+    //         console.log(element);
+    //         data.push(element);
+    //     });
+    //
+    //     return data;
+    // };
+    //
+    // // getData = () =>{
+    // //     const data = this.props.data;
+    // //     data.forEach(function(element){
+    // //         this.randomizeDataOrder(element.games);
+    // //     });
+    // //
+    // //     return data;
+    // // };
+
     render(){
         document.title = pageTitles.PROFILES;
         return (
