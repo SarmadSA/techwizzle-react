@@ -1,11 +1,12 @@
 import React from 'react';
 import GameShowcase from '../components/GameShowcase';
 import ImageImporter from './ImageImporter';
+import FlexErrorBox from "../components/FlexErrorBox";
 
 const GameRenderer = (props) =>{
     const gamesArray = [];
     const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
-    if(props.data){
+    if(props.data && props.data.length > 0){
         for(let i = 0; i < props.number; i++){
             gamesArray.push (
                 <GameShowcase
@@ -18,6 +19,9 @@ const GameRenderer = (props) =>{
                 />
             );
         }
+    }
+    else{
+        gamesArray.push (<FlexErrorBox>No game tests to show!</FlexErrorBox>);
     }
     return gamesArray;
 };

@@ -46,9 +46,11 @@ export default class Card extends Component{
                     Framerates depend on several factors. These results are Average, they may not be 100% accurate,
                     it all depend on build components, especially the CPU. Results achieved using high performance CPU.
                 </InfoBlock>
-                
-                <GameRenderer number={numberOfGames} data={gamesData}/>
-    
+
+                <div className="games-container">
+                    <GameRenderer number={numberOfGames} data={gamesData}/>
+                </div>
+
                 <Link  to={"/profile/" + id} className="more-link">
                     <div className="more-gameresults">
                         More

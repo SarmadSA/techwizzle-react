@@ -69,3 +69,7 @@
 .fa-exclamation-circle:hover{
     color: green;
 }
+
+.games-container{
+    min-height: 300px;
+}
