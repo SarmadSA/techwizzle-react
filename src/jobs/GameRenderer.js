@@ -7,7 +7,19 @@ const GameRenderer = (props) =>{
     const gamesArray = [];
     const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
     if(props.data && props.data.length > 0){
-        for(let i = 0; i < props.number; i++){
+        if(props.data.length > props.number){
+            renderGames(props.number);
+        }
+        else{
+            renderGames(props.data.length);
+        }
+    }
+    else{
+        gamesArray.push (<FlexErrorBox>No game tests to show!</FlexErrorBox>);
+    }
+
+    function renderGames(number){
+        for(let i = 0; i < number; i++){
             gamesArray.push (
                 <GameShowcase
                     // key={props.data[i].uid}
@@ -15,14 +27,12 @@ const GameRenderer = (props) =>{
                     title = {props.data[i].title}
                     settings = {props.data[i].settings}
                     resolution = {props.data[i].resolution}
-                    fps = {props.data[i].fps} 
+                    fps = {props.data[i].fps}
                 />
             );
         }
     }
-    else{
-        gamesArray.push (<FlexErrorBox>No game tests to show!</FlexErrorBox>);
-    }
+
     return gamesArray;
 };
 
