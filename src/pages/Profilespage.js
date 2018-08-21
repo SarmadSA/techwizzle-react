@@ -4,19 +4,20 @@ import SearchForm from '../components/SearchForm';
 import CardRenderer from '../jobs/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import { connect } from 'react-redux';
+import { profilesPageOptions } from '../resources/initStateConsts';
 import * as pageTitles from '../resources/pageTitles';
 
 class Profilespage extends Component{
     constructor(props){
         super(props);
         this.state = {
-            numberOfCards: 3
+            numberOfCards: profilesPageOptions.initialCards
         };
     }
 
     loadMore = () =>{
         if(this.state.numberOfCards <= (this.props.data).length){
-            this.setState({numberOfCards: this.state.numberOfCards + 6});
+            this.setState({numberOfCards: this.state.numberOfCards + profilesPageOptions.onLoadMore});
         }
     };
 
