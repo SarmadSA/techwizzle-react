@@ -9,7 +9,7 @@ const ProfileHeader = (props) =>{
                 <img src={imgSrc} alt="" className="thumbnail-img"/> 
             </figure>
             <div className="product-info-container">
-                <h3>{title}</h3>
+                <h1 className="profile-title">{title}</h1>
                 <p>Date Of Release: {dateOfRelease}</p>
                 <p>Average Price: {price} USD</p>
                 <br/>

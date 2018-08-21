@@ -11,7 +11,7 @@ const MiniCard = (props) =>{
                     <img src={imgSrc} alt="gtx" className="thumbnail-img"/> 
                 </figure>
                 <div className="product-info-container-mini">
-                    <h3>{title}</h3>
+                    <h2 className="card-title">{title}</h2>
                     <p>Date Of Release: {dateOfRelease}</p>
                     <p>Average Price: {price} USD</p>
                 </div>
