@@ -7,6 +7,7 @@ import GameRenderer from '../jobs/GameRenderer';
 import SuggestedContent from '../components/SuggestedContent';
 import { Redirect } from 'react-router-dom';
 import * as pageTitles from '../resources/pageTitles';
+import DisqusThread from '../jobs/DisqusThread'
 
 export default class Profile extends Component{
     constructor(props) {
@@ -81,10 +82,14 @@ export default class Profile extends Component{
                         <input className="profile-btn" type="submit" disabled value="Report correction" style={{background: "gray"}}/>
                         <input className="profile-btn" type="submit" disabled value="Edit profile" style={{background: "gray"}}/>
                     </div>
+
                 </section>
 
                 <SuggestedContent number={4} data={data.cards}/>
-
+                {/*you need to clear: both ?*/}
+                <div >
+                    <DisqusThread />
+                </div>
             </div>
         );
     }
