@@ -25,7 +25,8 @@ export default class Homepage extends Component{
 
     render(){
         document.title = pageTitles.HOME;
-        
+        const reversedData = (data.cards).slice().reverse();
+
         return (
             <div>
                 <Slider />
@@ -38,7 +39,7 @@ export default class Homepage extends Component{
 
                 <section>
                     <SectionTitle> Latest Product Profiles </SectionTitle>
-                    <CardRenderer number={homePageOptions.numberOfLatest} data={data.cards}/>
+                    <CardRenderer number={homePageOptions.numberOfLatest} data={reversedData}/>
 
                 </section>
                 
