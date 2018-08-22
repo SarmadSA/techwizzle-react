@@ -27,3 +27,8 @@ export const profilesPageOptions ={
     initialCards: 6,
     onLoadMore: 6
 };
+
+export const homePageOptions ={
+    numberOfFeatured: 6,
+    numberOfLatest: 3
+};

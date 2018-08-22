@@ -6,6 +6,7 @@ import data from '../resources/cards.json';
 import CardRenderer from '../jobs/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import History from '../jobs/History';
+import { homePageOptions } from '../resources/initStateConsts';
 import * as pageTitles from '../resources/pageTitles';
 
 export default class Homepage extends Component{
@@ -14,7 +15,7 @@ export default class Homepage extends Component{
         super(props);
         this.state={
             //If page size is enough for 3 display 3, else display 2 or 4.
-            numberOfFeatured  : 3
+            // numberOfFeatured  : homePageOptions.numberOfFeatured
         };
     }
 
@@ -32,12 +33,12 @@ export default class Homepage extends Component{
 
                 <section>
                     <SectionTitle> Featured Product Profiles </SectionTitle>
-                    <CardRenderer number={this.state.numberOfFeatured} data={data.cards}/>
+                    <CardRenderer number={homePageOptions.numberOfFeatured} data={data.cards}/>
                 </section>
 
                 <section>
                     <SectionTitle> Latest Product Profiles </SectionTitle>
-                    <CardRenderer number={3} data={data.cards}/>
+                    <CardRenderer number={homePageOptions.numberOfLatest} data={data.cards}/>
 
                 </section>
                 
