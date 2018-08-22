@@ -1,1 +1,466 @@
-{"cards":[{"image":"gtx1060.png","short_title":"MSI GTX 1060 6GB","technical_info":{"memory_interface_width":"192-bit","memory_clock_speed":"8008 MHz","standard_memory_config":"6 GB GDDR5","cuda_cores":"1280","memory_bandwidth":"192","base_clock":"1506 MHz","id":"1","card_id":"1","boost_clock":"1708 MHz"},"release_date":"2016-07-19","amazon_link":"https://www.amazon.com/MSI-GAMING-GTX-1060-6G/dp/B01IEKYD5U/ref=sr_1_3?ie=UTF8&qid=1530105701&sr=8-3&keywords=msi+gtx+1060","price":"330","games":[{"settings":"Max","image":"gtav.png","fps":"76","id":"1","title":"Grand Theft Auto V","resolution":"1080p","card_id":"1"},{"settings":"Ultra","image":"bf1.png","fps":"87","id":"2","title":"Battlefield 1","resolution":"1080p","card_id":"1"},{"settings":"Max","image":"csgo.png","fps":"182","id":"3","title":"Counter-strike GO","resolution":"1080p","card_id":"1"},{"settings":"Max","image":"twwh.png","fps":"60","id":"13","title":"The Witcher 3: Wild Hunt","resolution":"1080p","card_id":"1"},{"settings":"Max","image":"rotr.png","fps":"79","id":"14","title":"Rise of the Tomb Raider","resolution":"1080p","card_id":"1"},{"settings":"Max","image":"bf5.png","fps":"57","id":"15","title":"Battlefield V","resolution":"1080p","card_id":"1"}],"id":"1","title":"MSI GAMING GeForce GTX 1060 6GB"},{"image":"gtx1070.jpg","short_title":"ASUS GTX 1070 STRIX OC","technical_info":{"memory_interface_width":"256-bit","memory_clock_speed":"8008 MHz","standard_memory_config":"8 GB GDDR5","cuda_cores":"1920","memory_bandwidth":"256","base_clock":"1657 MHz","id":"2","card_id":"2","boost_clock":"1860 MHz"},"release_date":"2016-06-10","amazon_link":"https://www.amazon.com/ASUS-GeForce-STRIX-Graphic-STRIX-GTX1070-O8G-GAMING/dp/B01HDUVJ1I/ref=sr_1_3?ie=UTF8&qid=1534449064&sr=8-3&keywords=asus+gtx+1070","price":"499","games":[{"settings":"Max","image":"gtav.png","fps":"84","id":"4","title":"Grand Theft Auto V","resolution":"1080p","card_id":"2"},{"settings":"Max","image":"bf1.png","fps":"105","id":"5","title":"Battlefield 1","resolution":"1080p","card_id":"2"},{"settings":"Max","image":"csgo.png","fps":"211","id":"6","title":"Counter-strike GO","resolution":"1080p","card_id":"2"},{"settings":"Max","image":"twwh.png","fps":"81","id":"19","title":"The Witcher 3: Wild Hunt","resolution":"1080p","card_id":"2"},{"settings":"Max","image":"rotr.png","fps":"97","id":"20","title":"Rise of the Tomb Raider","resolution":"1080p","card_id":"2"},{"settings":"Max","image":"bf5.png","fps":"73","id":"21","title":"Battlefield V","resolution":"1080p","card_id":"2"}],"id":"2","title":"ASUS GeForce GTX 1070 8GB ROG STRIX OC Edition"},{"image":"gtx1080.png","short_title":"Gigabyte GTX 1080 G1","technical_info":{"memory_interface_width":"256 bit","memory_clock_speed":"10010 MHz","standard_memory_config":"8 GB GDDR5X","cuda_cores":"2560","memory_bandwidth":"256","base_clock":"1721 MHz","id":"3","card_id":"3","boost_clock":"1860 MHz"},"release_date":"2016-06-10","amazon_link":"https://www.amazon.com/Gigabyte-GeForce-GTX-1080-Gaming/dp/B01GJEE9BG/ref=sr_1_2?s=electronics&ie=UTF8&qid=1534449818&sr=1-2&keywords=Gigabyte+GTX+1080","price":"499","games":[{"settings":"Max","image":"gtav.png","fps":"98","id":"7","title":"Grand Theft Auto V","resolution":"1080p","card_id":"3"},{"settings":"Ultra","image":"bf1.png","fps":"115","id":"8","title":"Battlefield 1","resolution":"1080p","card_id":"3"},{"settings":"Max","image":"csgo.png","fps":"243","id":"9","title":"Counter-strike GO","resolution":"1080p","card_id":"3"},{"settings":"Max","image":"twwh.png","fps":"95","id":"22","title":"The Witcher 3: Wild Hunt","resolution":"1080p","card_id":"3"},{"settings":"Max","image":"rotr.png","fps":"120","id":"23","title":"Rise of the Tomb Raider","resolution":"1080p","card_id":"3"},{"settings":"Max","image":"bf5.png","fps":"86","id":"24","title":"Battlefield V","resolution":"1080p","card_id":"3"}],"id":"3","title":"Gigabyte GeForce GTX 1080 G1 Gaming 8G"},{"image":"evga1060.jpg","short_title":"EVGA GTX 1060 SC 6GB","technical_info":{"memory_interface_width":"192-bit","memory_clock_speed":"8008 MHz","standard_memory_config":"6 GB GDDR5 SDRAM","cuda_cores":"1280","memory_bandwidth":"192","base_clock":"1607 MHz","id":"4","card_id":"4","boost_clock":"1835 MHz"},"release_date":"2016-07-19","amazon_link":"https://www.amazon.com/EVGA-GeForce-GAMING-Support-06G-P4-6163-KR/dp/B01IPVSLTC/ref=sr_1_3?ie=UTF8&qid=1534450440&sr=8-3&keywords=EVGA+GeForce+GTX+1060+SC","price":"279","games":[{"settings":"Max","image":"gtav.png","fps":"74","id":"10","title":"Grand Theft Auto V","resolution":"1080p","card_id":"4"},{"settings":"Ultra","image":"bf1.png","fps":"85","id":"11","title":"Battlefield 1","resolution":"1080p","card_id":"4"},{"settings":"Max","image":"csgo.png","fps":"177","id":"12","title":"Counter-strike GO","resolution":"1080p","card_id":"4"},{"settings":"Max","image":"twwh.png","fps":"57","id":"16","title":"The Witcher 3: Wild Hunt","resolution":"1080p","card_id":"4"},{"settings":"Max","image":"rotr.png","fps":"77","id":"17","title":"Rise of the Tomb Raider","resolution":"1080p","card_id":"4"},{"settings":"Max","image":"bf5.png","fps":"55","id":"18","title":"Battlefield V","resolution":"1080p","card_id":"4"}],"id":"4","title":"EVGA GeForce GTX 1060 SC GAMING 6GB"},{"image":"gtx1060.png","short_title":"MSI GTX 1060 3GB","technical_info":{"memory_interface_width":"192-bit","memory_clock_speed":"8008 MHz","standard_memory_config":"3 GB GDDR5 SDRAM","cuda_cores":"1152","memory_bandwidth":"192","base_clock":"1594 MHz","id":"5","card_id":"5","boost_clock":"1809 MHz"},"release_date":"2016-08-08","amazon_link":"https://www.amazon.com/MSI-GAMING-GTX-1060-6G/dp/B01KIJ7XQG/ref=sr_1_3?ie=UTF8&qid=1534443742&sr=8-3&keywords=msi%2Bgtx%2B1060&th=1","price":"279","games":[{"settings":"Max","image":"gtav.png","fps":"70","id":"25","title":"Grand Theft Auto V","resolution":"1080p","card_id":"5"},{"settings":"Ultra","image":"bf1.png","fps":"81","id":"26","title":"Battlefield 1","resolution":"1080p","card_id":"5"},{"settings":"Max","image":"csgo.png","fps":"174","id":"29","title":"Counter-strike GO","resolution":"1080p","card_id":"5"},{"settings":"Max","image":"twwh.png","fps":"52","id":"30","title":"The Witcher 3: Wild Hunt","resolution":"1080p","card_id":"5"},{"settings":"Max","image":"rotr.png","fps":"73","id":"31","title":"Rise of the Tomb Raider","resolution":"1080p","card_id":"5"},{"settings":"Max","image":"bf5.png","fps":"52","id":"32","title":"Battlefield V","resolution":"1080p","card_id":"5"}],"id":"5","title":"MSI GAMING GeForce GTX 1060 3GB"},{"image":"msigtx1050.jpg","short_title":"MSI GTX 1050 2GT OC 2GB","technical_info":{"memory_interface_width":"128-bit","memory_clock_speed":"7008 GHz","standard_memory_config":"2 GB GDDR5 SDRAM","cuda_cores":"640","memory_bandwidth":"128","base_clock":"1404 MHz","id":"6","card_id":"6","boost_clock":"1518 MHz"},"release_date":"2016-10-25","amazon_link":"https://www.amazon.com/MSI-GTX-1050-OC-2GT/dp/B01MFB3SGY/ref=sr_1_3?s=electronics&ie=UTF8&qid=1534450773&sr=1-3&keywords=msi%2Bgtx%2B1050&th=1","price":"145","games":[{"settings":"Max","image":"gtav.png","fps":"61","id":"33","title":"Grand Theft Auto V","resolution":"1080p","card_id":"6"},{"settings":"Ultra","image":"bf1.png","fps":"62","id":"34","title":"Battlefield 1","resolution":"1080p","card_id":"6"},{"settings":"Max","image":"csgo.png","fps":"144","id":"35","title":"Counter-strike GO","resolution":"1080p","card_id":"6"},{"settings":"Max","image":"twwh.png","fps":"35","id":"36","title":"The Witcher 3: Wild Hunt","resolution":"1080p","card_id":"6"},{"settings":"Max","image":"rotr.png","fps":"41","id":"37","title":"Rise of the Tomb Raider","resolution":"1080p","card_id":"6"},{"settings":"Max","image":"bf5.png","fps":"43","id":"38","title":"Battlefield V","resolution":"1080p","card_id":"6"}],"id":"6","title":"MSI GAMING GeForce GTX 1050 2GB 2GT OC"}]}
+{
+  "cards": [
+    {
+      "image": "gtx1060.png",
+      "short_title": "MSI GTX 1060 6GB",
+      "technical_info": {
+        "memory_interface_width": "192-bit",
+        "memory_clock_speed": "8008 MHz",
+        "standard_memory_config": "6 GB GDDR5",
+        "cuda_cores": "1280",
+        "memory_bandwidth": "192",
+        "base_clock": "1506 MHz",
+        "id": "1",
+        "card_id": "1",
+        "boost_clock": "1708 MHz"
+      },
+      "release_date": "2016-07-19",
+      "amazon_link": "https://amzn.to/2OWGG4z",
+      "price": "330",
+      "games": [
+        {
+          "settings": "Max",
+          "image": "gtav.png",
+          "fps": "76",
+          "id": "1",
+          "title": "Grand Theft Auto V",
+          "resolution": "1080p",
+          "card_id": "1"
+        },
+        {
+          "settings": "Ultra",
+          "image": "bf1.png",
+          "fps": "87",
+          "id": "2",
+          "title": "Battlefield 1",
+          "resolution": "1080p",
+          "card_id": "1"
+        },
+        {
+          "settings": "Max",
+          "image": "csgo.png",
+          "fps": "182",
+          "id": "3",
+          "title": "Counter-strike GO",
+          "resolution": "1080p",
+          "card_id": "1"
+        },
+        {
+          "settings": "Max",
+          "image": "twwh.png",
+          "fps": "60",
+          "id": "13",
+          "title": "The Witcher 3: Wild Hunt",
+          "resolution": "1080p",
+          "card_id": "1"
+        },
+        {
+          "settings": "Max",
+          "image": "rotr.png",
+          "fps": "79",
+          "id": "14",
+          "title": "Rise of the Tomb Raider",
+          "resolution": "1080p",
+          "card_id": "1"
+        },
+        {
+          "settings": "Max",
+          "image": "bf5.png",
+          "fps": "57",
+          "id": "15",
+          "title": "Battlefield V",
+          "resolution": "1080p",
+          "card_id": "1"
+        }
+      ],
+      "id": "1",
+      "title": "MSI GAMING GeForce GTX 1060 6GB",
+      "external_image": "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01IEKYD5U&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20"
+    },
+    {
+      "image": "gtx1070.jpg",
+      "short_title": "ASUS GTX 1070 STRIX OC",
+      "technical_info": {
+        "memory_interface_width": "256-bit",
+        "memory_clock_speed": "8008 MHz",
+        "standard_memory_config": "8 GB GDDR5",
+        "cuda_cores": "1920",
+        "memory_bandwidth": "256",
+        "base_clock": "1657 MHz",
+        "id": "2",
+        "card_id": "2",
+        "boost_clock": "1860 MHz"
+      },
+      "release_date": "2016-06-10",
+      "amazon_link": "https://amzn.to/2N9a7zO",
+      "price": "499",
+      "games": [
+        {
+          "settings": "Max",
+          "image": "gtav.png",
+          "fps": "84",
+          "id": "4",
+          "title": "Grand Theft Auto V",
+          "resolution": "1080p",
+          "card_id": "2"
+        },
+        {
+          "settings": "Max",
+          "image": "bf1.png",
+          "fps": "105",
+          "id": "5",
+          "title": "Battlefield 1",
+          "resolution": "1080p",
+          "card_id": "2"
+        },
+        {
+          "settings": "Max",
+          "image": "csgo.png",
+          "fps": "211",
+          "id": "6",
+          "title": "Counter-strike GO",
+          "resolution": "1080p",
+          "card_id": "2"
+        },
+        {
+          "settings": "Max",
+          "image": "twwh.png",
+          "fps": "81",
+          "id": "19",
+          "title": "The Witcher 3: Wild Hunt",
+          "resolution": "1080p",
+          "card_id": "2"
+        },
+        {
+          "settings": "Max",
+          "image": "rotr.png",
+          "fps": "97",
+          "id": "20",
+          "title": "Rise of the Tomb Raider",
+          "resolution": "1080p",
+          "card_id": "2"
+        },
+        {
+          "settings": "Max",
+          "image": "bf5.png",
+          "fps": "73",
+          "id": "21",
+          "title": "Battlefield V",
+          "resolution": "1080p",
+          "card_id": "2"
+        }
+      ],
+      "id": "2",
+      "title": "ASUS GeForce GTX 1070 8GB ROG STRIX OC Edition",
+      "external_image": "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01HDUVJ1I&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20"
+    },
+    {
+      "image": "gtx1080.png",
+      "short_title": "Gigabyte GTX 1080 G1",
+      "technical_info": {
+        "memory_interface_width": "256 bit",
+        "memory_clock_speed": "10010 MHz",
+        "standard_memory_config": "8 GB GDDR5X",
+        "cuda_cores": "2560",
+        "memory_bandwidth": "256",
+        "base_clock": "1721 MHz",
+        "id": "3",
+        "card_id": "3",
+        "boost_clock": "1860 MHz"
+      },
+      "release_date": "2016-06-10",
+      "amazon_link": "https://amzn.to/2N7lWXs",
+      "price": "499",
+      "games": [
+        {
+          "settings": "Max",
+          "image": "gtav.png",
+          "fps": "98",
+          "id": "7",
+          "title": "Grand Theft Auto V",
+          "resolution": "1080p",
+          "card_id": "3"
+        },
+        {
+          "settings": "Ultra",
+          "image": "bf1.png",
+          "fps": "115",
+          "id": "8",
+          "title": "Battlefield 1",
+          "resolution": "1080p",
+          "card_id": "3"
+        },
+        {
+          "settings": "Max",
+          "image": "csgo.png",
+          "fps": "243",
+          "id": "9",
+          "title": "Counter-strike GO",
+          "resolution": "1080p",
+          "card_id": "3"
+        },
+        {
+          "settings": "Max",
+          "image": "twwh.png",
+          "fps": "95",
+          "id": "22",
+          "title": "The Witcher 3: Wild Hunt",
+          "resolution": "1080p",
+          "card_id": "3"
+        },
+        {
+          "settings": "Max",
+          "image": "rotr.png",
+          "fps": "120",
+          "id": "23",
+          "title": "Rise of the Tomb Raider",
+          "resolution": "1080p",
+          "card_id": "3"
+        },
+        {
+          "settings": "Max",
+          "image": "bf5.png",
+          "fps": "86",
+          "id": "24",
+          "title": "Battlefield V",
+          "resolution": "1080p",
+          "card_id": "3"
+        }
+      ],
+      "id": "3",
+      "title": "Gigabyte GeForce GTX 1080 G1 Gaming 8G",
+      "external_image": "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01GJEE9BG&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20"
+    },
+    {
+      "image": "evga1060.jpg",
+      "short_title": "EVGA GTX 1060 SC 6GB",
+      "technical_info": {
+        "memory_interface_width": "192-bit",
+        "memory_clock_speed": "8008 MHz",
+        "standard_memory_config": "6 GB GDDR5 SDRAM",
+        "cuda_cores": "1280",
+        "memory_bandwidth": "192",
+        "base_clock": "1607 MHz",
+        "id": "4",
+        "card_id": "4",
+        "boost_clock": "1835 MHz"
+      },
+      "release_date": "2016-07-19",
+      "amazon_link": "https://amzn.to/2N4fMqW",
+      "price": "279",
+      "games": [
+        {
+          "settings": "Max",
+          "image": "gtav.png",
+          "fps": "74",
+          "id": "10",
+          "title": "Grand Theft Auto V",
+          "resolution": "1080p",
+          "card_id": "4"
+        },
+        {
+          "settings": "Ultra",
+          "image": "bf1.png",
+          "fps": "85",
+          "id": "11",
+          "title": "Battlefield 1",
+          "resolution": "1080p",
+          "card_id": "4"
+        },
+        {
+          "settings": "Max",
+          "image": "csgo.png",
+          "fps": "177",
+          "id": "12",
+          "title": "Counter-strike GO",
+          "resolution": "1080p",
+          "card_id": "4"
+        },
+        {
+          "settings": "Max",
+          "image": "twwh.png",
+          "fps": "57",
+          "id": "16",
+          "title": "The Witcher 3: Wild Hunt",
+          "resolution": "1080p",
+          "card_id": "4"
+        },
+        {
+          "settings": "Max",
+          "image": "rotr.png",
+          "fps": "77",
+          "id": "17",
+          "title": "Rise of the Tomb Raider",
+          "resolution": "1080p",
+          "card_id": "4"
+        },
+        {
+          "settings": "Max",
+          "image": "bf5.png",
+          "fps": "55",
+          "id": "18",
+          "title": "Battlefield V",
+          "resolution": "1080p",
+          "card_id": "4"
+        }
+      ],
+      "id": "4",
+      "title": "EVGA GeForce GTX 1060 SC GAMING 6GB",
+      "external_image": "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01IPVSLTC&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20"
+    },
+    {
+      "image": "gtx1060.png",
+      "short_title": "MSI GTX 1060 3GB",
+      "technical_info": {
+        "memory_interface_width": "192-bit",
+        "memory_clock_speed": "8008 MHz",
+        "standard_memory_config": "3 GB GDDR5 SDRAM",
+        "cuda_cores": "1152",
+        "memory_bandwidth": "192",
+        "base_clock": "1594 MHz",
+        "id": "5",
+        "card_id": "5",
+        "boost_clock": "1809 MHz"
+      },
+      "release_date": "2016-08-08",
+      "amazon_link": "https://amzn.to/2wkWyq1",
+      "price": "279",
+      "games": [
+        {
+          "settings": "Max",
+          "image": "gtav.png",
+          "fps": "70",
+          "id": "25",
+          "title": "Grand Theft Auto V",
+          "resolution": "1080p",
+          "card_id": "5"
+        },
+        {
+          "settings": "Ultra",
+          "image": "bf1.png",
+          "fps": "81",
+          "id": "26",
+          "title": "Battlefield 1",
+          "resolution": "1080p",
+          "card_id": "5"
+        },
+        {
+          "settings": "Max",
+          "image": "csgo.png",
+          "fps": "174",
+          "id": "29",
+          "title": "Counter-strike GO",
+          "resolution": "1080p",
+          "card_id": "5"
+        },
+        {
+          "settings": "Max",
+          "image": "twwh.png",
+          "fps": "52",
+          "id": "30",
+          "title": "The Witcher 3: Wild Hunt",
+          "resolution": "1080p",
+          "card_id": "5"
+        },
+        {
+          "settings": "Max",
+          "image": "rotr.png",
+          "fps": "73",
+          "id": "31",
+          "title": "Rise of the Tomb Raider",
+          "resolution": "1080p",
+          "card_id": "5"
+        },
+        {
+          "settings": "Max",
+          "image": "bf5.png",
+          "fps": "52",
+          "id": "32",
+          "title": "Battlefield V",
+          "resolution": "1080p",
+          "card_id": "5"
+        }
+      ],
+      "id": "5",
+      "title": "MSI GAMING GeForce GTX 1060 3GB",
+      "external_image": "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01KIJ7XQG&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20"
+    },
+    {
+      "image": "msigtx1050.jpg",
+      "short_title": "MSI GTX 1050 2GT OC 2GB",
+      "technical_info": {
+        "memory_interface_width": "128-bit",
+        "memory_clock_speed": "7008 GHz",
+        "standard_memory_config": "2 GB GDDR5 SDRAM",
+        "cuda_cores": "640",
+        "memory_bandwidth": "128",
+        "base_clock": "1404 MHz",
+        "id": "6",
+        "card_id": "6",
+        "boost_clock": "1518 MHz"
+      },
+      "release_date": "2016-10-25",
+      "amazon_link": "https://amzn.to/2nYqEvx",
+      "price": "145",
+      "games": [
+        {
+          "settings": "Max",
+          "image": "gtav.png",
+          "fps": "61",
+          "id": "33",
+          "title": "Grand Theft Auto V",
+          "resolution": "1080p",
+          "card_id": "6"
+        },
+        {
+          "settings": "Ultra",
+          "image": "bf1.png",
+          "fps": "62",
+          "id": "34",
+          "title": "Battlefield 1",
+          "resolution": "1080p",
+          "card_id": "6"
+        },
+        {
+          "settings": "Max",
+          "image": "csgo.png",
+          "fps": "144",
+          "id": "35",
+          "title": "Counter-strike GO",
+          "resolution": "1080p",
+          "card_id": "6"
+        },
+        {
+          "settings": "Max",
+          "image": "twwh.png",
+          "fps": "35",
+          "id": "36",
+          "title": "The Witcher 3: Wild Hunt",
+          "resolution": "1080p",
+          "card_id": "6"
+        },
+        {
+          "settings": "Max",
+          "image": "rotr.png",
+          "fps": "41",
+          "id": "37",
+          "title": "Rise of the Tomb Raider",
+          "resolution": "1080p",
+          "card_id": "6"
+        },
+        {
+          "settings": "Max",
+          "image": "bf5.png",
+          "fps": "43",
+          "id": "38",
+          "title": "Battlefield V",
+          "resolution": "1080p",
+          "card_id": "6"
+        }
+      ],
+      "id": "6",
+      "title": "MSI GAMING GeForce GTX 1050 2GB 2GT OC",
+      "external_image": "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01MFB3SGY&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20"
+    }
+  ]
+}
