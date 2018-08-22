@@ -50,7 +50,7 @@ export default class Profile extends Component{
                 <section className="profile-section">
                     <ProfileHeader
                         title = { profileData.title }
-                        imgSrc = {images[profileData.image]}
+                        imgSrc = { profileData.external_image ? profileData.external_image : images[profileData.image] }
                         dateOfRelease = { profileData.release_date }
                         price = { profileData.price }
                         productLink={ profileData.amazon_link }

@@ -9,7 +9,7 @@ const MiniCardRenderer = (props) =>{
         for(let i = 0; i < props.number; i++){
             miniCardArray.push (
                 <MiniCard 
-                    imgSrc = {images[props.data[i].image]}
+                    imgSrc = {props.data[i].external_image? props.data[i].external_image: images[props.data[i].image]}
                     title = {props.data[i].short_title}
                     dateOfRelease = {props.data[i].release_date}
                     price = {props.data[i].price}
