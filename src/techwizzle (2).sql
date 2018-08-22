@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22. Aug, 2018 00:11 AM
+-- Generation Time: 22. Aug, 2018 14:00 PM
 -- Server-versjon: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -35,20 +35,21 @@ CREATE TABLE `cards` (
   `release_date` date DEFAULT NULL,
   `price` int(11) NOT NULL,
   `amazon_link` varchar(1000) DEFAULT NULL,
-  `image` varchar(32) DEFAULT NULL
+  `image` varchar(32) DEFAULT NULL,
+  `external_image` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dataark for tabell `cards`
 --
 
-INSERT INTO `cards` (`id`, `title`, `short_title`, `release_date`, `price`, `amazon_link`, `image`) VALUES
-(1, 'MSI GAMING GeForce GTX 1060 6GB', 'MSI GTX 1060 6GB', '2016-07-19', 330, 'https://www.amazon.com/MSI-GAMING-GTX-1060-6G/dp/B01IEKYD5U/ref=sr_1_3?ie=UTF8&qid=1530105701&sr=8-3&keywords=msi+gtx+1060', 'gtx1060.png'),
-(2, 'ASUS GeForce GTX 1070 8GB ROG STRIX OC Edition', 'ASUS GTX 1070 STRIX OC', '2016-06-10', 499, 'https://www.amazon.com/ASUS-GeForce-STRIX-Graphic-STRIX-GTX1070-O8G-GAMING/dp/B01HDUVJ1I/ref=sr_1_3?ie=UTF8&qid=1534449064&sr=8-3&keywords=asus+gtx+1070', 'gtx1070.jpg'),
-(3, 'Gigabyte GeForce GTX 1080 G1 Gaming 8G', 'Gigabyte GTX 1080 G1', '2016-06-10', 499, 'https://www.amazon.com/Gigabyte-GeForce-GTX-1080-Gaming/dp/B01GJEE9BG/ref=sr_1_2?s=electronics&ie=UTF8&qid=1534449818&sr=1-2&keywords=Gigabyte+GTX+1080', 'gtx1080.png'),
-(4, 'EVGA GeForce GTX 1060 SC GAMING 6GB', 'EVGA GTX 1060 SC 6GB', '2016-07-19', 279, 'https://www.amazon.com/EVGA-GeForce-GAMING-Support-06G-P4-6163-KR/dp/B01IPVSLTC/ref=sr_1_3?ie=UTF8&qid=1534450440&sr=8-3&keywords=EVGA+GeForce+GTX+1060+SC', 'evga1060.jpg'),
-(5, 'MSI GAMING GeForce GTX 1060 3GB', 'MSI GTX 1060 3GB', '2016-08-08', 279, 'https://www.amazon.com/MSI-GAMING-GTX-1060-6G/dp/B01KIJ7XQG/ref=sr_1_3?ie=UTF8&qid=1534443742&sr=8-3&keywords=msi%2Bgtx%2B1060&th=1', 'gtx1060.png'),
-(6, 'MSI GAMING GeForce GTX 1050 2GB 2GT OC', 'MSI GTX 1050 2GT OC 2GB', '2016-10-25', 145, 'https://www.amazon.com/MSI-GTX-1050-OC-2GT/dp/B01MFB3SGY/ref=sr_1_3?s=electronics&ie=UTF8&qid=1534450773&sr=1-3&keywords=msi%2Bgtx%2B1050&th=1', 'msigtx1050.jpg');
+INSERT INTO `cards` (`id`, `title`, `short_title`, `release_date`, `price`, `amazon_link`, `image`, `external_image`) VALUES
+(1, 'MSI GAMING GeForce GTX 1060 6GB', 'MSI GTX 1060 6GB', '2016-07-19', 330, 'https://amzn.to/2OWGG4z', 'gtx1060.png', '//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01IEKYD5U&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20'),
+(2, 'ASUS GeForce GTX 1070 8GB ROG STRIX OC Edition', 'ASUS GTX 1070 STRIX OC', '2016-06-10', 499, 'https://amzn.to/2N9a7zO', 'gtx1070.jpg', '//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01HDUVJ1I&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20'),
+(3, 'Gigabyte GeForce GTX 1080 G1 Gaming 8G', 'Gigabyte GTX 1080 G1', '2016-06-10', 499, 'https://amzn.to/2N7lWXs', 'gtx1080.png', '//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01GJEE9BG&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20'),
+(4, 'EVGA GeForce GTX 1060 SC GAMING 6GB', 'EVGA GTX 1060 SC 6GB', '2016-07-19', 279, 'https://amzn.to/2N4fMqW', 'evga1060.jpg', '//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01IPVSLTC&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20'),
+(5, 'MSI GAMING GeForce GTX 1060 3GB', 'MSI GTX 1060 3GB', '2016-08-08', 279, 'https://amzn.to/2wkWyq1', 'gtx1060.png', '//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01KIJ7XQG&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20'),
+(6, 'MSI GAMING GeForce GTX 1050 2GB 2GT OC', 'MSI GTX 1050 2GT OC 2GB', '2016-10-25', 145, 'https://amzn.to/2nYqEvx', 'msigtx1050.jpg', '//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01MFB3SGY&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=techwizzle-20');
 
 -- --------------------------------------------------------
 
