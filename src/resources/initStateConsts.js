@@ -30,5 +30,5 @@ export const profilesPageOptions ={
 
 export const homePageOptions ={
     numberOfFeatured: 6,
-    numberOfLatest: 3
+    numberOfLatest: 6
 };
