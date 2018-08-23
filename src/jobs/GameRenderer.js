@@ -15,7 +15,7 @@ const GameRenderer = (props) =>{
         }
     }
     else{
-        gamesArray.push (<FlexErrorBox>No game tests to show!</FlexErrorBox>);
+        gamesArray.push (<FlexErrorBox>No game tests available!</FlexErrorBox>);
     }
 
     function renderGames(number){
