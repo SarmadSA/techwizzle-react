@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Techwizzle.com, search, find and compare PC hardware easily.
+
 ![Techwizzle image](https://trello-attachments.s3.amazonaws.com/5b2655075b2844dfff50865c/5b5f24e14dc886354ae2c63f/7623a1dc2f70a4a8045a5300cfc33527/found_games_fps.PNG)
 
 
