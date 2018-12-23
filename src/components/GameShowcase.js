@@ -11,7 +11,7 @@ const GameShowcase = (props) =>{
             </figure>
 
             <div className="game-results-container">
-                <p className="game-result">{title}</p>
+                <h3 className="game-result">{title}</h3>
                 <p className="game-result">{settings} settings - {resolution}</p>
             </div>
             

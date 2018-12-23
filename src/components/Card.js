@@ -43,12 +43,14 @@ export default class Card extends Component{
                 </h4>
     
                 <InfoBlock style={{display: this.state.infoBlockDisplay}}>
-                    Game results are average results, they may not be 100% accurate. FPS will always depend on build components as a whole,
-                    specially the CPU. Results achieved using high performance CPU that does not bottleneck the GPU.
+                    Framerates depend on several factors. These results are Average, they may not be 100% accurate,
+                    it all depend on build components, especially the CPU. Results achieved using high performance CPU.
                 </InfoBlock>
-                
-                <GameRenderer number={numberOfGames} data={gamesData}/>
-    
+
+                <div className="games-container">
+                    <GameRenderer number={numberOfGames} data={gamesData}/>
+                </div>
+
                 <Link  to={"/profile/" + id} className="more-link">
                     <div className="more-gameresults">
                         More

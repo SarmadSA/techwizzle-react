@@ -7,17 +7,17 @@ const CardRenderer = (props) =>{
     const cards = [];
     if(props.data){
         for(let i = 0; i < props.number; i++){
-            const cardData = props.data[i];  
+            const cardData = props.data[i];
             if(cardData){
                 cards.push(
                     <Card
                         key={cardData.id}
                         id={cardData.id}
-                        imgSrc={images[cardData.image]}
-                        title={cardData.title}
-                        dateOfRelease={cardData.dateOfRelease}
+                        imgSrc={cardData.external_image ? cardData.external_image : images[cardData.image]}
+                        title={cardData.short_title}
+                        dateOfRelease={cardData.release_date}
                         price={cardData.price}
-                        productLink={cardData.link}
+                        productLink={cardData.amazon_link}
                         profileLink={"/profile/" + cardData.id}
                         gamesData={cardData.games}
                     />

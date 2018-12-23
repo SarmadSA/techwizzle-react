@@ -9,11 +9,11 @@ const MiniCardRenderer = (props) =>{
         for(let i = 0; i < props.number; i++){
             miniCardArray.push (
                 <MiniCard 
-                    imgSrc = {images[props.data[i].image]}
-                    title = {props.data[i].title}
-                    dateOfRelease = {props.data[i].dateOfRelease}
+                    imgSrc = {props.data[i].external_image? props.data[i].external_image: images[props.data[i].image]}
+                    title = {props.data[i].short_title}
+                    dateOfRelease = {props.data[i].release_date}
                     price = {props.data[i].price}
-                    productLink = {props.data[i].link} 
+                    productLink = {props.data[i].amazon_link}
                     profileLink = {props.data[i].id}
                     // gamesData = {props.data[i].games}
                 />

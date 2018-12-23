@@ -35,7 +35,7 @@
 }
 
 .product-info-container{
-    width: 60%;
+    width: 67%;
     float: left;
 }
 
@@ -125,4 +125,8 @@
 .profile-input-box{
     width: 95%;
     margin: auto;
+}
+
+.card-title{
+    font-size: 19px;
 }

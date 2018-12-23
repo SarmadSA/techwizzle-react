@@ -5,6 +5,7 @@ import AsideFomBox from '../components/AsideFormBox';
 import CardRenderer from '../jobs/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import History from '../jobs/History';
+import { homePageOptions } from '../resources/initStateConsts';
 import * as pageTitles from '../resources/pageTitles';
 import * as actionCreators from "../store/actionCreators";
 import { connect } from 'react-redux';
@@ -15,7 +16,8 @@ class Homepage extends Component{
         super(props);
         this.state={
             //If page size is enough for 3 display 3, else display 2 or 4.
-            numberOfFeatured  : 3
+            numberOfFeatured  : homePageOptions.numberOfFeatured,
+            numberOfLatest  : homePageOptions.numberOfLatest
         };
     }
 
@@ -33,7 +35,7 @@ class Homepage extends Component{
 
     render(){
         document.title = pageTitles.HOME;
-        
+        //const reversedData = (data.cards).slice().reverse();
         return (
             <div>
                 <Slider />
@@ -46,8 +48,7 @@ class Homepage extends Component{
 
                 <section>
                     <SectionTitle> Latest Product Profiles </SectionTitle>
-                    <CardRenderer number={3} data={this.props.data}/>
-
+                    <CardRenderer number={this.state.numberOfLatest} data={this.props.data}/>
                 </section>
                 
                 <LoadButton clickHandler={this.goToProfilesPage}>Load More</LoadButton>

@@ -5,6 +5,7 @@ import CardRenderer from '../jobs/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import Loading from '../components/Loading';
 import { connect } from 'react-redux';
+import { profilesPageOptions } from '../resources/initStateConsts';
 import * as pageTitles from '../resources/pageTitles';
 import * as actionCreators from "../store/actionCreators";
 import ErrorBox from "../components/ErrorBox";
@@ -13,7 +14,7 @@ class Profilespage extends Component{
     constructor(props){
         super(props);
         this.state = {
-            numberOfCards: 3
+            numberOfCards: profilesPageOptions.initialCards
         };
     }
 
@@ -27,7 +28,7 @@ class Profilespage extends Component{
 
     loadMore = () =>{
         if(this.state.numberOfCards <= (this.props.data).length){
-            this.setState({numberOfCards: this.state.numberOfCards + 6});
+            this.setState({numberOfCards: this.state.numberOfCards + profilesPageOptions.onLoadMore});
         }
     };
 
@@ -86,6 +87,44 @@ const mapDispatchToProps = dispatch =>{
         onLoad: () => dispatch(actionCreators.fetchData())
     };
 };
+
+// const contains = (numberArray, number) =>{
+//     let found = false;
+//     let index = 0;
+//
+//     while(index < numberArray.length && !found){
+//         if(numberArray[index] === number){
+//             found = true;
+//         }
+//         index++;
+//     }
+//     return found;
+// };
+//
+// const randomizeGamesDataOrder = (dataArray) =>{
+//     const data = [];
+//
+//     dataArray.forEach(function (element) {
+//         let numHistory = [];
+//         const newGamesArray = [];
+//         let index = 0;
+//
+//         while(index < element.games.length){
+//             let randomNr = Math.floor(Math.random() * element.games.length);
+//
+//             if(!contains(numHistory, randomNr)){
+//                 newGamesArray.push(element.games[randomNr]);
+//                 numHistory.push(randomNr);
+//                 index++;
+//             }
+//         }
+//         element.games = newGamesArray;
+//         data.push(element);
+//     });
+//
+//     return data;
+// };
+
 
 const mapStateToProps = state =>{
     return {

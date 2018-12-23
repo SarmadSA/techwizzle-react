@@ -7,6 +7,7 @@ import GameRenderer from '../jobs/GameRenderer';
 import SuggestedContent from '../components/SuggestedContent';
 import { Redirect } from 'react-router-dom';
 import * as pageTitles from '../resources/pageTitles';
+import DisqusThread from '../jobs/DisqusThread'
 
 export default class Profile extends Component{
     constructor(props) {
@@ -49,13 +50,13 @@ export default class Profile extends Component{
                 <section className="profile-section">
                     <ProfileHeader
                         title = { profileData.title }
-                        imgSrc = {images[profileData.image]}
-                        dateOfRelease = { profileData.dateOfRelease }
+                        imgSrc = { profileData.external_image ? profileData.external_image : images[profileData.image] }
+                        dateOfRelease = { profileData.release_date }
                         price = { profileData.price }
-                        productLink={ profileData.link }
+                        productLink={ profileData.amazon_link }
                     />
 
-                    <InfoList />
+                    <InfoList data={ profileData.technical_info }/>
 
                     <h4 className="card-content-tittle">Performance in games:</h4>
 
@@ -81,10 +82,14 @@ export default class Profile extends Component{
                         <input className="profile-btn" type="submit" disabled value="Report correction" style={{background: "gray"}}/>
                         <input className="profile-btn" type="submit" disabled value="Edit profile" style={{background: "gray"}}/>
                     </div>
+
                 </section>
 
                 <SuggestedContent number={4} data={data.cards}/>
-
+                {/*you need to clear: both ?*/}
+                <div >
+                    <DisqusThread />
+                </div>
             </div>
         );
     }
