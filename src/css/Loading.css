@@ -1,14 +1,18 @@
 .loading-component-container{
     align-content: center;
     position: absolute;
-    top: calc(50% - 75px); /*75px is half height of div*/
-    left: calc(50% - 75px); /*75px is half width of div*/
+    top: calc(50% - 150px); /*150px is half height of div*/
+    left: calc(50% - 150px); /*150px is half width of div*/
 }
 
 .loading-icon-svg{
     height: 300px;
     width: 300px;
     padding: 40px;
+}
+
+.loading-icon-group{
+    transform: translate(25%,25%);
 }
 
 .loading-icon{
