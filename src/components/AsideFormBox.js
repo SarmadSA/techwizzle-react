@@ -18,6 +18,9 @@ const AsideFormBox = (props) =>{
                 <p>Enter your email address:</p>
                 <input className="email-input focus-style" type="email" placeholder="Email.." disabled/>
                 <input className="submit-btn" type="submit" value="Subscribe" disabled style={disabledButton}/>
+                <br />
+                <br />
+                <p>By subscribing you will receive. We never share your email</p>
             </form>
         </aside>
     );
