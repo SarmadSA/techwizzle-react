@@ -86,8 +86,8 @@ export default class Profile extends Component{
                 </section>
 
                 <SuggestedContent number={4} data={data.cards}/>
-                {/*you need to clear: both ?*/}
-                <div >
+
+                <div id="disqus-thread">
                     <DisqusThread />
                 </div>
             </div>

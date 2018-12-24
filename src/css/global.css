@@ -130,3 +130,11 @@
 .card-title{
     font-size: 19px;
 }
+
+#disqus-thread{
+    background: whitesmoke;
+    width: 70%;
+    padding: 30px;
+    /*border-top: 2px solid #22B473;*/
+    clear: both;
+}
