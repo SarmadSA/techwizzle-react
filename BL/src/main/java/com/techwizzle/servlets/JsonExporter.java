@@ -19,6 +19,10 @@ public class JsonExporter extends HttpServlet {
         DBConnect connection = new DBConnect();
 
         response.setContentType("application/json");
+
+        //TODO: set the second parameter to only authorized clients
+        response.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+
         PrintWriter out = response.getWriter();
 
         String query = "SELECT * FROM CARDS";
