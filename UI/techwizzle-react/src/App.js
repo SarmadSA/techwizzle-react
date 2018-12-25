@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Router } from 'react-router-dom';
-import ScrollToTop from './jobs/ScrollToTop';
-import History from './jobs/History';
+import ScrollToTop from './utils/ScrollToTop';
+import History from './utils/History';
 import Routes from './components/Routes';
 import './css/App.css';
 

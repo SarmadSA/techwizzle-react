@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SectionTitle from '../components/SectionTitle';
 import SearchForm from '../components/SearchForm';
-import CardRenderer from '../jobs/CardRenderer';
+import CardRenderer from '../utils/CardRenderer';
 import LoadButton from '../components/LoadButton';
 import Loading from '../components/Loading';
 import { connect } from 'react-redux';

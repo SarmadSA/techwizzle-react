@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/SuggestedContent.css';
-import MiniCardRenderer from '../jobs/MiniCardRenderer';
+import MiniCardRenderer from '../utils/MiniCardRenderer';
 
 const SuggestedContent = (props) =>{
     return (

@@ -11,7 +11,7 @@ export const storeData = (data) =>{
 
 export const fetchData = () =>{
     return dispatch =>{
-        axios.get("http://localhost/TW/backend/dbConnect.php")
+        axios.get("http://localhost:8080/BL/getJsonData")
             .then(response => {
                 console.log(response.data);
                 console.log(response.data[0].title);

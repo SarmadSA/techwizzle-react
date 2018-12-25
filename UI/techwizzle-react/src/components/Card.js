@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CardHeader from './CardHeader';
-import GameRenderer from '../jobs/GameRenderer'
+import GameRenderer from '../utils/GameRenderer'
 import '../css/Card.css';
 import {Link} from 'react-router-dom';
 import InfoBlock from './InfoBlock';
