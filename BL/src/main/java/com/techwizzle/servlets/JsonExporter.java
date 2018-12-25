@@ -18,16 +18,26 @@ public class JsonExporter extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         DBConnect connection = new DBConnect();
 
+        response.setContentType("application/json");
         PrintWriter out = response.getWriter();
 
         String query = "SELECT * FROM CARDS";
         try{
             ResultSet rs = connection.getStatement().executeQuery(query);
-            out.println("there are that many objects: ");
-            out.println(convertToJSON(rs).length());
-            for(int i = 0; i < convertToJSON(rs).length(); i++){
-                out.print("hello");
+            JSONArray jsonArray = convertToJSON(rs);
+
+            //Print all objects inside of JSON array
+            out.print("[");
+            for(int i = 0; i < jsonArray.length(); i++){
+                out.print(jsonArray.getJSONObject(i));
+                if(i != jsonArray.length() - 1){ //if not the last element, add comma to separate objects.
+                    out.print(",");
+                }
             }
+            out.print("]");
+
+            out.flush();
+            out.close();
         }
         catch(Exception e){
             System.out.println("Error: " + e);
@@ -41,16 +51,16 @@ public class JsonExporter extends HttpServlet {
      * @return a JSONArray
      * @throws Exception
      */
-    public static JSONArray convertToJSON(ResultSet resultSet)
+    private static JSONArray convertToJSON(ResultSet resultSet)
             throws Exception {
         JSONArray jsonArray = new JSONArray();
         while (resultSet.next()) {
             int total_rows = resultSet.getMetaData().getColumnCount();
+            JSONObject obj = new JSONObject();
             for (int i = 0; i < total_rows; i++) {
-                JSONObject obj = new JSONObject();
                 obj.put(resultSet.getMetaData().getColumnLabel(i + 1).toLowerCase(), resultSet.getObject(i + 1));
-                jsonArray.put(obj);
             }
+            jsonArray.put(obj);
         }
         return jsonArray;
     }
