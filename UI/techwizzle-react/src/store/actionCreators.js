@@ -1,4 +1,5 @@
 import * as actionTypes from './actions';
+import * as API from '../resources/API'
 import axios from 'axios';
 
 export const storeData = (data) =>{
@@ -11,11 +12,11 @@ export const storeData = (data) =>{
 
 export const fetchData = () =>{
     return dispatch =>{
-        axios.get("http://localhost:8080/BL/getData") //TODO: get link from external
+        axios.get(API.GET_DATA)
             .then(response => {
-                console.log(response.data);
-                console.log(response.data[0].title);
                 dispatch(storeData(response.data));
+                //console.log(response.data);
+                //console.log(response.data[0].title);
             })
             .catch(error =>{
                 console.log(error);
