@@ -1,8 +1,8 @@
 package com.techwizzle.utils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
+
+import java.sql.*;
 
 public class DBConnect {
     //Constatnts
@@ -14,6 +14,7 @@ public class DBConnect {
 
     private Connection connection;
     private Statement statement;
+    private ResultSet resultSet;
 
     public DBConnect(){
         try{
@@ -26,7 +27,43 @@ public class DBConnect {
         }
     }
 
-    public Statement getStatement(){
-        return this.statement;
+    public ResultSet executeSQLQuery(String query){
+        try{
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException e){
+            //TODO: handle error
+        }
+        return resultSet;
+    }
+
+
+    public void closeResultSet(){
+        try {
+            if(resultSet != null){
+                resultSet.close();
+            }
+        } catch (SQLException e){
+            //TODO: handle error
+        }
+    }
+
+    public void closeStatement(){
+        try {
+            if(statement != null){
+                statement.close();
+            }
+        } catch (SQLException e){
+            //TODO: handle error
+        }
+    }
+
+    public void closeConnection(){
+        try {
+            if(statement != null){
+                connection.close();
+            }
+        } catch (SQLException e){
+            //TODO: handle error
+        }
     }
 }
