@@ -1,0 +1,21 @@
+.fps-filterer{
+    float: left;
+    width: 45%;
+
+}
+
+.price-filterer{
+    float: right;
+    width: 45%;
+}
+
+.fps-display, .price-display{
+    text-align: center; 
+}
+
+.filterer-options-text{
+    display: block;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+}
