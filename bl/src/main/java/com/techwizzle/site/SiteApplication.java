@@ -8,6 +8,7 @@ public class SiteApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SiteApplication.class, args);
+        System.out.println("Working spring app");
     }
 
 }
