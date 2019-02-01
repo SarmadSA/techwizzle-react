@@ -1,0 +1,140 @@
+.profile-section{
+    float: left;
+    width: 70%;
+    min-height: 1000px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+    box-shadow: 0 6px 37px -11px rgba(0,0,0,0.2);
+    border-top: 2px solid #22B473;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .profile-section {
+        width: 100%;
+    }
+}
+
+.profie-more-info-box{
+    width: 95%;
+    font-size: 17px;
+    margin: 10px auto;
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+.thumbnail-figure{
+    float: left;
+    height: 80px;
+    width: 100px;
+    background-color: transparent;
+    margin-right: 20px;
+}
+
+.product-info-container{
+    width: 67%;
+    float: left;
+}
+
+.product-header-common{
+    width:100%;
+    height: 140px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.custom-link{
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    transition: 0.2s ease;
+}
+
+.custom-link:hover {
+    color: #04b849;
+    text-decoration: underline;
+}
+
+.thumbnail-img{
+    max-height: 100%;
+    max-width: 100%; 
+    /*
+    Always fit to the container (streach):
+    height: 100%;
+    width: 100%; 
+    */
+}
+
+.fa-external-link-alt{
+    font-size: 12px;
+}
+
+.more-info-title{
+    font-size: 21px;
+    margin-bottom: 15px;
+    color: green
+}
+
+.resouce-usage-list{
+    margin-bottom: 15px;
+    margin-left: 30px;
+}
+
+.resouce-usage-list li{
+    list-style-type: circle;
+}
+
+.info-title{
+    margin-bottom: 5px;
+}
+
+.danger{
+    color: red;
+}
+
+.profile-btn{
+    float: right;
+    margin: 15px;
+    padding: 0 10px;
+    transition: 0.4s ease;
+	height: 35px;
+	min-width: 80px;
+	border-style: none;
+	border-radius: 5px;
+    background-color: #0AA320;
+	color: white;
+	text-shadow:none; 
+	box-shadow: none;
+	font-size: 80%;
+    cursor: pointer;
+}
+
+.profile-btn:hover{
+    background-color: #00D700;
+}
+
+.profile-btn:focus{
+	outline: none;
+}
+
+.profile-input-box{
+    width: 95%;
+    margin: auto;
+}
+
+.card-title{
+    font-size: 19px;
+}
+
+#disqus-thread{
+    background: whitesmoke;
+    width: 70%;
+    padding: 30px;
+    /*border-top: 2px solid #22B473;*/
+    clear: both;
+}

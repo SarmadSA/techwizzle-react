@@ -1,0 +1,14 @@
+.suggested-content-container{
+    float: right;
+    width: 27%;
+}
+
+.suggested-content-container h2{
+    color: green;
+}
+
+@media only screen and (max-width: 1200px) {
+    .suggested-content-container {
+        width: 100%;
+    }
+}
