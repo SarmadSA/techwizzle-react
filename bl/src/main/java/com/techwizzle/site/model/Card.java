@@ -1,5 +1,6 @@
 package com.techwizzle.site.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Card {
@@ -16,7 +18,7 @@ public class Card {
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter//@Setter
-    private Integer id;
+    private Long id;
 
     @Size(min = 1, max = 100)
     @NotNull
@@ -28,63 +30,56 @@ public class Card {
     @Getter @Setter
     private String shortTitle;
 
-    @Column(nullable = true)
     @Getter @Setter
     private Date releaseDate;
 
-    @Column(nullable = true)
     @Min(0)
     @Getter @Setter
-    private int averagePrice;
+    private Integer averagePrice;
 
-    @Column(nullable = true)
     @Size(max = 1000)
     @Getter @Setter
     private String amazonLink;
 
-    @Column(nullable = true)
     @Size(max = 150)
     @Getter @Setter
     private String internalImageLink;
 
-    @Column(nullable = true)
     @Size(max = 1000)
     @Getter @Setter
     private String externalImageLink;
 
-    @Column(nullable = true)
     @Min(0)
     @Getter @Setter
-    private int cudaCores;
+    private Integer cudaCores;
 
-    @Column(nullable = true)
     @Min(0)
     @Getter @Setter
-    private int baseClock;
+    private Integer baseClock;
 
-    @Column(nullable = true)
     @Min(0)
     @Getter @Setter
-    private int boostClock;
+    private Integer boostClock;
 
-    @Column(nullable = true)
     @Size(max = 30)
     @Getter @Setter
     private String standardMemoryConfig;
 
-    @Column(nullable = true)
     @Min(0)
     @Getter @Setter
-    private int memoryClockSpeed;
+    private Integer memoryClockSpeed;
 
-    @Column(nullable = true)
     @Min(0)
     @Getter @Setter
-    private int memoryInterfaceWidth;
+    private Integer memoryInterfaceWidth;
 
-    @Column(nullable = true)
     @Min(0)
     @Getter @Setter
-    private int memoryBandwidth;
+    private Integer memoryBandwidth;
+
+    @OneToMany(mappedBy = "card")
+    @JsonIgnoreProperties("card")
+    @Getter @Setter
+    private List<Benchmark> benchmarks;
 
 }
