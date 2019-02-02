@@ -1,5 +1,6 @@
 package com.techwizzle.site.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Game {
@@ -15,7 +17,7 @@ public class Game {
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter//@Setter
-    private Integer id;
+    private Long id;
 
     @Size(min = 1, max = 100)
     @NotNull
@@ -27,18 +29,20 @@ public class Game {
     @Getter @Setter
     private String shortTitle;
 
-    @Column(nullable = true)
     @Getter @Setter
     private Date releaseDate;
 
-    @Column(nullable = true)
     @Size(max = 150)
     @Getter @Setter
     private String internalImageLink;
 
-    @Column(nullable = true)
     @Size(max = 1000)
     @Getter @Setter
     private String externalImageLink;
+
+    @OneToMany(mappedBy = "game")
+    @JsonIgnoreProperties("game")
+    @Getter @Setter
+    private List<Benchmark> benchmarks;
 
 }

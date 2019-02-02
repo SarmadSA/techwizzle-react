@@ -1,5 +1,6 @@
 package com.techwizzle.site.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,39 +16,39 @@ public class Benchmark {
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter//@Setter
-    private Integer id;
+    private Long id;
 
     @ManyToOne
+    @JsonIgnoreProperties("benchmarks")
     @JoinColumn(name="card_id")
     @NotNull
     @Getter @Setter
     private Card card;
 
     @ManyToOne
+    @JsonIgnoreProperties("benchmarks")
     @JoinColumn(name="game_id")
     @NotNull
     @Getter @Setter
     private Game game;
 
-    @Column(nullable = true)
     @Min(0) // fps no less than 0. Negative values not allowed
     @Getter @Setter
-    private int minFps;
+    private Integer minFps;
 
     @Min(0)
     @NotNull
     @Getter @Setter
-    private int avgFps;
+    private Integer avgFps;
 
-    @Column(nullable = true)
     @Min(0)
     @Getter @Setter
-    private int maxFps;
+    private Integer maxFps;
 
     @Min(0)
     @NotNull
     @Getter @Setter
-    private int resolution;
+    private Integer resolution;
 
     @Size(max = 20) //No more than 20 chars.
     @NotNull
