@@ -1,7 +1,7 @@
 package com.techwizzle.site.controllers;
 
-import com.techwizzle.site.model.Card;
-import com.techwizzle.site.services.CardService;
+import com.techwizzle.site.model.Game;
+import com.techwizzle.site.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,20 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/card")
-@CrossOrigin //TODO - allow only authorized domains
-public class CardController {
-
-    private final CardService cardService;
+@CrossOrigin //TODO - Allow only authorized domains
+@RequestMapping("/game")
+public class GameController {
+    private final GameService gameService;
 
     @Autowired
-    public CardController(CardService cardService) {
-        this.cardService = cardService;
+    public GameController(GameService gameService) {
+        this.gameService = gameService;
     }
 
     @GetMapping("/list")
-    public Iterable<Card> listCards(){
-        return cardService.getAllCards();
+    public Iterable<Game> listGames(){
+        return gameService.getAllGames();
     }
-
 }
