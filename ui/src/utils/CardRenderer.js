@@ -13,13 +13,13 @@ const CardRenderer = (props) =>{
                     <Card
                         key={cardData.id}
                         id={cardData.id}
-                        imgSrc={cardData.external_image ? cardData.external_image : images[cardData.image]}
-                        title={cardData.short_title}
+                        imgSrc={cardData.externalImageLink ? cardData.externalImageLink : images[cardData.internalImageLink]}
+                        title={cardData.shortTitle}
                         dateOfRelease={cardData.release_date}
-                        price={cardData.price}
-                        productLink={cardData.amazon_link}
+                        price={cardData.averagePrice}
+                        productLink={cardData.amazonLink}
                         profileLink={"/profile/" + cardData.id}
-                        gamesData={cardData.games}
+                        gamesData={cardData.benchmarks}
                     />
                 );
             }
