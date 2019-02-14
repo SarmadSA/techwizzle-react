@@ -75,10 +75,10 @@ class Profile extends Component{
 
     /************* CONTENT RENDERING FUNCTIONS *************/
 
-    renderCommentSection = () =>{
+    renderCommentSection = (profileData) =>{
         return (
             <div id="disqus-thread">
-                <DisqusThread />
+                <DisqusThread id={profileData.id} title={profileData.title} path={"/profile/" + profileData.id}/>
             </div>
         );
     };
@@ -172,7 +172,7 @@ class Profile extends Component{
                         { this.renderEditingButtons() }
                     </section>
                     { this.renderSuggestedContent(4, this.props.data) }
-                    { this.renderCommentSection() }
+                    { this.renderCommentSection(profileData) }
                 </div>
             );
         }
