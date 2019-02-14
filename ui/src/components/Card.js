@@ -25,7 +25,7 @@ export default class Card extends Component{
     render(){
 
         const numberOfGames = 3;
-        const { id, imgSrc, title, dateOfRelease, price, productLink, profileLink, gamesData } = this.props;
+        const { id, imgSrc, title, dateOfRelease, price, productLink, profileLink, benchmarks } = this.props;
 
         return(
             <div className="card">
@@ -47,9 +47,11 @@ export default class Card extends Component{
                     it all depend on build components, especially the CPU. Results achieved using high performance CPU.
                 </InfoBlock>
 
-                <div className="games-container">
-                    <GameRenderer number={numberOfGames} data={gamesData}/>
+                <div>
+                    <GameRenderer number={numberOfGames} data={benchmarks}/>
                 </div>
+
+                <div className="more-gameresults-copy-invis"></div>
 
                 <Link  to={"/profile/" + id} className="more-link">
                     <div className="more-gameresults">
