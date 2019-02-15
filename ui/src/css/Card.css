@@ -5,10 +5,10 @@
     min-height: 550px;
     margin-right: 1%;
     margin-left: 1%;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     background-color: whitesmoke;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
     height: auto;
@@ -31,8 +31,8 @@
     color: black;
     font-size: 120%;
     cursor: pointer;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 9px;
+	border-bottom-right-radius: 9px;
 	transition: 0.4s ease;
     position: absolute;
     bottom: 0;
