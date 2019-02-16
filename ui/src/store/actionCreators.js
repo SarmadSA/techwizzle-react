@@ -1,5 +1,6 @@
 import * as actionTypes from './actions';
 import axios from 'axios';
+import * as API from '../resources/API';
 
 export const storeData = (data) =>{
     return {
@@ -11,7 +12,7 @@ export const storeData = (data) =>{
 
 export const fetchData = () =>{
     return dispatch =>{
-        axios.get("http://localhost:8080/card/list") //TODO: get link from external
+        axios.get(API.CARDS_URL)
             .then(response => {
                 console.log(response.data);
                 console.log(response.data[0].title);
