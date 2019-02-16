@@ -10,12 +10,12 @@ import * as pageTitles from '../resources/pageTitles';
 import * as actionCreators from "../store/actionCreators";
 import { connect } from 'react-redux';
 
-class Homepage extends Component{
+class HomePage extends Component{
     
     constructor(props){
         super(props);
         this.state={
-            //If page size is enough for 3 display 3, else display 2 or 4.
+            //TODO: If page size is enough for 3 display 3, else display 2 or 4.
             numberOfFeatured  : homePageOptions.numberOfFeatured,
             numberOfLatest  : homePageOptions.numberOfLatest
         };
@@ -70,4 +70,4 @@ const mapStateToProps = state =>{
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
