@@ -1,7 +1,7 @@
 import React from 'react';
 import * as pageTitles from '../resources/pageTitles';
 
-const Comparepage = () =>{
+const ComparePage = () =>{
     document.title = pageTitles.COMPARE;
     return (
         <div>
@@ -12,4 +12,4 @@ const Comparepage = () =>{
     );
 };
 
-export default Comparepage;
+export default ComparePage;

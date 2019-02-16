@@ -3,7 +3,7 @@ import TextBox from '../components/TextBox';
 import AsideFormBox from '../components/AsideFormBox';
 import * as pageTitles from '../resources/pageTitles'
 
-const Aboutpage = () =>{
+const AboutPage = () =>{
     document.title = pageTitles.ABOUT;
     return (
         <div>
@@ -32,4 +32,4 @@ const Aboutpage = () =>{
     );
 };
 
-export default Aboutpage;
+export default AboutPage;
