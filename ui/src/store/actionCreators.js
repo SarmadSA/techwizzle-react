@@ -19,6 +19,7 @@ export const fetchData = () =>{
         }
 
         function onFetchFailure(url, response){
+            //TODO: Handle fetching failure (the loading animation will go forever if failure not handled)
             //this.setState({error: true});
         }
     }
