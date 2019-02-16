@@ -1,24 +1,24 @@
 import React from "react";
 import {Route, Switch} from "react-router-dom";
-import Profilespage from "../pages/Profilespage";
-import Comparepage from "../pages/Comparepage";
-import Aboutpage from "../pages/Aboutpage";
-import Contactpage from "../pages/Contactpage";
+import ProfilesPage from "../pages/ProfilesPage";
+import ComparePage from "../pages/ComparePage";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
 import Profile from "../pages/Profile";
-import Homepage from "../pages/Homepage";
+import HomePage from "../pages/HomePage";
 import NotFoundPage from "../pages/NotFoundPage";
 
 
 const Routes = () =>{
     return(
         <Switch>
-            <Route path="/profiles" exact component={Profilespage}/>
-            <Route path="/compare" exact component={Comparepage}/>
-            <Route path="/about" exact component={Aboutpage}/>
-            <Route path="/contact" exact component={Contactpage}/>
+            <Route path="/profiles" exact component={ProfilesPage}/>
+            <Route path="/compare" exact component={ComparePage}/>
+            <Route path="/about" exact component={AboutPage}/>
+            <Route path="/contact" exact component={ContactPage}/>
             <Route path="/profile/:id" exact component={Profile}/>
-            <Route path="/home" exact component={Homepage}/>
-            <Route path="/" exact component={Homepage}/>
+            <Route path="/home" exact component={HomePage}/>
+            <Route path="/" exact component={HomePage}/>
             <Route render={()=> <NotFoundPage/>}/>
         </Switch>
     );
