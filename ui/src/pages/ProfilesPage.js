@@ -10,7 +10,7 @@ import * as pageTitles from '../resources/pageTitles';
 import * as actionCreators from "../store/actionCreators";
 import ErrorBox from "../components/ErrorBox";
 
-class Profilespage extends Component{
+class ProfilesPage extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -168,4 +168,4 @@ const mapStateToProps = state =>{
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profilespage);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilesPage);
