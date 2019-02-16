@@ -43,6 +43,9 @@ const reducer = (state = initialState, action) =>{
         case actionTypes.SORT:
             //Sort-by code here...
             break;
+        default:
+            //Default here..
+            break;
     }
     return state;
 };
