@@ -1,6 +1,6 @@
 import * as actionTypes from './actions';
-import axios from 'axios';
-import * as API from '../resources/API';
+import {CARDS_URL} from '../resources/API';
+import {executeHttpGet} from "../services/ApiClient";
 
 export const storeData = (data) =>{
     return {
@@ -12,16 +12,15 @@ export const storeData = (data) =>{
 
 export const fetchData = () =>{
     return dispatch =>{
-        axios.get(API.CARDS_URL)
-            .then(response => {
-                console.log(response.data);
-                console.log(response.data[0].title);
-                dispatch(storeData(response.data));
-            })
-            .catch(error =>{
-                console.log(error);
-                //this.setState({error: true});
-            });
+        executeHttpGet(CARDS_URL, onFetchSuccess, onFetchFailure);
+
+        function onFetchSuccess(url, response){
+            dispatch(storeData(response.data));
+        }
+
+        function onFetchFailure(url, response){
+            //this.setState({error: true});
+        }
     }
 };
 
