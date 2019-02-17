@@ -9,6 +9,7 @@ import { homePageOptions } from '../resources/initStateConsts';
 import * as pageTitles from '../resources/pageTitles';
 import * as actionCreators from "../store/actionCreators";
 import { connect } from 'react-redux';
+import {setPageTitle} from "../helpers/helperFunctions";
 
 class HomePage extends Component{
     
@@ -34,7 +35,7 @@ class HomePage extends Component{
     };
 
     render(){
-        document.title = pageTitles.HOME;
+        setPageTitle(pageTitles.HOME);
         //const reversedData = (data.cards).slice().reverse();
         return (
             <div>
