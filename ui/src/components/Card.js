@@ -47,7 +47,7 @@ export default class Card extends Component{
                     it all depend on build components, especially the CPU. Results achieved using high performance CPU.
                 </InfoBlock>
 
-                <div>
+                <div className="games-container">
                     <GameRenderer number={numberOfGames} data={benchmarks}/>
                 </div>
 
