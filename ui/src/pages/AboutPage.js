@@ -1,10 +1,11 @@
 import React from 'react';
 import TextBox from '../components/TextBox';
 import AsideFormBox from '../components/AsideFormBox';
-import * as pageTitles from '../resources/pageTitles'
+import * as pageTitles from '../resources/pageTitles';
+import {setPageTitle} from "../helpers/helperFunctions";
 
 const AboutPage = () =>{
-    document.title = pageTitles.ABOUT;
+    setPageTitle(pageTitles.ABOUT);
     return (
         <div>
             <TextBox title="About">
