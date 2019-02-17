@@ -6,16 +6,16 @@ import GameRenderer from '../utils/GameRenderer';
 import SuggestedContent from '../components/SuggestedContent';
 import { Redirect } from 'react-router-dom';
 import * as pageTitles from '../resources/pageTitles';
+import * as Helper from '../helpers/helperFunctions'
 import DisqusThread from '../utils/DisqusThread'
 import {connect} from "react-redux";
 import * as actionCreators from "../store/actionCreators";
-import ErrorBox from "./Profilespage";
+import ErrorBox from "./ProfilesPage";
+import {PROFILE_LOADING_FEEDBACK} from '../resources/feedbackMessages';
+import {PROFILE} from '../resources/defaultData';
 import Loading from "../components/Loading";
 
 class Profile extends Component{
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount = () =>{
         // check if data already fetched, if true, don't fetch again
@@ -25,13 +25,6 @@ class Profile extends Component{
         }
     };
 
-    render(){
-        return (
-            <div>
-                { this.renderContent() }
-            </div>
-        );
-    }
 
     /************* HELPER FUNCTIONS *************/
 
@@ -55,11 +48,6 @@ class Profile extends Component{
         return data;
     };
 
-
-    setPageTitle = (pageTitle) =>{
-        document.title = pageTitle + pageTitles.VB + pageTitles.MAIN;
-    };
-
     profileNotFound = (profileData) =>{
         return profileData.length <= 0;
     };
@@ -78,19 +66,32 @@ class Profile extends Component{
     renderCommentSection = (profileData) =>{
         return (
             <div id="disqus-thread">
-                <DisqusThread id={profileData.id} title={profileData.title} path={"/profile/" + profileData.id}/>
+                <DisqusThread id={'' + profileData.id} title={profileData.title} path={"/profile/" + profileData.id}/>
             </div>
         );
     };
 
+    //TODO: externalize text defaults (default titles, image links etc..)
     renderProfileHeader = (profileData, images) => {
+
+        //TODO: Replace with common general helper function in all renderers and PAGE
+        const getImage = (data) => {
+            if(null != data.externalImageLink){
+                return data.externalImageLink;
+            } else if(null != data.internalImageLink){
+                return images[data.internalImageLink];
+            } else{
+                return images[PROFILE.IMAGE_LINK];
+            }
+        };
+
         return (
             <ProfileHeader
-                title = { profileData.title }
-                imgSrc = { profileData.external_image ? profileData.external_image : images[profileData.image] }
-                dateOfRelease = { profileData.release_date }
-                price = { profileData.price }
-                productLink={ profileData.amazon_link }
+                title = { Helper.valueOrDefault(profileData.title, PROFILE.TITLE) }
+                imgSrc = { getImage(profileData) }
+                dateOfRelease = { Helper.valueOrDefault(profileData.releaseDate, PROFILE.RELEASE_DATE) }
+                price = { Helper.valueOrDefault(profileData.averagePrice, PROFILE.AVERAGE_PRICE) }
+                productLink={ Helper.valueOrDefault(profileData.amazonLink, PROFILE.AMAZON_LINK) }
             />
         );
     };
@@ -100,11 +101,11 @@ class Profile extends Component{
         return(<InfoList data={ profileData }/>);
     };
 
-    renderGames = (profileData, numberOfGames) => {
+    renderGames = (gamesData, numberOfGames) => {
         return (
             <div>
                 <h4 className="card-content-tittle">Performance in games:</h4>
-                <GameRenderer number={numberOfGames} data={profileData.games}/>
+                <GameRenderer number={numberOfGames} data={gamesData}/>
             </div>
         );
     };
@@ -152,13 +153,13 @@ class Profile extends Component{
             contentToRender = <Loading />
         }
         else if(this.dataLoadingError()){
-            contentToRender = <ErrorBox> Could not load profile! <i className="far fa-frown"/> </ErrorBox>
+            contentToRender = <ErrorBox> {PROFILE_LOADING_FEEDBACK.LOADING_FAIL} <i className="far fa-frown"/> </ErrorBox>
         }
         else if(this.profileNotFound(profileData)){
             contentToRender = <Redirect to="/Error-404"/>;
         }
         else{
-            this.setPageTitle(profileData.title);
+            Helper.setPageTitle(Helper.valueOrDefault(profileData.title, '') + pageTitles.VB + pageTitles.MAIN);
             const numberOfGames = profileData.benchmarks.length;
             const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
 
@@ -167,7 +168,7 @@ class Profile extends Component{
                     <section className="profile-section">
                         { this.renderProfileHeader(profileData, images) }
                         { this.renderInfoList(profileData) }
-                        { this.renderGames(profileData, numberOfGames) }
+                        { this.renderGames(profileData.benchmarks, numberOfGames) }
                         { this.renderMoreInfoBox() }
                         { this.renderEditingButtons() }
                     </section>
@@ -178,6 +179,14 @@ class Profile extends Component{
         }
         return contentToRender;
     };
+
+    render(){
+        return (
+            <div>
+                { this.renderContent() }
+            </div>
+        );
+    }
 }
 
 /************* STATE AND DATA *************/
