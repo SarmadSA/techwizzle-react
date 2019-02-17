@@ -1,29 +1,23 @@
 import React from 'react';
 import '../css/InfoList.css';
+import {valueOrDefault} from "../helpers/helperFunctions";
+import {PROFILE} from "../resources/defaultData";
 
 const InfoList = (props) =>{
     const data = props.data;
-
-    const formatData = (data) =>{
-      let dataFormat = '--';
-      if(data){
-          dataFormat = data;
-      }
-      return dataFormat;
-    };
 
     return (
         <div className="info-list-box">
             <h3>Technical information:</h3>
             <br/>
             <ul className="info-list">
-                <li> <span className="info-text-span"> CUDA Cores: </span> { formatData(data.cuda_cores) } </li>
-                <li> <span className="info-text-span"> Base Clock (MHz): </span> { formatData(data.base_clock) } </li>
-                <li> <span className="info-text-span"> Boost Clock (MHz): </span> { formatData(data.boost_clock) } </li>
-                <li> <span className="info-text-span"> Memory Clock Speed: </span> { formatData(data.memory_clock_speed) } </li>
-                <li> <span className="info-text-span"> Standard Memory Config: </span> { formatData(data.standard_memory_config) } </li>
-                <li> <span className="info-text-span"> Memory Interface Width: </span> { formatData(data.memory_interface_width) } </li>
-                <li> <span className="info-text-span"> Memory Bandwidth (GB/sec): </span> { formatData(data.memory_bandwidth) } </li>
+                <li> <span className="info-text-span"> CUDA Cores: </span> { valueOrDefault(data.cudaCores, PROFILE.TECHNICAL_INFO.CUDA_CORES) } </li>
+                <li> <span className="info-text-span"> Base Clock (MHz): </span> { valueOrDefault(data.baseClock, PROFILE.TECHNICAL_INFO.BASE_CLOCK) } </li>
+                <li> <span className="info-text-span"> Boost Clock (MHz): </span> { valueOrDefault(data.boostClock, PROFILE.TECHNICAL_INFO.BOOST_CLOCK) } </li>
+                <li> <span className="info-text-span"> Memory Clock Speed (MHz): </span> { valueOrDefault(data.memoryClockSpeed, PROFILE.TECHNICAL_INFO.MEMORY_CLOCK_SPEED) } </li>
+                <li> <span className="info-text-span"> Standard Memory Config: </span> { valueOrDefault(data.standardMemoryConfig, PROFILE.TECHNICAL_INFO.STANDARD_MEMORY_CONFIG) } </li>
+                <li> <span className="info-text-span"> Memory Interface Width (bit): </span> { valueOrDefault(data.memoryInterfaceWidth, PROFILE.TECHNICAL_INFO.MEMORY_INTERFACE_WIDTH) } </li>
+                <li> <span className="info-text-span"> Memory Bandwidth (GB/sec): </span> { valueOrDefault(data.memoryBandwidth, PROFILE.TECHNICAL_INFO.MEMORY_BANDWIDTH) } </li>
             </ul>
         </div>
     );
