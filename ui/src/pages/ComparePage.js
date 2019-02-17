@@ -1,8 +1,9 @@
 import React from 'react';
 import * as pageTitles from '../resources/pageTitles';
+import {setPageTitle} from "../helpers/helperFunctions";
 
 const ComparePage = () =>{
-    document.title = pageTitles.COMPARE;
+    setPageTitle(pageTitles.COMPARE);
     return (
         <div>
             <section style={{textAlign:'center', fontSize:'30px'}}>
