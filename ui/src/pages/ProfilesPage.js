@@ -9,6 +9,7 @@ import { profilesPageOptions } from '../resources/initStateConsts';
 import * as pageTitles from '../resources/pageTitles';
 import * as actionCreators from "../store/actionCreators";
 import ErrorBox from "../components/ErrorBox";
+import {setPageTitle} from "../helpers/helperFunctions";
 
 class ProfilesPage extends Component{
     constructor(props){
@@ -99,7 +100,7 @@ class ProfilesPage extends Component{
     // // };
 
     render(){
-        document.title = pageTitles.PROFILES;
+        setPageTitle(pageTitles.PROFILES);
 
         return (
             <div>
