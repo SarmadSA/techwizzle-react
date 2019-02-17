@@ -29,8 +29,9 @@ public class Game {
     @Getter @Setter
     private String shortTitle;
 
+    @Size(max = 8)
     @Getter @Setter
-    private Date releaseDate;
+    private String releaseDate;
 
     @Size(max = 150)
     @Getter @Setter

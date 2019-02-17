@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("*") //allow only this domain to perform cross requests.
+@CrossOrigin("*") //TODO: Allow only authorized domain to perform cross requests.
 @RequestMapping(path="/contact")
 public class ContactFormMessageController {
 
