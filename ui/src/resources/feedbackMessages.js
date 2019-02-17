@@ -11,4 +11,8 @@ export const PROFILE_LOADING_FEEDBACK = {
     LOADING_FAIL: "Could not load profile!"
 };
 
+export const CARD_FEEDBACK = {
+    NO_GAME_TESTS: "No game tests available!"
+};
+
 //OTHER MESSAGES TO COME..
