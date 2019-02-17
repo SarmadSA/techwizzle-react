@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import * as pageTitles from '../resources/pageTitles';
 import '../css/Card.css';
+import {setPageTitle} from "../helpers/helperFunctions";
 
 export default class NotFoundPage extends React.Component{
 
@@ -22,7 +23,7 @@ export default class NotFoundPage extends React.Component{
     };
 
     render(){
-        document.title = pageTitles.NOT_FOUND;
+        setPageTitle(pageTitles.NOT_FOUND);
 
         if(this.state.timedOut){
             return <Redirect to="/"/>
