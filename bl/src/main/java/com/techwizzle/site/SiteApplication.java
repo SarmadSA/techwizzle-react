@@ -10,6 +10,4 @@ public class SiteApplication {
         SpringApplication.run(SiteApplication.class, args);
         System.out.println("Working spring app");
     }
-
 }
-

@@ -8,7 +8,6 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -30,8 +29,9 @@ public class Card {
     @Getter @Setter
     private String shortTitle;
 
+    @Size(max = 8)
     @Getter @Setter
-    private Date releaseDate;
+    private String releaseDate;
 
     @Min(0)
     @Getter @Setter
