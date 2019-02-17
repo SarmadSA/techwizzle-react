@@ -8,6 +8,7 @@ const CardRenderer = (props) =>{
     const images = ImageImporter(require.context('../images', false, /\.(png|jpe?g|svg)$/));
     const cards = [];
 
+    //TODO: Replace with common general helper function in all renderers
     const getImage = (data) => {
         if(null != data.externalImageLink){
             return data.externalImageLink;
@@ -24,7 +25,7 @@ const CardRenderer = (props) =>{
             if(cardData){
                 cards.push(
                     <Card
-                        key={ i }
+                        key={i}
                         id={ cardData.id }
                         imgSrc={ getImage(cardData) }
                         title={ valueOrDefault(cardData.shortTitle, PROFILE.TITLE) }
