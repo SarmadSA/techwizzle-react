@@ -1,130 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3478a433-0ea7-4550-b4ef-7d8becf4451c" name="Default Changelist" comment="Refac">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3478a433-0ea7-4550-b4ef-7d8becf4451c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BL/src/main/java/com/techwizzle/servlets/FormResponder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BL/src/main/java/com/techwizzle/servlets/JsonExporter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BL/src/main/java/com/techwizzle/utils/DBConnect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BL/src/main/java/com/techwizzle/utils/FormValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BL/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BL/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/public/techwizzle-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/AsideFormBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Card.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/CardHeader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/ContactForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/ErrorBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/FiltererOptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/FlexErrorBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Footer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/GameShowcase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Hexagon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/InfoBlock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/InfoList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/LoadButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Loading.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Logo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/MiniCard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/NextButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/PreviewsButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/ProfileHeader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/SearchForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/SearchOptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/SectionTitle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Slide.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/Slider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/SliderBubble.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/SosialmediaIcons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/SuggestedContent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/components/TextBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/AsideFormBox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/Card.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/CardHeader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/ContactForm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/ErrorBox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/FiltererOptions.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/FlexErrorBox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/Footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/GameShowcase.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/Header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/Hexagon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/InfoBlock.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/InfoList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/LoadButton.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/Loading.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/Logo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/MiniCard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/NavigationButton.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/ProfileHeader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/SearchForm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/SearchOptions.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/SectionTitle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/Slide.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/Slider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/SliderBubble.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/SosialmediaIcons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/SuggestedContent.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/TextBox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/global.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/bf1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/bf1_gtx_1060.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/bf5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/csgo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/evga1060.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/grtx2080.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gta 5 gtx 1060_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gta_5_gtx_1060.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gta_5_gtx_1060_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gta_5_gtx_1060_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gta_5_gtx_1060_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gtav.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gtx1060.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gtx1070.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/gtx1080.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/msigtx1050.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/recon_gtx_1060.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/recon_gtx_1060_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/rotr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/images/twwh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/pages/Aboutpage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/pages/Comparepage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/pages/Contactpage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/pages/Homepage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/pages/NotFoundPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/pages/Profile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/pages/Profilespage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/registerServiceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/resources/cards.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/resources/consts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/resources/dataImporter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/resources/initStateConsts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/resources/pageTitles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/store/actionCreators.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/store/actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/store/reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/techwizzle.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/CardRenderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/DisqusThread.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/GameRenderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/History.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/ImageImporter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/MiniCardRenderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/ProfileRenderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/ScrollToTop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/techwizzle-react/src/utils/sitemap-builder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BL/BL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BL/BL.iml" afterDir="false" />
     </list>
     <list id="e33932a5-8a96-4b59-99de-6dd61bd9a5f0" name="Implement contact from request handlers, send AJAX to server with collected data" comment="Implement contact from request handlers, send AJAX to server with collected data" />
     <list id="13b2d639-3064-466c-861c-5008347b9828" name="Refactor project" comment="Refactor project" />
@@ -161,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bl/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="114">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
             </state>
           </provider>
         </entry>
@@ -213,7 +92,12 @@
           <expand>
             <path>
               <item name="TW" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bl" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,6 +108,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550492598256" />
@@ -245,7 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SiteApplication">
     <configuration name="SiteApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="bl" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.techwizzle.site.SiteApplication" />
@@ -253,6 +141,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/ui/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.npm start" />
+      <item itemvalue="Spring Boot.SiteApplication" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -271,14 +173,7 @@
       <workItem from="1545571334013" duration="125000" />
       <workItem from="1545571476446" duration="9972000" />
       <workItem from="1550490317127" duration="2334000" />
-      <workItem from="1550492750382" duration="1119000" />
-    </task>
-    <task id="LOCAL-00017" summary="Create benchmark &amp; game controllers">
-      <created>1550491258048</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1550491258048</updated>
+      <workItem from="1550492750382" duration="2157000" />
     </task>
     <task id="LOCAL-00018" summary="Commit idea files">
       <created>1550491270917</created>
@@ -616,14 +511,22 @@
       <option name="project" value="LOCAL" />
       <updated>1550492126784</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Rest refactor commit">
+      <created>1550498526297</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1550498526301</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13337000" />
+    <option name="totallyTimeSpent" value="14375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28926176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -637,12 +540,12 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47733712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.5865772" visible="true" weight="0.7181303" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.5865772" weight="0.7181303" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.41342282" side_tool="true" weight="0.7181303" />
@@ -705,7 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create print debugger" />
     <MESSAGE value="Move all feedback messages text to own external file" />
     <MESSAGE value="Move all variant styles to own external file" />
     <MESSAGE value="Create helper functions in own file" />
@@ -730,7 +632,8 @@
     <MESSAGE value="Use helpers to set title" />
     <MESSAGE value="Create page text where all text in website should be" />
     <MESSAGE value="Change datatype of release data to String, since Q date is used (example Q3'16)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change datatype of release data to String, since Q date is used (example Q3'16)" />
+    <MESSAGE value="Rest refactor commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rest refactor commit" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/App.js" />
@@ -780,8 +683,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bl/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="114">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
