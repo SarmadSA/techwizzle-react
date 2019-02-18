@@ -1,0 +1,79 @@
+.card{
+    position: relative;
+    float: left;
+    width: 31%;
+    min-height: 550px;
+    margin-right: 1%;
+    margin-left: 1%;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+    margin-bottom: 40px;
+    border-top: 2px solid green;
+}
+
+.card-content-tittle{
+    font-size: 125%;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.more-gameresults{
+	float: left;
+    height: 67px;
+    width: 100%;
+    padding-top: 17px;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+    cursor: pointer;
+	border-bottom-left-radius: 9px;
+	border-bottom-right-radius: 9px;
+	transition: 0.4s ease;
+    position: absolute;
+    bottom: 0;
+}
+
+/*Must be the same height as .more-gameresults, this is a inves copy*/
+.more-gameresults-copy-invis{
+    width: 100%;
+    height: 67px;
+}
+
+.more-gameresults:hover{
+	background-color: rgb(22, 156, 51); /*rgba(5,154,55,0.70);*/
+}
+
+.more-link{
+    color: black;
+}
+
+.more-gameresults:hover{
+    color: white;
+}
+
+@media only screen and (max-width: 1400px) {
+    .card {
+        width: 46%;
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+}
+
+.fa-exclamation-circle{
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    vertical-align: middle;
+    color: #aaaaaa;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.fa-exclamation-circle:hover{
+    color: green;
+}
