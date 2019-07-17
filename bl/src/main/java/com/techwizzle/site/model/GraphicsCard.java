@@ -11,13 +11,13 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-public class Card {
+public class GraphicsCard {
 
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter//@Setter
-    private Long id;
+    private Integer id;
 
     @Size(min = 1, max = 100)
     @NotNull
