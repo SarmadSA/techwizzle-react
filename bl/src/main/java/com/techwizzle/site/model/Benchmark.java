@@ -16,14 +16,14 @@ public class Benchmark {
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter//@Setter
-    private Long id;
+    private Integer id;
 
     @ManyToOne
     @JsonIgnoreProperties("benchmarks")
     @JoinColumn(name="card_id")
     @NotNull
     @Getter @Setter
-    private Card card;
+    private GraphicsCard card;
 
     @ManyToOne
     @JsonIgnoreProperties("benchmarks")

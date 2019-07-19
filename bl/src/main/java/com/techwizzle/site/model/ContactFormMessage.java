@@ -18,7 +18,7 @@ public class ContactFormMessage {
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter//@Setter
-    private Long id;
+    private Integer id;
 
     @Size(min = 1, max = 50)
     @NotNull

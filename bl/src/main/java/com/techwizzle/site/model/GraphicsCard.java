@@ -77,8 +77,8 @@ public class GraphicsCard {
     @Getter @Setter
     private Integer memoryBandwidth;
 
-    @OneToMany(mappedBy = "card")
-    @JsonIgnoreProperties("card")
+    @OneToMany(mappedBy = "graphicsCard")
+    @JsonIgnoreProperties("graphicsCard")
     @Getter @Setter
     private List<Benchmark> benchmarks;
 

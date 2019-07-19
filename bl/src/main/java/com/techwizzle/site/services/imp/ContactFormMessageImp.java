@@ -1,12 +1,13 @@
-package com.techwizzle.site.services;
+package com.techwizzle.site.services.imp;
 
 import com.techwizzle.site.model.ContactFormMessage;
 import com.techwizzle.site.repositories.ContactFormMessageRepository;
+import com.techwizzle.site.services.ContactFormMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ContactFormMessageImp implements ContactFormMessageService{
+public class ContactFormMessageImp implements ContactFormMessageService {
     private ContactFormMessageRepository contactFormMessageRepository;
 
     @Autowired
