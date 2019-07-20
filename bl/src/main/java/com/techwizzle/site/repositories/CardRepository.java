@@ -1,8 +1,8 @@
 package com.techwizzle.site.repositories;
 
-import com.techwizzle.site.model.Card;
-import org.springframework.data.repository.CrudRepository;
+import com.techwizzle.site.model.GraphicsCard;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CardRepository extends CrudRepository<Card, Long> {
+public interface CardRepository extends JpaRepository<GraphicsCard, Integer> {
 
 }
