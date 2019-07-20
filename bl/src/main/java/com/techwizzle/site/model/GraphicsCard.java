@@ -14,7 +14,6 @@ import java.util.List;
 public class GraphicsCard {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter//@Setter
     private Integer id;
