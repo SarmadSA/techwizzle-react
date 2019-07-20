@@ -23,7 +23,7 @@ public class Benchmark {
     @JoinColumn(name="card_id")
     @NotNull
     @Getter @Setter
-    private GraphicsCard card;
+    private GraphicsCard graphicsCard;
 
     @ManyToOne
     @JsonIgnoreProperties("benchmarks")
