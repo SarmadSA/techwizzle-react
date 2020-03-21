@@ -7,20 +7,25 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import java.sql.Timestamp;
 
 @Entity
+//@IdClass(CompositeKey.class)
 public class Benchmark {
 
     @Id
-    @NotNull
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter//@Setter
     private Integer id;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    private Timestamp timestamp;
+
+    //@Id
     @ManyToOne
     @JsonIgnoreProperties("benchmarks")
-    @JoinColumn(name="card_id")
+    @JoinColumn(name="graphics_card_id")
     @NotNull
     @Getter @Setter
     private GraphicsCard graphicsCard;
@@ -32,27 +37,32 @@ public class Benchmark {
     @Getter @Setter
     private Game game;
 
-    @Min(0) // fps no less than 0. Negative values not allowed
+    @ManyToOne
+    @JsonIgnoreProperties("benchmarks")
+    @JoinColumn(name="resolution_id")
+    @NotNull
     @Getter @Setter
-    private Integer minFps;
+    private Resolution resolution;
 
+    @ManyToOne
+    @JsonIgnoreProperties("benchmarks")
+    @JoinColumn(name="graphics_setting_id")
+    @NotNull
+    @Getter @Setter
+    private GraphicsSetting GraphicsSetting;
+
+    //@Min(0) // fps no less than 0. Negative values not allowed
+    //@Getter @Setter
+    //private Integer minFps;
+
+    @Column(name = "fps")
     @Min(0)
     @NotNull
     @Getter @Setter
     private Integer avgFps;
 
-    @Min(0)
-    @Getter @Setter
-    private Integer maxFps;
-
-    @Min(0)
-    @NotNull
-    @Getter @Setter
-    private Integer resolution;
-
-    @Size(max = 20) //No more than 20 chars.
-    @NotNull
-    @Getter @Setter
-    private String settings;
+    //@Min(0)
+    //@Getter @Setter
+    //private Integer maxFps;
 
 }
