@@ -21,7 +21,7 @@ public class GraphicsCardServiceImp implements GraphicsCardService {
     }
 
 
-    public List<GraphicsCard> getAllGraphicsCards(Pageable pageable) {
+    public List<GraphicsCard> getGraphicsCards(Pageable pageable) {
         return graphicsCardRepository.findAll(pageable).getContent();
     }
 

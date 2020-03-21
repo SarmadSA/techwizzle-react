@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface GraphicsCardService {
 
-    List<GraphicsCard> getAllGraphicsCards(Pageable pageable);
+    List<GraphicsCard> getGraphicsCards(Pageable pageable);
 
     boolean addGraphicsCard(GraphicsCard graphicsCard);
 
