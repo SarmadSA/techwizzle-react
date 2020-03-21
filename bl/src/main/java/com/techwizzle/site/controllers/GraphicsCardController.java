@@ -35,10 +35,12 @@ public class GraphicsCardController {
      * @return
      */
     @GetMapping("/list") //TODO default sort should be by latest release
-    public List<GraphicsCard> listGraphicsCards(@RequestParam(value = "page", defaultValue = "0", required = false) int page,
-                                                @RequestParam(value = "size", defaultValue = "6", required = false) int size,
-                                                @RequestParam(value = "sort", defaultValue = "timestamp:ASC", required = false) String[] sortBy){
-        return graphicsCardService.getAllGraphicsCards(Helper.getPagable(page, size, sortBy));
+    public ResponseEntity listGraphicsCards(@RequestParam(value = "page", defaultValue = "0", required = false) int page,
+                                            @RequestParam(value = "size", defaultValue = "6", required = false) int size,
+                                            @RequestParam(value = "sort", defaultValue = "timestamp:ASC", required = false) String[] sortBy){
+
+        List<GraphicsCard> graphicsCardList = graphicsCardService.getGraphicsCards(Helper.getPagable(page, size, sortBy));
+        return new ResponseEntity<>(graphicsCardList, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -55,11 +57,12 @@ public class GraphicsCardController {
     }
 
     @GetMapping("/search")
-    public List<GraphicsCard> searchGraphicsCardsByTitle(@RequestParam String title,
+    public ResponseEntity searchGraphicsCardsByTitle(@RequestParam String title,
                                                          @RequestParam(value = "page", defaultValue = "0", required = false) int page,
                                                          @RequestParam(value = "size", defaultValue = "6", required = false) int size,
                                                          @RequestParam(value = "sort", defaultValue = "timestamp:ASC", required = false) String[] sortBy){
-        return graphicsCardService.searchByTitle(title, Helper.getPagable(page, size, sortBy));
+        List<GraphicsCard> graphicsCardSearchResult = graphicsCardService.searchByTitle(title, Helper.getPagable(page, size, sortBy));
+        return new ResponseEntity<> (graphicsCardSearchResult, HttpStatus.OK);
     }
 
     @PostMapping("/add")
