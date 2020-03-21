@@ -1,9 +1,11 @@
 package com.techwizzle.site.services.imp;
 
+import com.techwizzle.site.exception.GraphicsCardServiceException;
 import com.techwizzle.site.model.GraphicsCard;
-import com.techwizzle.site.repositories.CardRepository;
+import com.techwizzle.site.repositories.GraphicsCardRepository;
 import com.techwizzle.site.services.GraphicsCardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,36 +13,37 @@ import java.util.List;
 @Service
 public class GraphicsCardServiceImp implements GraphicsCardService {
 
-    private final CardRepository cardRepository;
+    private final GraphicsCardRepository graphicsCardRepository;
 
     @Autowired
-    public GraphicsCardServiceImp(CardRepository cardRepository) {
-        this.cardRepository = cardRepository;
+    public GraphicsCardServiceImp(GraphicsCardRepository cardRepository) {
+        this.graphicsCardRepository = cardRepository;
     }
 
-    public List<GraphicsCard> getAllGraphicsCards() {
-        return cardRepository.findAll();
+
+    public List<GraphicsCard> getAllGraphicsCards(Pageable pageable) {
+        return graphicsCardRepository.findAll(pageable).getContent();
     }
 
     @Override
     public boolean addGraphicsCard(GraphicsCard card) {
-        try {
-            this.cardRepository.save(card);
+        //try {
+            this.graphicsCardRepository.save(card);
             return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+        //} catch (Exception e) {
+        //    e.printStackTrace();
+        //    return false;
+        //}
     }
 
     @Override
-    public boolean removeGraphicsCard(Integer id) {
-        try {
-            this.cardRepository.deleteById(id);
+    public boolean removeGraphicsCard(Integer id) throws Exception{
+        if(this.graphicsCardRepository.existsById(id)){
+            this.graphicsCardRepository.deleteById(id);
             return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+        } else {
+            throw new Exception();
+            //return false;
         }
     }
 
@@ -48,11 +51,26 @@ public class GraphicsCardServiceImp implements GraphicsCardService {
     public boolean updateGraphicsCard(GraphicsCard card) {
         try {
             //TODO: does it update?
-            this.cardRepository.save(card);
+            this.graphicsCardRepository.save(card);
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public GraphicsCard findByID(String uuid) throws GraphicsCardServiceException{
+        GraphicsCard foundGraphicsCard = graphicsCardRepository.getByUuid(uuid);
+        if(null == foundGraphicsCard){
+            throw new GraphicsCardServiceException("Failed to retrieve data")
+                    .addSingleError("Could not find a graphics card with id: " + uuid);
+        }
+        return foundGraphicsCard;
+    }
+
+    @Override
+    public List<GraphicsCard> searchByTitle(String title, Pageable pageable){
+        return graphicsCardRepository.searchByTitle(title, pageable);
     }
 }
