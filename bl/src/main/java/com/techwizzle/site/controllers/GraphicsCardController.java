@@ -3,6 +3,7 @@ package com.techwizzle.site.controllers;
 import com.techwizzle.site.exception.GraphicsCardServiceException;
 import com.techwizzle.site.model.GraphicsCard;
 import com.techwizzle.site.response.ErrorMessage;
+import com.techwizzle.site.response.SuccessMessage;
 import com.techwizzle.site.services.GraphicsCardService;
 import com.techwizzle.site.util.Constants;
 import com.techwizzle.site.util.Helper;
@@ -58,19 +59,23 @@ public class GraphicsCardController {
 
     @GetMapping("/search")
     public ResponseEntity searchGraphicsCardsByTitle(@RequestParam String title,
-                                                         @RequestParam(value = "page", defaultValue = "0", required = false) int page,
-                                                         @RequestParam(value = "size", defaultValue = "6", required = false) int size,
-                                                         @RequestParam(value = "sort", defaultValue = "timestamp:ASC", required = false) String[] sortBy){
+                                                     @RequestParam(value = "page", defaultValue = "0", required = false) int page,
+                                                     @RequestParam(value = "size", defaultValue = "6", required = false) int size,
+                                                     @RequestParam(value = "sort", defaultValue = "timestamp:ASC", required = false) String[] sortBy){
         List<GraphicsCard> graphicsCardSearchResult = graphicsCardService.searchByTitle(title, Helper.getPagable(page, size, sortBy));
         return new ResponseEntity<> (graphicsCardSearchResult, HttpStatus.OK);
     }
 
     @PostMapping("/add")
     public ResponseEntity addGraphicsCard(@Valid @RequestBody GraphicsCard graphicsCard){
-        if(this.graphicsCardService.addGraphicsCard(graphicsCard)){
-            return new ResponseEntity<>(Constants.ADD_SUCCESS , HttpStatus.CREATED);
-        }
-        return new ResponseEntity<>(Constants.ADD_FAILURE, HttpStatus.BAD_REQUEST);
+        this.graphicsCardService.addGraphicsCard(graphicsCard);
+        SuccessMessage successMessage = new SuccessMessage()
+                .setMessage("Successfully added")
+                .setPath("/graphics-card/add")
+                .addSingleDataObject(graphicsCard);
+        return new ResponseEntity<>(successMessage, HttpStatus.CREATED);
+
+        //return new ResponseEntity<>(Constants.ADD_FAILURE, HttpStatus.BAD_REQUEST);
     }
 
     @DeleteMapping("/remove")
