@@ -17,14 +17,13 @@ public class GraphicsCard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
     private Integer id;
 
+    @Column(name = "uuid")
     @Getter
-    private String uuid = UUID.randomUUID().toString().replace("-", "");
+    private String resourceId = UUID.randomUUID().toString().replace("-", "");
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
     private Timestamp timestamp;
 
     @Size(min = 1, max = 100)
