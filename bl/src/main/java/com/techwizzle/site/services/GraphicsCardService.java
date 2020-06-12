@@ -10,7 +10,7 @@ public interface GraphicsCardService {
 
     List<GraphicsCard> getGraphicsCards(Pageable pageable);
 
-    boolean addGraphicsCard(GraphicsCard graphicsCard);
+    void addGraphicsCard(GraphicsCard graphicsCard);
 
     boolean removeGraphicsCard(Integer id) throws Exception;
 

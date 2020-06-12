@@ -20,7 +20,7 @@ class Profile extends Component{
     componentDidMount = () =>{
         // check if data already fetched, if true, don't fetch again
         // call the function the fetches then stores the data here from action creators
-        if(this.props.data.length < 1){
+        if(this.props.graphicsCardData.length < 1){
             this.props.onLoad();
         }
     };
@@ -57,7 +57,7 @@ class Profile extends Component{
     };
 
     dataLoadingError = () =>{
-        return this.props.data.length <= 0;
+        return this.props.graphicsCardData.length <= 0;
     };
 
 
@@ -145,7 +145,7 @@ class Profile extends Component{
 
     renderContent = () =>{
         const profileId = this.props.match.params.id;
-        const profileData = this.getData(profileId, this.props.data);
+        const profileData = this.getData(profileId, this.props.graphicsCardData);
 
         let contentToRender = null;
 
@@ -172,7 +172,7 @@ class Profile extends Component{
                         { this.renderMoreInfoBox() }
                         { this.renderEditingButtons() }
                     </section>
-                    { this.renderSuggestedContent(4, this.props.data) }
+                    { this.renderSuggestedContent(4, this.props.graphicsCardData) }
                     { this.renderCommentSection(profileData) }
                 </div>
             );
@@ -193,7 +193,7 @@ class Profile extends Component{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        onLoad: () => dispatch(actionCreators.fetchData())
+        onLoad: () => dispatch(actionCreators.fetchGraphicsCards())
     };
 };
 

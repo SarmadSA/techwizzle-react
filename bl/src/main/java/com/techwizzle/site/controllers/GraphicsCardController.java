@@ -68,12 +68,21 @@ public class GraphicsCardController {
 
     @PostMapping("/add")
     public ResponseEntity addGraphicsCard(@Valid @RequestBody GraphicsCard graphicsCard){
-        this.graphicsCardService.addGraphicsCard(graphicsCard);
-        SuccessMessage successMessage = new SuccessMessage()
-                .setMessage("Successfully added")
-                .setPath("/graphics-card/add")
-                .addSingleDataObject(graphicsCard);
-        return new ResponseEntity<>(successMessage, HttpStatus.CREATED);
+        try {
+            this.graphicsCardService.addGraphicsCard(graphicsCard);
+            SuccessMessage successMessage = new SuccessMessage()
+                    .setMessage("Successfully added")
+                    .setPath("/graphics-card/add")
+                    .addSingleDataObject(graphicsCard);
+            return new ResponseEntity<>(successMessage, HttpStatus.CREATED);
+        } catch (Exception e){
+            e.printStackTrace();
+            ErrorMessage errorMessage = new ErrorMessage()
+                    .setMessage(e.getMessage())
+                    .setPath("/graphics-card/add")
+                    .addSingleError(e.getCause().getMessage());
+            return new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
+        }
 
         //return new ResponseEntity<>(Constants.ADD_FAILURE, HttpStatus.BAD_REQUEST);
     }

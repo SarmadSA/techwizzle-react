@@ -20,19 +20,16 @@ public class GraphicsCardServiceImp implements GraphicsCardService {
         this.graphicsCardRepository = cardRepository;
     }
 
-
     public List<GraphicsCard> getGraphicsCards(Pageable pageable) {
         return graphicsCardRepository.findAll(pageable).getContent();
     }
 
     @Override
-    public boolean addGraphicsCard(GraphicsCard card) {
+    public void addGraphicsCard(GraphicsCard card) {
         //try {
             this.graphicsCardRepository.save(card);
-            return true;
         //} catch (Exception e) {
-        //    e.printStackTrace();
-        //    return false;
+          //  e.printStackTrace();
         //}
     }
 
@@ -61,7 +58,7 @@ public class GraphicsCardServiceImp implements GraphicsCardService {
 
     @Override
     public GraphicsCard findByID(String uuid) throws GraphicsCardServiceException{
-        GraphicsCard foundGraphicsCard = graphicsCardRepository.getByUuid(uuid);
+        GraphicsCard foundGraphicsCard = graphicsCardRepository.getByResourceId(uuid);
         if(null == foundGraphicsCard){
             throw new GraphicsCardServiceException("Failed to retrieve data")
                     .addSingleError("Could not find a graphics card with id: " + uuid);

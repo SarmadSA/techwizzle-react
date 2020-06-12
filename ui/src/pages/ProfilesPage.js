@@ -15,27 +15,30 @@ class ProfilesPage extends Component{
     constructor(props){
         super(props);
         this.state = {
-            numberOfCards: profilesPageOptions.initialCards
+            data: [],
+            numberOfCards: profilesPageOptions.initialCards,
+            pageSize: profilesPageOptions.initialCards,
+            currentPage: 0
         };
     }
 
     componentDidMount = () =>{
         // check if data already fetched, if true, don't fetch again
         // call the function the fetches then stores the data here from action creators
-        if(this.props.data.length < 1){
+        if(this.props.graphicsCardData.length < 1){
             this.props.onLoad();
         }
     };
 
     loadMore = () =>{
-        if(this.state.numberOfCards <= (this.props.data).length){
-            this.setState({numberOfCards: this.state.numberOfCards + profilesPageOptions.onLoadMore});
-        }
+        //if(this.state.numberOfCards <= (this.props.graphicsCardData).length){
+        //    this.setState({numberOfCards: this.state.numberOfCards + profilesPageOptions.onLoadMore});
+        //}
     };
 
     renderContent = () =>{
         let contentToRender = null;
-        if(this.props.searching && this.props.data.length <= 0){
+        if(this.props.searching && this.props.graphicsCardData.length <= 0){
             contentToRender =(<ErrorBox>
                 No results found! <i className="far fa-frown"/> <br/>
                 Please make sure you typed correct term and selected correct search settings
@@ -44,14 +47,14 @@ class ProfilesPage extends Component{
         else if(this.props.loading){
             contentToRender = <Loading />
         }
-        else if(this.props.data.length <= 0){
+        else if(this.props.graphicsCardData.length <= 0){
             contentToRender = <ErrorBox> No profiles to load! <i className="far fa-frown"/> </ErrorBox>
         }
         else{
-            contentToRender = <CardRenderer number={this.state.numberOfCards} data={this.props.data}/>;
-            if(this.state.numberOfCards > (this.props.data).length && !this.props.loading && !this.props.searching){
+            contentToRender = <CardRenderer number={this.state.numberOfCards} data={this.props.graphicsCardData}/>;
+            if(this.state.numberOfCards > (this.props.graphicsCardData).length && !this.props.loading && !this.props.searching){
                 contentToRender = (<div>
-                    <CardRenderer number={this.state.numberOfCards} data={this.props.data}/>
+                    <CardRenderer number={this.state.numberOfCards} data={this.props.graphicsCardData}/>
                     <ErrorBox> No more profiles to load! <i className="far fa-frown"/> </ErrorBox>
                 </div>)
             }
@@ -60,44 +63,11 @@ class ProfilesPage extends Component{
     };
 
     renderLoadButton = () =>{
-        if(this.state.numberOfCards <= (this.props.data).length){
+        if(this.state.numberOfCards <= (this.props.graphicsCardData).length){
             return (<LoadButton clickHandler={this.loadMore}>Load More</LoadButton>);
         }
     };
 
-    // randomizeDataOrder = (dataArray) =>{
-    //     const data = [];
-    //
-    //     dataArray.forEach(function (element) {
-    //         let prevNum = null;
-    //         let index = 0;
-    //
-    //         while(index < element.games.length){
-    //             let randomNr = Math.floor(Math.random() * dataArray.length);
-    //
-    //             if(randomNr !== prevNum){
-    //                 // console.log(element.games[randomNr]);
-    //                 // console.log(element.games[index]);
-    //                 element.games[index] = element.games[randomNr];
-    //                 prevNum = randomNr;
-    //                 index++
-    //             }
-    //         }
-    //         console.log(element);
-    //         data.push(element);
-    //     });
-    //
-    //     return data;
-    // };
-    //
-    // // getData = () =>{
-    // //     const data = this.props.data;
-    // //     data.forEach(function(element){
-    // //         this.randomizeDataOrder(element.games);
-    // //     });
-    // //
-    // //     return data;
-    // // };
 
     render(){
         setPageTitle(pageTitles.PROFILES);
@@ -106,7 +76,7 @@ class ProfilesPage extends Component{
             <div>
                 <SearchForm />
                 <section>
-                    
+
                     <SectionTitle> All Product Profiles </SectionTitle>
                     { this.renderContent() }
                     { this.renderLoadButton() }
@@ -116,12 +86,6 @@ class ProfilesPage extends Component{
         );
     }
 }
-
-const mapDispatchToProps = dispatch =>{
-    return {
-        onLoad: () => dispatch(actionCreators.fetchData())
-    };
-};
 
 // const contains = (numberArray, number) =>{
 //     let found = false;
@@ -159,14 +123,3 @@ const mapDispatchToProps = dispatch =>{
 //
 //     return data;
 // };
-
-
-const mapStateToProps = state =>{
-    return {
-        data : state.data,
-        searching: state.searching,
-        loading: state.loading
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProfilesPage);

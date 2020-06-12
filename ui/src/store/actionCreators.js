@@ -5,14 +5,14 @@ import {executeHttpGet} from "../services/ApiClient";
 export const storeData = (data) =>{
     return {
         type: actionTypes.FETCH_DATA,
-        data: data,
-        loading: false
-    }
+        graphicsCardData: data,
+     }
 };
 
-export const fetchData = () =>{
+export const fetchGraphicsCards = (size) =>{
     return dispatch =>{
-        executeHttpGet(CARDS_URL, onFetchSuccess, onFetchFailure);
+        const requestParams = "?size="+size;
+        executeHttpGet(CARDS_URL + requestParams, onFetchSuccess, onFetchFailure);
 
         function onFetchSuccess(url, response){
             dispatch(storeData(response.data));

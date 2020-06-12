@@ -4,7 +4,7 @@
  * changed or reassigned a new value from out side of this file (on run time).
  */
 
-export const data = [];
+export const graphicsCardData = [];
 
 export const searchFormOptions = {
     inputValue: '',

@@ -40,8 +40,8 @@ const GameRenderer = (props) =>{
                     key={i}
                     imgSrc = { getImage(props.data[i].game) }
                     title = { valueOrDefault(props.data[i].game.title, GAME.TITLE) }
-                    settings = { valueOrDefault(props.data[i].settings, BENCHMARK.SETTINGS) }
-                    resolution = { valueOrDefault(props.data[i].resolution, BENCHMARK.RESOLUTION) }
+                    settings = { valueOrDefault(props.data[i].graphicsSetting.title, BENCHMARK.SETTINGS) }
+                    resolution = { valueOrDefault(props.data[i].resolution.resolution, BENCHMARK.RESOLUTION) }
                     fps = { valueOrDefault(props.data[i].avgFps, BENCHMARK.AVERAGE_FPS) }
                 />
             );

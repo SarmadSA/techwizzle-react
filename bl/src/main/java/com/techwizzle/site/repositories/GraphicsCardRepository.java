@@ -14,7 +14,7 @@ public interface GraphicsCardRepository extends JpaRepository<GraphicsCard, Inte
 
     List<GraphicsCard> findAllByMemorySize(Integer memorySize, Pageable pageable);
 
-    GraphicsCard getByUuid(String uuid);
+    GraphicsCard getByResourceId(String uuid);
 
     @Query("SELECT gpu FROM GraphicsCard gpu WHERE gpu.title LIKE %?1%")
     List<GraphicsCard> searchByTitle(String title, Pageable pageable);

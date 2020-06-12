@@ -1,8 +1,8 @@
 import * as actionTypes from './actions';
-import { data, searchFormOptions } from "../resources/initStateConsts";
+import { graphicsCardData, searchFormOptions } from "../resources/initStateConsts";
 
 const initialState = {
-    data,
+    graphicsCardData: graphicsCardData,
     searchFormOptions,
     searching: false,
     loading: true,
@@ -11,12 +11,12 @@ const initialState = {
 const reducer = (state = initialState, action) =>{
     switch (action.type) {
         case actionTypes.FETCH_DATA:
-            initialState.data = action.data;
+            initialState.graphicsCardData = action.graphicsCardData;
             return{
                 ...state,
                 searching: false,
                 loading: action.loading,
-                data: action.data
+                graphicsCardData: action.graphicsCardData
             };
         case actionTypes.SEARCH:
             return {
@@ -34,7 +34,7 @@ const reducer = (state = initialState, action) =>{
                 },
                 maxPrice: action.maxPrice,
                 searching: true,
-                data: getUpdatedData(initialState.data, action)
+                graphicsCardData: getUpdatedData(initialState.graphicsCardData, action)
             };
         case actionTypes.RESET_STATE:
             state = initialState;

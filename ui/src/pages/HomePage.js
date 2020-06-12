@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import {setPageTitle} from "../helpers/helperFunctions";
 
 class HomePage extends Component{
-    
+
     constructor(props){
         super(props);
         this.state={
@@ -25,7 +25,7 @@ class HomePage extends Component{
     componentDidMount = () =>{
         // check if data already fetched, if true, don't fetch again
         // call the function that fetches then stores the data here from action creators
-        if(this.props.data.length < 1){
+        if(this.props.graphicsCardData.length < 1){
             this.props.onLoad();
         }
     };
@@ -44,14 +44,14 @@ class HomePage extends Component{
 
                 <section>
                     <SectionTitle> Featured Product Profiles </SectionTitle>
-                    <CardRenderer number={this.state.numberOfFeatured} data={this.props.data}/>
+                    <CardRenderer number={this.state.numberOfFeatured} data={this.props.graphicsCardData}/>
                 </section>
 
                 <section>
                     <SectionTitle> Latest Product Profiles </SectionTitle>
-                    <CardRenderer number={this.state.numberOfLatest} data={this.props.data}/>
+                    <CardRenderer number={this.state.numberOfLatest} data={this.props.graphicsCardData}/>
                 </section>
-                
+
                 <LoadButton clickHandler={this.goToProfilesPage}>Load More</LoadButton>
 
             </div>
@@ -61,13 +61,13 @@ class HomePage extends Component{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        onLoad: () => dispatch(actionCreators.fetchData())
+        onLoad: () => dispatch(actionCreators.fetchGraphicsCards())
     };
 };
 
 const mapStateToProps = state =>{
     return {
-        data : state.data
+        graphicsCardData : state.graphicsCardData
     };
 };
 
