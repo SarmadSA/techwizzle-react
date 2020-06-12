@@ -20,7 +20,7 @@ const CardRenderer = (props) =>{
     };
 
     if(props.data){
-        for(let i = 0; i < props.number; i++){
+        for(let i = 0; i < props.data.length; i++){
             const cardData = props.data[i];
             if(cardData){
                 cards.push(
